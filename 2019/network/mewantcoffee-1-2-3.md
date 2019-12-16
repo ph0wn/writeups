@@ -1,5 +1,9 @@
 # Solution (spoiler)
 
+- Me Want Coffee 1: 17 solves
+- Me Want Coffee 2: 1 solve
+- Me Want Exactly 90 mL: 0 solve
+
 ## Abstract
 
 We download the Nespresso App for Android and  try to brew a coffee. We see that the application pairs with the coffee machine.
