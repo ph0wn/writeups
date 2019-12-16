@@ -10,6 +10,7 @@ Ph0wn is a CTF dedicated to smart devices. The 2019 edition took place on Decemb
 
 - [misc/Domoticz](https://github.com/ph0wn/writeups/blob/master/2019/misc/domoticz.md)
 - [network/Me Want Coffee 1 and 2, and reverse/Me Want exactly 90mL](https://github.com/ph0wn/writeups/blob/master/2019/network/mewantcoffee-1-2-3.md) and a [video of a 70mL coffee](https://github.com/ph0wn/writeups/blob/master/2019/network/join-coffee-70ml.mp4) (we changed the challenge later to ask for not 70mL but 90mL so as to check the volume more easily). A [script to solve Me Want Exactly 90mL](https://github.com/ph0wn/writeups/blob/master/2019/network/ph0wn-hack.sh)
+- [crypto/Message from Pauline 1](https://github.com/ph0wn/writeups/blob/master/2019/crypto/message-pauline-1.md) and [reverse/Message from Pauline 2](https://github.com/ph0wn/writeups/blob/master/2019/reverse/message-pauline-2.md)
 
 ## External write-ups
 
