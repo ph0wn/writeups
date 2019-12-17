@@ -24,11 +24,11 @@ Ph0wn is a CTF dedicated to smart devices. The 2019 edition took place on Decemb
 *Thank you to participants for their write-ups!*
 
 - https://swisskyrepo.github.io/Ph0wnCTF/index.html (Sunny day, AntMaker, Compromised Sensor, Domoticz, Shamir Quest)
+- [RISC-Y Business](http://duksctf.github.io/2019/12/13/ph0wn-RISC-Y-Business.html)
 
 ## Missing write-ups
 
 - Secure Flag Storage 1 and 2
-- RISC-Y Business
 - Double Rainbow 2
 - CispaMan
 - Watch Me 2
