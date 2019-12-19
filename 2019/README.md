@@ -34,6 +34,7 @@ Rookie challenges:
 - [Double Rainbow 1](http://sebastien.andrivet.com/en/posts/ph0wn-2019-double-rainbow-writeup/)
 - [RISC-Y Business](http://duksctf.github.io/2019/12/13/ph0wn-RISC-Y-Business.html)
 - [Secure Flag Storage 1 and 2](https://github.com/vdehors/writeups/blob/master/ph0wn2019/pwn/securefs/README.md)
+- [Shamir Quest](https://github.com/ziyedbe/ph0wn/tree/master/shamir)
 
 
 ## Missing write-ups
