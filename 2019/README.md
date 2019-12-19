@@ -8,27 +8,36 @@ Ph0wn is a CTF dedicated to smart devices. The 2019 edition took place on Decemb
 
 ## Completed write-ups
 
-- [misc/Domoticz](https://github.com/ph0wn/writeups/blob/master/2019/misc/domoticz.md)
-- [misc/Compromised Sensor](https://github.com/ph0wn/writeups/blob/master/2019/misc/compromised-sensor.md)
-- [network/Me Want Coffee 1 and 2, and reverse/Me Want exactly 90mL](https://github.com/ph0wn/writeups/blob/master/2019/network/mewantcoffee-1-2-3.md) and a [video of a 70mL coffee](https://github.com/ph0wn/writeups/blob/master/2019/network/join-coffee-70ml.mp4) (we changed the challenge later to ask for not 70mL but 90mL so as to check the volume more easily). A [script to solve Me Want Exactly 90mL](https://github.com/ph0wn/writeups/blob/master/2019/network/ph0wn-hack.sh)
-- [crypto/Message from Pauline 1](https://github.com/ph0wn/writeups/blob/master/2019/crypto/message-pauline-1.md) and [reverse/Message from Pauline 2](https://github.com/ph0wn/writeups/blob/master/2019/reverse/message-pauline-2.md)
-- [crypto/Shamir Quest](https://github.com/ph0wn/writeups/blob/master/2019/crypto/shamirquest.md)
-- [hardware/Flag Digger 3 Wires](https://github.com/ph0wn/writeups/blob/master/2019/hardware/flagdigger.md)
-- [hardware/AntMaker](https://github.com/ph0wn/writeups/blob/master/2019/hardware/partial-antmaker.md)
-- [reverse/Double Rainbow 1](https://github.com/ph0wn/writeups/blob/master/2019/reverse/doublerainbow1.md)
-- [rookie/X-Ray](https://github.com/ph0wn/writeups/blob/master/2019/rookie/xray.md)
-- [rookie/Watch Me 1](https://github.com/ph0wn/writeups/blob/master/2019/rookie/watchme1.md)
+- [AntMaker](https://github.com/ph0wn/writeups/blob/master/2019/hardware/partial-antmaker.md)
+- [Compromised Sensor](https://github.com/ph0wn/writeups/blob/master/2019/misc/compromised-sensor.md)
+- [Double Rainbow 1](https://github.com/ph0wn/writeups/blob/master/2019/reverse/doublerainbow1.md)
+- [Domoticz](https://github.com/ph0wn/writeups/blob/master/2019/misc/domoticz.md)
+- [Flag Digger 3 Wires](https://github.com/ph0wn/writeups/blob/master/2019/hardware/flagdigger.md)
+- [Message from Pauline 1](https://github.com/ph0wn/writeups/blob/master/2019/crypto/message-pauline-1.md)
+- [Message from Pauline 2](https://github.com/ph0wn/writeups/blob/master/2019/reverse/message-pauline-2.md)
+- [Me Want Coffee 1](https://github.com/ph0wn/writeups/blob/master/2019/network/mewantcoffee-1-2-3.md)
+- [Me Want Coffee 2](https://github.com/ph0wn/writeups/blob/master/2019/network/mewantcoffee-1-2-3.md)
+- [Me Want Exactly 90mL 3](https://github.com/ph0wn/writeups/blob/master/2019/network/mewantcoffee-1-2-3.md), [video of a 70mL coffee](https://github.com/ph0wn/writeups/blob/master/2019/network/join-coffee-70ml.mp4) (we changed the challenge later to ask for not 70mL but 90mL so as to check the volume more easily), [script to solve Me Want Exactly 90mL](https://github.com/ph0wn/writeups/blob/master/2019/network/ph0wn-hack.sh)
+- [Shamir Quest](https://github.com/ph0wn/writeups/blob/master/2019/crypto/shamirquest.md)
+
+Rookie challenges:
+
+- [Watch Me 1](https://github.com/ph0wn/writeups/blob/master/2019/rookie/watchme1.md)
+- [X-Ray](https://github.com/ph0wn/writeups/blob/master/2019/rookie/xray.md)
+
 
 ## External write-ups
 
 *Thank you to participants for their write-ups!*
 
 - https://swisskyrepo.github.io/Ph0wnCTF/index.html (Sunny day, AntMaker, Compromised Sensor, Domoticz, Shamir Quest)
+- [Double Rainbow 1](http://sebastien.andrivet.com/en/posts/ph0wn-2019-double-rainbow-writeup/)
 - [RISC-Y Business](http://duksctf.github.io/2019/12/13/ph0wn-RISC-Y-Business.html)
+- [Secure Flag Storage 1 and 2](https://github.com/vdehors/writeups/blob/master/ph0wn2019/pwn/securefs/README.md)
+
 
 ## Missing write-ups
 
-- Secure Flag Storage 1 and 2
 - Double Rainbow 2
 - CispaMan
 - Watch Me 2
