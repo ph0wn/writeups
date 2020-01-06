@@ -22,6 +22,7 @@ Ph0wn is a CTF dedicated to smart devices. The 2019 edition took place on Decemb
 
 Rookie challenges:
 
+- [Break my ARM](https://github.com/ph0wn/writeups/blob/master/2019/rookie/breakmyarm.md)
 - [Watch Me 1](https://github.com/ph0wn/writeups/blob/master/2019/rookie/watchme1.md)
 - [X-Ray](https://github.com/ph0wn/writeups/blob/master/2019/rookie/xray.md)
 
@@ -32,6 +33,7 @@ Rookie challenges:
 
 - https://swisskyrepo.github.io/Ph0wnCTF/index.html (Sunny day, AntMaker, Compromised Sensor, Domoticz, Shamir Quest)
 - [Double Rainbow 1](http://sebastien.andrivet.com/en/posts/ph0wn-2019-double-rainbow-writeup/)
+- [Double Rainbow 2](http://sebastien.andrivet.com/en/posts/ph0wn-2019-double-rainbow-level-2/)
 - [RISC-Y Business](http://duksctf.github.io/2019/12/13/ph0wn-RISC-Y-Business.html)
 - [Secure Flag Storage 1 and 2](https://github.com/vdehors/writeups/blob/master/ph0wn2019/pwn/securefs/README.md)
 - [Shamir Quest](https://github.com/ziyedbe/ph0wn/tree/master/shamir)
@@ -39,11 +41,9 @@ Rookie challenges:
 
 ## Missing write-ups
 
-- Double Rainbow 2
 - CispaMan
 - Watch Me 2
 - Maybe it contains gold!
-- Break my ARM
 - LoRaWAN
 
 
