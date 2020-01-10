@@ -9,6 +9,7 @@ Ph0wn is a CTF dedicated to smart devices. The 2019 edition took place on Decemb
 ## Completed write-ups
 
 - [AntMaker](https://github.com/ph0wn/writeups/blob/master/2019/hardware/partial-antmaker.md)
+- [CispaMan](https://github.com/ph0wn/writeups/blob/master/2019/reverse/cispaman.md)
 - [Compromised Sensor](https://github.com/ph0wn/writeups/blob/master/2019/misc/compromised-sensor.md)
 - [Double Rainbow 1](https://github.com/ph0wn/writeups/blob/master/2019/reverse/doublerainbow1.md)
 - [Domoticz](https://github.com/ph0wn/writeups/blob/master/2019/misc/domoticz.md)
@@ -42,7 +43,6 @@ Rookie challenges:
 
 ## Missing write-ups
 
-- CispaMan
 - Watch Me 2
 - Maybe it contains gold!
 - LoRaWAN
