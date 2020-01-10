@@ -32,6 +32,7 @@ Rookie challenges:
 *Thank you to participants for their write-ups!*
 
 - https://swisskyrepo.github.io/Ph0wnCTF/index.html (Sunny day, AntMaker, Compromised Sensor, Domoticz, Shamir Quest)
+- [Break my ARM](https://ctftime.org/writeup/17648)
 - [Double Rainbow 1](http://sebastien.andrivet.com/en/posts/ph0wn-2019-double-rainbow-writeup/)
 - [Double Rainbow 2](http://sebastien.andrivet.com/en/posts/ph0wn-2019-double-rainbow-level-2/)
 - [RISC-Y Business](http://duksctf.github.io/2019/12/13/ph0wn-RISC-Y-Business.html)
