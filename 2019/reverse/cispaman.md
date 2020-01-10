@@ -18,7 +18,7 @@ We can also identify some code smells such as:
 
 A quick and dirty (CTF) solution is to create a new `ToolBox` class with a static method that takes a Bitmap as a parameter and returns whether it is a solid color bitmap or not. The idea is to iterate through all the pixels and check if there is a color difference between the current one and the previous one if so, it is not a solid color Bitmap as the color should never change. You'll find below the used piece of code:
 
-```
+```java
 import android.graphics.Bitmap;
 
 public class ToolBox {
@@ -64,7 +64,7 @@ public class ToolBox {
 
 The advantage of adding a class is that we then only have to slightly modify the `PrivacyView.onDraw()` method in order to perform the changes:
 
-```
+```java
     /* access modifiers changed from: protected */
     public void onDraw(Canvas canvas) {
         canvas.drawColor(ViewCompat.MEASURED_STATE_MASK);
