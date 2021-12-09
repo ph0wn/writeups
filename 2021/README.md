@@ -11,3 +11,4 @@
 ## Rookie challenges
 
 - [CIA](./rookie-cia/README.md)
+- [Reolink](./rookie-reolink/gianluca.md)
