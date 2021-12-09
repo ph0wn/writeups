@@ -11,7 +11,7 @@ Download the firmware and ... find the flag!
 
 ### First Step
 
-I used `cat` command on `firmware.axf` and reading rapidly the output I saw a string `ph0wn{XXXXXXXXXXXXXXXX}` inside  a page named `/h1dden.shtml1
+I used `cat` command on `firmware.axf` and reading rapidly the output I saw a string `ph0wn{XXXXXXXXXXXXXXXX}` inside  a page named `/h1dden.shtml`
 
 ### Second Step
 
