@@ -6,3 +6,8 @@
 - [Musical Ear](https://0bin.net/paste/+7ZoscHn#NQ93NNce5OBYwBAwMVwofbaOcVJ5yEsAOb4dY9a-fV0)
 - [Smart leak](https://github.com/sebhz/writeups/blob/main/ph0wn/2021/smart_leak/writeup.md)
 - [Ph0wnorama bank](https://github.com/savinoda/Ph0wn2021-Writeups/blob/main/Ph0wnorama-bank/Ph0wnorama-bank.md)
+- [Lost Legacy 1 and 2](https://github.com/histausse/ph0wn_2021_lost_legacy)
+
+## Rookie challenges
+
+- [CIA](./rookie-cia/README.md)
