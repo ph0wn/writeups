@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Ph0wn Musical Ear</string>
+    <string name="question">Do you have a musical ear? Test!</string>
+    <string name="a_la">A/La</string>
+    <string name="g_sol">G/Sol</string>
+    <string name="c_do_diese">C#/Do#</string>
+    <string name="f_fa">F/Fa</string>
+    <string name="g_sol_diese">G#/Sol#</string>
+    <string name="d_r_diese">D#/Ré#</string>
+    <string name="a_la_diese">A#/La#</string>
+    <string name="e_mi">E/Mi</string>
+    <string name="f_fa_diese">F#/Fa#</string>
+    <string name="c_do">C/Do</string>
+    <string name="d_r">D/Ré</string>
+    <string name="b_si">B/Si</string>
+    <string name="button_play">Play Sound</string>
+    <string name="pico_playing_music">pico playing music</string>
+    <string name="which_note_was_that">Which note was that?</string>
+    <string name="score_0_20">Score: 0/20</string>
+    <string name="version">0.5</string>
+    <string name="funcname">displayFlag</string>
+    <string name="author">Greetz from @cryptax</string>
+</resources>
