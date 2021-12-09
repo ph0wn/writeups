@@ -20,7 +20,7 @@ Using **nmap**, I saw that a telnet server and a ftp server were available at th
 
 Note:
 
-- Several participants tried to connect to *http://medfusion.ph0wn.org* and complained it was down. The infusion pump does not have a web server. Only FTP and Telnet.
+- Several participants tried to connect to *http: // medfusion . ph0wn . org* and complained it was down. The infusion pump does not have a web server. Only FTP and Telnet.
 
 
 ## FTP
@@ -75,9 +75,8 @@ In `CONFIG.XML`, read Telnet credentials:
 ```
 
 
-I used credentials written inside "CONFIG.XML" for telnet connection, and here I found "flag1.txt" which contained the flag
+I used credentials written inside `CONFIG.XML` for telnet connection, and here I found `flag1.txt` which contained the flag:
 
-Connect via Telnet:
 
 ```
 $ telnet  34.79.161.43
