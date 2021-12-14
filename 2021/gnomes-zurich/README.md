@@ -1,6 +1,12 @@
 
 # Gnomes of Zurich
 
+- Category: Network
+- Points: 320
+- Authors: al1foobar, cryptax
+- Author of the write up: cryptax
+- Solved by 8 teams
+
 ## IP camera overview
 
 We connect to our remote IP camera's HTTP web site and notice the web site has been defaced:
