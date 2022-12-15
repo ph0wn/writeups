@@ -24,9 +24,18 @@ When your design is ready to print, book a slot on one of the 2 printers. Don't 
 Looking at the pdf, this plan looked pretty clear and I didn't expected complexe geometry requiring a lot of math, so I decided to use my preferred tool [OpenScad](https://openscad.org/)
 
 Let's start start by measuring the key profile. 
+![](img/keydesign.png) 
 
-That's where the problem begins, it was too simple to be true. Of lot of measurements are missing from the document. Some guess work will be needed.
-Comparing known cotations with other using drag and drop on pinta, I manage to get the following measurements.
+That's where the problem begins, it was too simple to be true. A lot of measurements are missing from the document. Some guess work will be needed.
+Comparing known cotations with other using drag and drop on pinta, I can verify that waht looks the same width is actually the same width  
+  
+  ![](img/measure.png) 
+
+  ![](img/measure2.png) 
+  
+Doing that for all the missing measurement, I manage to get the following measurements.  
+  
+  
 
 ```c
 /* width of the profile, lenght of the profile */ 
@@ -124,6 +133,9 @@ And found the flag
 
 ![](img/flag1.png) 
 
+Remark:  
+  
+ once I manage to get the flag, the organizer told me that the key design was avaialbe on thingiverse, and indeed in the top results for "padlock", the [key](https://www.thingiverse.com/thing:27205) can be found.
 
 # Unlock Me 2
 
@@ -149,7 +161,7 @@ You need to have solved Unlock Me 1 to solve Unlock Me 2!
  
  Here there are no plan to follow, the reference is an existing key.  
  So to create the new key, we need to get the measurement from the key.  
-   
+     
  2 methods:  
 1.  Try to measure the key: it helps but it is not enough  
  
