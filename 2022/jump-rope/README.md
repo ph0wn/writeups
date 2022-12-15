@@ -1,12 +1,59 @@
 # ph0wn 2022 Jump Rope challenge
 * Category: Network
-* Author: TODO
+* Author: cryptax
 * Author of the write-up: kbr (Re1n3r!)
 * Points: 500
 * Solves: 2
 
 # Description
-TODO
+People say crocodiles are lazy. This doesn't please Pico le Croco. He
+challenges you with a connected jump rope. Are you fit? It's time to prove
+it!
+
+The jump rope, manufactured by Renpho, is connected by Bluetooth to a
+[smartphone app](https://apkpure.com/renpho-fit/com.renpho.fit)
+(com.renpho.fit), and features 3 different modes:
+
+* Jump for a target amount of time
+* Jump for a target amount of jumps
+* Free mode, where you do want you want
+
+At ph0wn, we want geeks, right? So, Pico would like you to initiate a jump
+workout session for 1337 target jumps without the smartphone app (i.e you
+must understand how to do it on your own).
+
+Go on! Jump!
+
+## Device info
+
+* Come and borrow one of the 2 jump ropes at the organizer's desk. Book a
+  slot.
+* Safety remark: when you jump, we kindly ask you to ensure you won't break
+  anything around you, or hurt anyone (or yourself). You can go outside to
+  test it. If you are disabled, you can still complete the challenge :)
+* Do not modify the length of the rope, and please handle it with care.
+* Do not attempt to flash a new firmware on the jump rope.
+* Do not open, tear down the jump rope! This is not a hardware challenge.
+* Do not fuzz the jump rope: the security of this smart object is uncertain
+  (lol), and you're likely to brick it. Do not try anything that might
+  brick the jump rope. You should only do things you understand...
+* It's not your time slot? Please disconnect and do not send BLE packets
+  to the jump rope. Be fair.
+* If you absolutely need to reset the jump rope, remove the batteries and
+  replace them to reset the device.
+
+## Flag! I want the flag!
+
+To validate your answer - and prove you are not cheating - please send the
+adequate Bluetooth commands on one of our BLE PH0WN-VALIDATION-ROPE
+devices. There should be 3 (#1, or #2, or #3). Those Ph0wn Validation
+Ropes replicate the connected jump rope, except there is no rope, but a
+flag ;P.
+
+The Ph0wn Jump Rope won't help you solve this challenge. Don't try to hack
+it, you are losing your time. If you are unable to connect to any of the
+validation ropes, come to the organizers desk and ask us to reboot one.
+Once you have your flag, please disconnect from the device.
 
 # Reversing
 We want to see how the app talks to the rope, so we can start by reversing
@@ -118,6 +165,7 @@ rope. (At this point, it would have been a good idea to check if this
 function is actually called, but we felt confident that we were on the
 right track.)
 
+# Dynamic Analysis
 We had a rooted Android phone with us, which we don't care too much about,
 so we could just install the Renpho app there. (We also somehow assumed
 that the ph0wn organizers are not trying to pwn us. Using an emulator
@@ -210,6 +258,7 @@ Now we can run the script and the rope makes loud beeping noises and shows
 1337 on the screen! (That is, if we don't forget to disconnect our phone
 first...)
 
+# Getting the flag
 Finally, it is time to run this against the validation devices, as these
 are supposed to print out the flag after successful attack. Trying to run
 the script with the address of any of the validation devices, we get this
@@ -288,5 +337,5 @@ writing 0100063012000A0C165F78
 written ok
 writing 0200058100000539DB3E
 written ok
-resp=b"ph0wn{...}"
+resp=b"ph0wn{weSeeYouRF1t_GooD}"
 ```
