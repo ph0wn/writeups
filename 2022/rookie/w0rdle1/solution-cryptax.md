@@ -29,3 +29,9 @@ Those teenagers really have no respect. Actually, this w0rdle turns out to be mo
 App to be provided later. I want to update with stage 3 :)
 
 # Solution 
+
+You need to find the word "ph0wn". With the normal keyboard, you can't print numbers, but there is a *l33t* keyboard option in the app.
+If you use that, you'll be able to write `ph0wn` and get the flag.
+Another option is to unzip the APK, and do strings on `libapp.so`. We find the flag for stage 1.
+
+`ph0wn{you_w1n_darts_stage1}`
