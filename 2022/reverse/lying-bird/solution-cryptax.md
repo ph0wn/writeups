@@ -1,13 +1,13 @@
 # MI5 Stage 1
 
 - Category: Reverse
-- Author: letitia
+- Author: Letitia Li, Axelle Apvrille
 - Points: 458
 - Solves: 8
 
 # Description
 
-As you know, Pico le Croco is a crocodile, thus a carnivorous animal, feeding mostly on vertebrates such as fish, reptiles, birds and mammals. He'd very much like to eat the bird in this PDF...
+As you know, Pico le Croco is a crocodile, thus a carnivorous animal, feeding mostly on vertebrates such as fish, reptiles, birds and mammals. He'd very much like to eat the bird in this PDF... if he can get past all its lies.
 
 Help him, and get a flag.
 
@@ -16,6 +16,14 @@ PS. This is not steganography.
 SHA256: `f8b469e6e39afd2bf1f978ae1e30e49196a6f53060432f466a69ef25afc35465`
 
 The file is in `./files/chall.pdf`
+
+# Background
+
+While Portable Document Format (PDF) files may seem static, they actually can serve as avenues for attack by embedding javascript, executables, etc as documented [here](https://attack.mitre.org/techniques/T1036/). An example
+walkthrough of a PDF which saves a file onto your machine when opened is described [here](https://blog.didierstevens.com/2015/08/28/test-file-pdf-with-embedded-doc-dropping-eicar/).Other malicious
+uses for PDFs include manipulating the content of a signed [PDF](https://pdf-insecurity.org/signature/shadow-attacks.html).
+
+This challenge delves into manipulating and hiding the flag inside a PDF. 
 
 # Solution
 
@@ -175,10 +183,21 @@ void main(void)
 
 The function does not end because of the bogus end `__TMC_END__`.
 
+This executable was intentionally obfuscated to print a message in the worst way possible, and then clipped with the for loop to require
+decompiling the binary instead of simply running it. Credits to this [guide](https://sp2hari.com/obfuscate-c-code-part-i/).
+
+However, despite the fact that you have what appears to be a flag, it is not correct. The 5 X's are a bit odd, so the other piece of the flag
+still needs to be found. This flag is therefore, something of a 'half truth'.
+
 ## Fixing the PDF
 
-A PDF is walked from the catalog down. When you find the catalog, it points to the
-page tree obj 6. 
+Finding the other piece of the flag requires understanding how PDFs are structured. A detailed explanation can be found [here](https://resources.infosecinstitute.com/topic/pdf-file-format-basic-structure/). 
+In summary, a PDF consists of a header, objects, xref table, and trailer. Relevant to this challenge, the content visible on the screen are specified in the objects in the Body,
+and the xref (cross-reference) table specifies which objects are displayed. The root object is the Catalog, which contains references to child objects, and 
+is where we should start our walk.
+
+When you find the catalog, it points to the
+Page Tree, obj 6. 
 
 ```
 6 0 obj
@@ -187,7 +206,7 @@ endobj
 ```
 
 obj 6 is weird because page count is 1, but there are 2 entries in /Kids. That implies there
-should be 2 pages. We fix this.
+should be 2 pages. We fix this by changing the object to:
 
 ```
 6 0 obj
@@ -196,7 +215,7 @@ endobj
 ```
 
 Now, there is a second page in the PDF, but strangely it has the same content.
-We look again in the PDF format: the first pages references object 3, the second page references object 8.
+We look again in the PDF format: the kids field contains the pages objects, referencing object 3 and object 8.
 If we look at object 3, its content references object 4, and same for object 8
 
 ```
@@ -209,10 +228,14 @@ endobj
 endobj
 ```
 
-This explains why we have the same content on both pages. 
-On the other side, we realize obj 9 is a text stream that is never used. We fix this
+This explains why we have the same content on both pages. One of these, therefore, is probably wrong. This change was
+made to foil pdf to text extractors, which walk the PDF object tree, instead of going through each PDF object and extracting
+the text if it is a stream.
 
-We fix the second page to use object 9:
+
+We therefore need to check for unused objects, and find obj 9 is a text stream that is never used. 
+
+We therefore reference object 9 on the page specified by object 8:
 
 ```
 8 0 obj
@@ -222,11 +245,12 @@ endobj
 
 Now, the hidden text appears, saying `Find the hidden text to replace the XXXXX characters in the flag`.
 
+Getting tired of all the truths that are half-hidden yet?
 
 ## Finding the hidden text
 
 If you look at the xref table, the
-number of entries is stated to be 15, but there are 16 entries. 
+number of entries is stated to be 15, but there are actually 16 entries. 
 
 ```
 xref
@@ -251,7 +275,7 @@ xref
 
 Also note the revision number of `fffff` should make no sense, and the location in
 memory this xref points to, `6a556e6330` is way too high and past the last
-byte of this file! It is greater than the location pointed to by `startxref`,
+byte of this file! It is greater than the location pointed to by `startxref` in the trailer (startxref indicates the byte that the xref table starts at),
 which is impossible!
 
 ```
@@ -259,7 +283,7 @@ $ echo "6a 55 6e 63 30" | xxd -r -p
 jUnc0
 ```
 
-A junco happens to be the bird in the picture.
+A junco happens to be the bird in the picture. He did say that he was going to be important to you, just not how!
 We replace it in the partial flag. 
 
 The flag is `ph0wn{jUnc0B23aDb83l23s9}`
