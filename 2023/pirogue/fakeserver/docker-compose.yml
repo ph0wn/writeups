@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    server:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        image: cryptax/ph0wn-fakebianserver:2023.04
+        container_name: pirogue-fakebianserver
+        ports:
+        - 9999:9000

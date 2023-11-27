@@ -1,0 +1,1 @@
+Pico le Croco, in need of securing his luxurious jacuzzi installation, enlisted the services of a renowned cryptographer, who goes by the name Lars Bogdanov, or something along those lines. Can you crack the algorithm designed to protect the jacuzzi's remote control?
