@@ -4,7 +4,7 @@
 all : ph0wnmag.pdf
 
 ph0wnmag.pdf: *.md
-	pandoc *.md --template ../../org/meetings/eisvogel.latex --lua-filter="./columns.lua" -o $@ --from markdown --filter pandoc-latex-environment --listings --toc
+	pandoc *.md --template ./eisvogel.latex --lua-filter="./columns.lua" -o $@ --from markdown --filter pandoc-latex-environment --listings --toc
 
 clean:
 	rm -f ph0wnmag.pdf
