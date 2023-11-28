@@ -45,7 +45,15 @@ Besides, any request to www.getdoorbot.com usually redirects now to ring.com
 
 ![](./images/ring.png)
 
-So the company name is *Ring*, and the product name is *Doorbot*.
+So the **new** company name is *Ring*, and the product name is *Doorbot*.
 The flag is `ph0wn{ring_doorbot}`.
+
+However, in reality, **the board was not** designed by *Ring*, which did not exist at that time, but by a startup named *Doorbot*: ["The company was first founded in the Fall of 2013 by Jamie Siminoff as the crowdfunded startup Doorbot"](https://en.wikipedia.org/wiki/Ring_(company)). 
+
+![](./images/box.jpg){ width=50% }
+
+So, a more accurate flag should have been `ph0wn{doorbot_doorbot}`. 
+
+As this was misleading, we decided to change the description to ask for common name + product name. This time `ph0wn{ring_doorbot}` was correct.
 
 \newpage
