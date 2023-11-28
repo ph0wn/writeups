@@ -1,0 +1,70 @@
+                             **************************************************************
+                             *                                                            *
+                             *  FUNCTION                                                  *
+                             **************************************************************
+                             undefined main()
+             undefined         w0:1           <RETURN>
+             undefined4        Stack[-0x4]:4  local_4                                 XREF[5]:     001007e4(W), 
+                                                                                                   001007ec(R), 
+                                                                                                   00100810(R), 
+                                                                                                   00100818(W), 
+                                                                                                   0010081c(R)  
+             undefined1        Stack[-0x8]:1  local_8                                 XREF[1]:     001007d4(W)  
+             undefined8        Stack[-0x10]:8 local_10                                XREF[1]:     001007cc(W)  
+             undefined8        Stack[-0x20]:8 local_20                                XREF[2]:     001007b4(W), 
+                                                                                                   00100834(*)  
+                             main                                            XREF[5]:     Entry Point(*), 
+                                                                                          _start:001006bc(*), 00100948, 
+                                                                                          001009e0(*), 00110fd8(*)  
+        001007b4 fd 7b be a9     stp        x29,x30,[sp, #local_20]!
+        001007b8 fd 03 00 91     mov        x29,sp
+        001007bc 00 00 00 90     adrp       x0,0x100000
+        001007c0 01 40 24 91     add        x1,x0,#0x910
+        001007c4 e0 43 00 91     add        x0,sp,#0x10
+        001007c8 22 00 40 f9     ldr        x2,[x1]=>DAT_00100910                            = 434F52434F434950h
+        001007cc 02 00 00 f9     str        x2,[x0]=>local_10
+        001007d0 21 20 40 39     ldrb       w1,[x1, #0x8]=>DAT_00100918                      = 4Fh
+        001007d4 01 20 00 39     strb       w1,[x0, #local_8]
+        001007d8 00 00 00 90     adrp       x0,0x100000
+        001007dc 00 80 23 91     add        x0=>s_The_code_to_unlock_the_safe_is:_001008e0   = "The code to unlock the safe i
+        001007e0 a8 ff ff 97     bl         <EXTERNAL>::printf                               int printf(char * __format, ...)
+        001007e4 ff 1f 00 b9     str        wzr,[sp, #local_4]
+        001007e8 0d 00 00 14     b          LAB_0010081c
+                             LAB_001007ec                                    XREF[1]:     00100824(j)  
+        001007ec e0 1f 80 b9     ldrsw      x0,[sp, #local_4]
+        001007f0 e1 43 00 91     add        x1,sp,#0x10
+        001007f4 20 68 60 38     ldrb       w0,[x1, x0, LSL ]
+        001007f8 00 f0 00 51     sub        w0,w0,#0x3c
+        001007fc 00 7c 02 13     asr        w0,w0,#0x2
+        00100800 e1 03 00 2a     mov        w1,w0
+        00100804 00 00 00 90     adrp       x0,0x100000
+        00100808 00 20 24 91     add        x0=>DAT_00100908,x0,#0x908                       = 25h    %
+        0010080c 9d ff ff 97     bl         <EXTERNAL>::printf                               int printf(char * __format, ...)
+        00100810 e0 1f 40 b9     ldr        w0,[sp, #local_4]
+        00100814 00 04 00 11     add        w0,w0,#0x1
+        00100818 e0 1f 00 b9     str        w0,[sp, #local_4]
+                             LAB_0010081c                                    XREF[1]:     001007e8(j)  
+        0010081c e0 1f 40 b9     ldr        w0,[sp, #local_4]
+        00100820 1f 20 00 71     cmp        w0,#0x8
+        00100824 4d fe ff 54     b.le       LAB_001007ec
+        00100828 40 01 80 52     mov        w0,#0xa
+        0010082c 99 ff ff 97     bl         <EXTERNAL>::putchar                              int putchar(int __c)
+        00100830 1f 20 03 d5     nop
+        00100834 fd 7b c2 a8     ldp        x29=>local_20,x30,[sp], #0x20
+        00100838 c0 03 5f d6     ret
+
+                             DAT_00100908                                    XREF[1]:     main:00100808(*)  
+        00100908 25              ??         25h    %
+        00100909 69              ??         69h    i
+        0010090a 00              ??         00h
+        0010090b 00              ??         00h
+        0010090c 00              ??         00h
+        0010090d 00              ??         00h
+        0010090e 00              ??         00h
+        0010090f 00              ??         00h
+                             DAT_00100910                                    XREF[1]:     main:001007c8(R)  
+        00100910 50 49 43        undefined8 434F52434F434950h
+                 4f 43 52 
+                 4f 43
+                             DAT_00100918                                    XREF[1]:     main:001007d0(R)  
+        00100918 4f              undefined1 4Fh

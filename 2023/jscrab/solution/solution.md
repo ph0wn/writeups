@@ -1,0 +1,4 @@
+1. Thanks to the metadata of musikalischeOpfer.pdf and the user name at the bottom of the score, we find the original score (https://musescore.com/user/17829001/scores/6623785)
+2. A comparison of both scores highlights the presence of several altered notes. These modified notes, listed in order, are: D C A F D E B C C.
+3. The modified score corresponds to the renowned canon cancrizans, also known as the "crab canon", found within the Musical Offering. The essence of this canon lies in the concept where each musical line is performed both forwards and in reverse, creating a mirrored effect. When examining the sequence of modified notes in both directions (forward and backward) it yields the following result: D C A F D E B C C C C B E D F A C D.
+4. Input this sequence into the micro:bit using its keyboard, and the flag will be unveiled.

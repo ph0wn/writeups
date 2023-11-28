@@ -1,0 +1,48 @@
+
+dumpcode.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <start>:
+   0:	b094      	sub	sp, #80	@ 0x50
+   2:	2280      	movs	r2, #128	@ 0x80
+   4:	4804      	ldr	r0, [pc, #16]	@ (18 <flash_adr>)
+   6:	4905      	ldr	r1, [pc, #20]	@ (1c <uart_base_adr>)
+
+00000008 <.send_loop>:
+   8:	7803      	ldrb	r3, [r0, #0]
+   a:	3001      	adds	r0, #1
+   c:	71cb      	strb	r3, [r1, #7]
+
+0000000e <.wait_tx>:
+   e:	680b      	ldr	r3, [r1, #0]
+  10:	4013      	ands	r3, r2
+  12:	d0fc      	beq.n	e <.wait_tx>
+  14:	e7f8      	b.n	8 <.send_loop>
+  16:	46c0      	nop			@ (mov r8, r8)
+
+00000018 <flash_adr>:
+  18:	0804a904 	.word	0x0804a904
+
+0000001c <uart_base_adr>:
+  1c:	40011000 	.word	0x40011000
+00000000  94 b0 80 22 04 48 05 49  03 78 01 30 cb 71 0b 68  |...".H.I.x.0.q.h|
+00000010  13 40 fc d0 f8 e7 c0 46  04 a9 04 08 00 10 01 40  |.@.....Fx......@|
+00000020
+
+printfcode.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <start>:
+   0:	b092      	sub	sp, #72	@ 0x48
+   2:	4801      	ldr	r0, [pc, #4]	@ (8 <printf_adr>)
+   4:	4700      	bx	r0
+   6:	46c0      	nop			@ (mov r8, r8)
+
+00000008 <printf_adr>:
+   8:	0802c2d9 	.word	0x0802c2d9
+00000000  92 b0 01 48 00 47 c0 46  d9 c2 02 08              |...H.G.F....|
+0000000c
