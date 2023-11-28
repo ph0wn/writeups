@@ -22,7 +22,7 @@ For instance, if this card belonged to a Tesla, the flag would be:
 
 **ERRATUM**
 
-This write-up was written with a *slightly different description where we asked the name of the company*. We changed afterwards to the *common name* of the device.
+This write-up was written with a *slightly different description, a few months ago, where we asked the name of the company*. We changed afterwards and proposed for the CTF a version we believed was more precise: the *common name* of the device.
 
 Indeed, the board you saw was *not* designed by the company *Ring*, as this company did not exist at that time. 
 
