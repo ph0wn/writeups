@@ -3,8 +3,8 @@ title: Ph0wn eMagazine, issue \#01
 subtitle: https://ph0wn.org, November 2023
 lang: "en"
 titlepage: true
-logo: "../../org/logo/logo-ph0wn.png"
-titlepage-background: "./highph0wn.jpg"
+logo: "./images/logo-ph0wn.png"
+titlepage-background: "./images/highph0wn.jpg"
 titlepage-rule-color: "A31D21"
 colorlinks: true
 toc-own-page: true

@@ -1,0 +1,1 @@
+../../2023/magneto/solution/magneto.md

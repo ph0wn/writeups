@@ -1,0 +1,1 @@
+../../2023/jscrab/solution/solution.md

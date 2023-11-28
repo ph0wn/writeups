@@ -1,0 +1,1 @@
+../../2023/arkanoid/solution/spoiler.md
