@@ -59,7 +59,7 @@ The module is configured to use only 10dBm output power to reach the Satellite. 
 ```
 AT+PTH=1?   // To get access to EM2050 Echostar Modem
 AT+JOIN  // To join the network
-AT+SEND=1,0,8;0,your@email.address   // To send a packet with your email address as a payload, the Echostar server will send you an email with the Flag
+AT+SEND=1,0,8,0,your@email.address   // To send a packet with your email address as a payload, the Echostar server will send you an email with the Flag
 ```
 
 ![](./images/6.png)
