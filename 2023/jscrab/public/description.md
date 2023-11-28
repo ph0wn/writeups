@@ -1,0 +1,3 @@
+It appears that Bach has bestowed upon us a musical offering, and as Bach was known for weaving hidden messages within his compositions, perhaps you'll uncover a hidden gem amidst these musical notes. All you require is a healthy dose of curiosity and a micro:bit and its piano keyboard. May your musical exploration be rewarding!
+
+Remember: it is a **crab** canon. Annd crabs take pleasure in gazing at their reflections in the shimmering sea mirror.
