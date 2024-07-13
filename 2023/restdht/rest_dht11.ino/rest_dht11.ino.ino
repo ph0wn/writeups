@@ -15,8 +15,6 @@
 
 const char* wifi_ssid = "SpaPrivate";   
 const char* wifi_password = "sp@_cha11en6e_secret"; 
-/*const char* wifi_ssid = "Tiger_WiFi";   
-const char* wifi_password = "A4tiger!"; */
 
 #define HTTP_REST_PORT 8080
 ESP8266WebServer server(HTTP_REST_PORT);
