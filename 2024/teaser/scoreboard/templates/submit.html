@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto" >
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="color-scheme" content="light dark" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.red.min.css"/>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	<title>Ph0wn CTF 2024 Teaser</title>
+    </head>
+    <body>
+        <main class="container">
+	    <h1 style="text-align: center; color: red;">Submit your Ph0wn CTF Teaser flag</h1>
+            <center>
+		<img src="{{ url_for('static', filename='images/pico-rouge.png') }}">
+
+		{% if message %}
+		<p>{{ message }}</p>
+		{% endif %}
+	    
+		<form method="post" style="max-width: 600px;">
+		    <fieldset>
+			<label for="nickname">Nickname:</label><br>
+			<input type="text" id="nickname" name="nickname" aria-describedby="nickname-helper" required>
+			<small id="nickname-helper">Your name, nickname, or team name - to appear in the Hall of Fame.</small>
+		    </fieldset>
+		    <fieldset>
+			<label for="flag">Flag:</label><br>
+			<input type="text" id="flag" name="flag" aria-describedby="flag-helper" required>
+			<small id="flag-helper">The flag you found. Flag format is ph0wn{xxxxx}.</small>
+		    </fieldset>
+		    <button type="submit">Submit</button>
+		</form>
+	    </center>
+        </main>
+	<footer class="container">
+	    <a href="#" data-theme-switcher="light">Light</a> or 
+	    <a href="#" data-theme-switcher="dark">Dark</a> theme
+	</footer>
+    </body>
+</html>

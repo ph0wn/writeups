@@ -1,0 +1,7 @@
+version: '3'
+services:
+  picostar-server:
+    build: .
+    image: ph0wn/picostar:0.4
+    ports:
+      - "9950:9950"

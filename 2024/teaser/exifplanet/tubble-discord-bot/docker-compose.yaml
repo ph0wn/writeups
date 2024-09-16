@@ -1,0 +1,5 @@
+services:
+  tubblebot:
+    build: .
+    image: cryptax/tubblebot:0.14
+

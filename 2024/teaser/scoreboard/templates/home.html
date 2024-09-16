@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+    <head>
+	<meta charset="UTF-8">
+	<meta name="color-scheme" content="light dark" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.red.min.css"/>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	<title>Ph0wn CTF 2024 Teaser</title>
+    </head>
+    <body>
+        <main class="container">
+	        <h1 style="text-align: center; color: red;" >Ph0wn CTF 2024 Teaser</h1>
+            <center>
+                <img src="{{ url_for('static', filename='images/pico_satellite.png') }}">
+                </center>
+    
+	    <b>Teaser will close on September 15, 2024. Hurry up!</b>
+	    
+	    <h2 style="color:red;">Download the Teaser</h2>
+            <p>
+		Yesterday, I observed the sky. I spotted a new <i>Exifplanet</i>. Or is it a constellation of satellites? or aliens? <a href="{{ url_for('static', filename='images/m42.jpg') }}">[Download]</a>.
+	        <br>
+		Bruteforce is useless. Use your brains.
+            </p>
+            <h2 style="color: red;">Hall of Fame</h2>
+	    <p>You get in the Hall of Fame when you have validated a stage. Good luck, and congratulations to those below! <br>
+		Date and time are for Paris/France.</p>
+            {% macro render_table(records, stage, tag) %}
+            <h3>Stage {{ stage }} {{ tag }}</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th scope="col">Nickname</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in records if record.stage == stage %}
+                    <tr>
+                        <td>{{ record.nickname }}</td>
+                        <td>{{ record.time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endmacro %}
+            
+            {{ render_table(records, '1', '- OSINT' ) }}
+            {{ render_table(records, '2', '- Android' ) }}
+	    {{ render_table(records, '3', '- Vuln' ) }}
+
+	    <h2 style="color: red;">Glory and Goodies</h2>
+		<p>
+		  Thanks for sending your write-ups!<br>
+		  @Hung, @R and @Ghozt will receive a fancy goodie at Ph0wn CTF.<br>
+		  Their write-up will be published in Ph0wn Mag #2.
+	    </p>
+
+        </main>
+    </body>
+</html>
