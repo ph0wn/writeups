@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PicoStar</string>
+    <string name="server_ip">https://<REPLACE WITH IPADDRESS:PORT></string>
+</resources>
