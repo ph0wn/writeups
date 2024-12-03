@@ -1,0 +1,12 @@
+services:
+  scoreboard:
+    build: .
+    image: ph0wn/scoreboard:0.13
+    ports:
+      - '443:8090'
+    volumes:
+      - logs:/app/logs
+ 
+volumes:
+  logs:
+
