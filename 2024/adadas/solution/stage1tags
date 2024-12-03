@@ -1,0 +1,17 @@
+SpeedSensor/currentSpeed=currentSpeed+speedIncrement
+ObstacleGenerator/nbOfObstacles=2
+!readSpeed?readSpeed(205)
+!infoDetectedObstacles?infoDetectedObstacles(1)
+!goObstacle?goObstacle()
+!readSpeed?readSpeed(149)
+!emergencyBrakingON?emergencyBrakingON(1)
+!obstacleDetected?obstacleDetected(2)
+SpeedSensor/currentSpeed=currentSpeed-speedIncrement
+!goSpeed?goSpeed()
+Maincontroller/Pic0L0vesCh0c0late
+MainController/braking=2
+SpeedSensor/currentSpeed=currentSpeed-speedIncrement
+!readSpeed?readSpeed(30)
+!GoodLuckAlmostThere?GoodLuckAlmostThere(12)
+!readSpeed?readSpeed(305)
+ObstacleGenerator/nbOfObstacles=1
