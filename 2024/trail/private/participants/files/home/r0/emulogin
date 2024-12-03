@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# ph0wn auto login
+
+# Check if QEMU is running
+
+QEMUVER=$(cat /opt/qemu-version)
+QPID=$(pidof qemu-system-aarch64-${QEMUVER})
+if [ "$QPID" != "" ]
+then
+   ssh r0@192.168.250.2
+fi

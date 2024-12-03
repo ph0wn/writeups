@@ -1,0 +1,69 @@
+# Dockerfile for ARM64-Docker for ph0wn
+# by Saumil Shah
+
+FROM alpine:3.15.4
+
+# Install packages
+RUN apk update
+RUN apk add \
+	bash sudo tar pv vim iptables \
+	coreutils util-linux \
+	iputils iproute2 \
+	openssh-client \
+	xz-dev \
+	openrc \
+	nfs-utils \
+	socat \
+    dnsmasq \
+	netcat-openbsd \
+	busybox-extras \
+	--no-cache
+
+# Copy network tunnel startup script
+COPY files/etc/local.d/ /etc/local.d/
+COPY files/etc/exports /etc/exports
+RUN chmod 755 /etc/local.d/*.start
+
+# Create an r0 user for all userland work
+RUN adduser --disabled-password --gecos "" r0
+RUN echo 'r0 ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+# Set r0's shell to bash
+RUN sed -i 's!/bin/ash!/bin/bash!g' /etc/passwd
+
+# Copy the QEMU stuff
+WORKDIR /opt
+COPY --chown=root files/opt/ /opt/
+
+# Set up the home directory of r0 user
+WORKDIR /home/r0
+
+# Add bashrc, ssh configs, etc
+COPY --chown=r0 files/home/r0/bashrc .bashrc
+COPY --chown=r0 files/home/r0/bash_profile .bash_profile
+COPY --chown=r0 files/home/r0/ssh .ssh
+COPY --chown=r0 files/home/r0/dircolors .dircolors
+COPY --chown=r0 files/home/r0/emulogin emulogin
+
+COPY --chown=root files/home/r0/bashrc /root/.bashrc
+COPY --chown=root files/home/r0/bash_profile /root/.bash_profile
+COPY --chown=root files/home/r0/ssh /root/.ssh
+COPY --chown=root files/home/r0/dircolors /root/.dircolors
+
+RUN chmod 600 /home/r0/.ssh/id_rsa /home/r0/.ssh/config
+RUN chmod 755 /home/r0/emulogin
+RUN chmod 600 /root/.ssh/id_rsa
+#RUN ln -s /usr/bin/vim /usr/bin/vimdiff
+
+# Set up the docker entrypoint script
+COPY ./docker-entrypoint.sh /usr/local/bin
+
+USER r0
+
+ENV TERM=xterm-256color
+ENV LANG=C.UTF-8
+ENV CHARSET=UTF-8
+ENV LC_COLLATE=C
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["/bin/bash"]

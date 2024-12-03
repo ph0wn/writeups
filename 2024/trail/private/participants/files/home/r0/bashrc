@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Ignore case during tab completion.
+bind 'set completion-ignore-case on'
+
+if [ "${ARM64DOCKERSHELL}" = "1" ]
+then
+   export PS1="\[\033[97;44m\][ph0wn-docker]\[\033[0m\] \w\\$ "
+else
+   export PS1="\[\033[97;105m\][PH0WN-DOCKER]\[\033[0m\] \w\\$ "
+fi
+
+alias ls="ls -F --color=auto"
+eval $(dircolors -b ~/.dircolors/dircolors.256dark)
+export PATH="$PATH:/opt"
+
+if [ -f ~/emulogin ]
+then
+   ~/emulogin
+   exit
+fi

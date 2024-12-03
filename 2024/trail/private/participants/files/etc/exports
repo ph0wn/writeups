@@ -1,0 +1,1 @@
+/arm64fs   192.168.250.0/24(rw,sync,fsid=0,no_auth_nlm,insecure,no_root_squash,no_subtree_check)
