@@ -1,0 +1,4 @@
+algo: AES-CBC
+key: thanks_to_balda!
+IV:  butter_soldering
+
