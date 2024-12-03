@@ -1,0 +1,6 @@
+services:
+  tenda:
+    build: .
+    image: ph0wn/tenda:0.6
+    ports:
+      - '80:8080'
