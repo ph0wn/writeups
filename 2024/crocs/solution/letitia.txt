@@ -1,0 +1,25 @@
+Pico is a sneaky crocodile. Can you figure out the key and his next meal?
+
+The challenge is a zip with a text file and crocodile pictures. Keep the
+text file and its name in mind since it contains hints about the key when
+you find it.
+
+But if you look at the zip file, you’ll notice it starts with “%PDF”. This
+file is a polyglot, or file that is valid in multiple formats. Rename the
+zip to .pdf, and open it to see something entirely different.
+
+All you see is a single page pdf with a crocodile who is on the move. But if
+you look at the file in detail, you notice many page entries beyond the
+single page. If you go to the /Pages object, you’ll notice that there are
+actually 27 Page objects linked, even if the /Length field is set to 1. Edit
+the file in hexedit to change the 1 to a 27, and you’ll see many more
+crocodiles and list of coordinates. Pico doesn’t like the sign warning his
+food about him.
+
+By using pdftotext, you can easily extract all the sets of coordinates. With
+some processing from a library like JPX, the list of coordinates can be
+turned into a gpx file. Then, open the gpx file with an online viewer, and
+the tracks form “ph0wn{PICOVISITS_______}. As previously hinted, the key is
+all caps and 24 characters long. To find what the blanks mean, look around
+and see what the single coordinate points to, which is EURECOM. Now is
+probably a good time to work from home until Pico has eaten!

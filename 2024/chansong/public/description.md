@@ -1,0 +1,3 @@
+Ph0wn is great. And it’s so great that this year, a CD was released in its honor. Maybe its songs are hiding something... So listen closely. But remember: sometimes, the truth is hidden behind the words...
+
+The CD, and CD players, are by the organizers' desk.
