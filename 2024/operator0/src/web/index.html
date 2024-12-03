@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="static/css/counter.css">
+    </head>
+    <body>
+        <div class="wrap">
+
+        </div>
+        <div class="wrap"> 
+            
+            <h1>Realtime Race circuit <strong>sensors data</strong></h1>
+            
+            <div class="temperature countdown">
+                <div class="bloc-time hours" data-init-value="0">
+                    <span class="count-title"><strong>Temperature</strong></span>
+              
+                    <div class="figure figureTemperature">
+                        <span id="temperature"> </span>
+                    </div>
+                </div>
+
+                <div class="bloc-time min" data-init-value="0">
+                    <span class="count-title"><strong>Wind Direction</strong></span>
+              
+                    <div class="figure figureTemperature">
+                        <span id="windDirection">  </span>
+                    </div>
+                </div>
+
+                <div class="bloc-time sec" data-init-value="0">
+                    <span class="count-title"><strong>Wind Speed</strong></span>
+              
+                    <div class="figure sec sec-1 figureTemperature">
+                        <span id="windSpeed">  </span>
+                    </div>
+                </div>
+            </div>
+            <div class="temperature countdown">
+                <div class="bloc-time hours" data-init-value="0">
+                    <span class="count-title"><strong>humidity</strong></span>
+              
+                    <div class="figure figureTemperature">
+                        <span id="humidity">  </span>
+                    </div>
+                </div>
+
+                <div class="bloc-time min" data-init-value="0">
+                    <span class="count-title"><strong>pressure</strong></span>
+              
+                    <div class="figure figurePressure">
+                        <span id="pressure">  </span>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            
+        </div>    
+
+
+
+
+
+               
+            
+            
+            
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"> </script>    
+        <script src="static/scripts/sensorsData.js"></script>
+    </body>
+</html>

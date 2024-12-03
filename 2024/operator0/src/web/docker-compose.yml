@@ -1,0 +1,14 @@
+version: '1.0'
+
+services:
+  operator0:
+    image: operator0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+
+    
