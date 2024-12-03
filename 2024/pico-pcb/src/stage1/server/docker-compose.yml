@@ -1,0 +1,6 @@
+services:
+  pcb_server:
+    build:
+      context: .
+    ports:
+      - "9099:9099"
