@@ -1,0 +1,13 @@
+#!/bin/sh
+QEMUVER=$(cat /opt/qemu-version)
+NATIVEARCH=$(uname -m)
+sudo /opt/qemu-bin-${NATIVEARCH}/qemu-system-aarch64-${QEMUVER} \
+   -M virt \
+   -m 3072 \
+   -cpu cortex-a72 \
+   -kernel /opt/kernel/Image-5.10.7-exploitlab-arm64.gz \
+   -append "root=/dev/nfs nfsroot=192.168.250.1:/arm64fs,tcp,vers=3 rw ip=192.168.250.2::192.168.250.1:255.255.255.0 init=/sbin/init console=ttyAMA0 fastboot noswap" \
+   -netdev tap,id=tap2,ifname=tap2,script=no,downscript=no \
+   -device virtio-net-pci,netdev=tap2 \
+   -nographic \
+   -no-reboot

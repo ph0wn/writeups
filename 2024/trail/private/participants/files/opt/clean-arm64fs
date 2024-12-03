@@ -1,0 +1,28 @@
+#!/bin/sh
+# This must be run as root
+
+cd /arm64fs
+
+rm -f \
+	home/krafty/.bash_history \
+	root/.bash_history \
+	home/krafty/.lesshst \
+	root/.lesshst \
+	var/log/dmesg.[0-9]* \
+
+for f in \
+	btmp \
+	debug \
+	dmesg \
+	dpkg.log \
+	faillog \
+	kern.log \
+	lastlog \
+	messages \
+	syslog \
+	user.log \
+	wtmp
+do
+   cat /dev/null > var/log/$f
+done
+

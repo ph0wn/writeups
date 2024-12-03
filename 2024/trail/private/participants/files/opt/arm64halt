@@ -1,0 +1,10 @@
+#!/bin/bash
+
+QEMUVER=$(cat /opt/qemu-version)
+QPID=$(pidof qemu-system-aarch64-${QEMUVER})
+if [ "$QPID" != "" ]
+then
+   ssh root@192.168.250.2 "shutdown -h now"
+else
+   echo "arm64 emulator not running"
+fi
