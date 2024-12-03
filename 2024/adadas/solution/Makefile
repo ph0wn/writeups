@@ -1,0 +1,14 @@
+compile:
+	javac *.java
+
+test2:	compile
+	java Liveness test2i.aut test2itags
+
+stage1: compile
+	java Reachability test2i.aut stage1tags
+
+stage2:	compile
+	java Liveness test2i.aut stage2tags
+
+preparegraph:
+	java GraphTransform graph2.aut graph2i.aut

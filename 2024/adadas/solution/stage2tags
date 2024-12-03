@@ -1,0 +1,16 @@
+!emergencyBrakingON?emergencyBrakingON()
+!braking?braking
+!braking?braking(0)
+!braking?braking(1)
+!goObstacle?goObstacle
+!goObstacle?goObstacle(1)
+!obstacleDetected?obstacleDetected
+SpeedSensor/currentSpeed=currentSpeed+speedIncrement
+SpeedSensor/currentSpeed=minSpeed
+MainController/Pic0LovesSp0rtCars
+ObstacleGenerator/nbOfObstacles=0
+ObstacleGenerator/nbOfObstacles
+!infoDetectedObstacles?infoDetectedObstacles
+!infoDetectedObstacles?infoDetectedObstacles(1)
+!readSpeed?readSpeed(185)
+!readSpeed?readSpeed(1)
