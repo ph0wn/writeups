@@ -21,10 +21,7 @@ Aux participants, on donne `participants.zip`, qui contient un flag bidon.
 
 - Lancer `./run-trail-server`. Ca va mettre ~2 minutes (plus la première fois) car QEMU se lance. Un docker `trail-server` sera présent.
 
-- Il faut changer le flag
-
-TODO: y a truc bizarre, car Saumil a lancé le démon sur 8080 via /etc/rc.local
-
+- Il faut changer le flag à la main dans l'instance.
 
 - Pour arrêter le serveur, `shutdown-trail-server`.
 
