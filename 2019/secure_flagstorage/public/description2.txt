@@ -1,0 +1,11 @@
+Oh, you could get the flag from our secure flag storage? That's alright, at
+least you don't have code execution inside our TA.
+Otherwise, you could just call win() to get a flag...
+
+Get files from FTP server `10.210.17.66`, user: `ph0wn`, password: `ph0wn2019`:
+
+```
+107dcc1f607e959f47fd27c729c70a1c  bddf28fa-86fd-4b5d-9b5e-aad2f2b0c68d.elf
+fda9809f13d5b4e3072ccf02418285b9  ph0wn_flagstorage
+fa7cde30a53732276edc5a9fdd4abbbe  qemu_image.tar.gz
+```

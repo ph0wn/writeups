@@ -1,0 +1,15 @@
+Install the SDK somewhere and add the bin/ folder in the $path
+
+Build the a full binary (by default gcc is in RV32 mode):
+riscv-nuclei-elf-gcc -c -o shellcode.o shellcode.S
+(the full command is: riscv-nuclei-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medlow -c -o shellcode.o shellcode.S  but with the default compiler option it works)
+
+Disassemble it to check everything is OK:
+riscv-nuclei-elf-objdump -d shellcode.o
+
+Keep only the text section of the current lib object:
+riscv-nuclei-elf-objcopy -O binary -j .text shellcode.o shellcode.bin
+
+Copy the shellcode in you favorite script tool:
+hexdump -e '/1 "%02X "' shellcode.bin
+

@@ -1,0 +1,7 @@
+socat:
+    build: .
+    command: TCP4-LISTEN:13336,fork,reuseaddr exec:"/qemu/run.sh"
+    volumes:
+        - ./qemu:/qemu
+    ports:
+        - 21347:13336

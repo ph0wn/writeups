@@ -1,0 +1,3 @@
+- unpack the apk
+- go into main/res/layout/main.xml
+- The flag is in the BadWeather section, in clear, as the text of a button

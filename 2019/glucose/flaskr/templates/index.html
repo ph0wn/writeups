@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>Ph0wn Medical Lab</h1>
+{% endblock %}
+
+  {% block content %}
+  <img src="{{ url_for('static', filename='syringe-md.png') }}">
+  <br>
+  <br>
+  <form action="submit.html" method="post">
+    <b>Patient Identifier:</b>
+    <br>
+  <input id="patient_id" name="patient_id" type="text" width="150px">
+  <br>
+  <br>
+  <b>Patient password:</b>
+  <br>
+  <input id="patient_password" name="patient_password" type="password" width="150px">
+  <br>
+  
+  <br>
+  <input type="submit" id="submit" value="Send Login">
+  </form>
+{% endblock %}
+

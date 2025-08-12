@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>LOGIN ERROR</h1>
+{% endblock %}
+
+  {% block content %}
+<p>
+  <font color="yellow">
+    <img src="{{ url_for('static', filename='warning.png') }}" height="40px">
+    Emergency Logon has been disabled!
+    </font>
+  <br>
+  Notice: All use is recorded<br>
+  Unauthorized use of this system is a violation of federal or international law, and hospital policy.
+  <br>
+  To re-enable Emergency Logon, contact your system administrator.
+  <br>
+</p>
+(c) 2019 Ph0wn Electric Company - All Rights Reserved<br>
+<br>
+<font size="5" >
+  Incorrect identifier or password<br>
+  </font>
+  <br>
+{% endblock %}

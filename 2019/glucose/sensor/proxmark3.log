@@ -1,0 +1,249 @@
+Prox/RFID mark3 RFID instrument
+bootrom: master/v3.1.0-119-g88b3dad-suspect 2019-07-29 09:05:11
+os: master/v3.1.0-119-g88b3dad-suspect 2019-07-29 09:05:12
+fpga_lf.bit built for 2s30vq100 on 2015/03/06 at 07:38:04
+fpga_hf.bit built for 2s30vq100 on 2019/03/20 at 08:08:07
+SmartCard Slot: not available
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 208552 bytes (40%). Free: 315736 bytes (60%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help. Use '<command> help' for details of a particular command.
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+emv              { EMV iso14443 and iso7816... }
+sc               { Smartcard commands... }
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+help             This help. Use '<command> help' for details of a particular command.
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+emv              { EMV iso14443 and iso7816... }
+sc               { Smartcard commands... }
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+This is a feature to run Lua-scripts. You can place lua-scripts within the scripts/-folder. 
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+ndef_dump.lua    A script file
+cmdline.lua      A script file
+tnp3dump.lua     A script file
+mfkeys.lua       A script file
+test_t55x7_bi.lua A script file
+parameters.lua   A script file
+test.lua         A script file
+emul2dump.lua    A script file
+test_t55x7_ask.lua A script file
+remagic.lua      A script file
+tracetest.lua    A script file
+tnp3clone.lua    A script file
+htmldump.lua     A script file
+tnp3sim.lua      A script file
+brutesim.lua     A script file
+lf_bulk_program.lua A script file
+axelle.lua       A script file
+test_t55x7_fsk.lua A script file
+hf_read.lua      A script file
+mifarePlus.lua   A script file
+emul2html.lua    A script file
+iso15_magic.lua  A script file
+flash-sensor.lua A script file
+reset.lua        A script file
+14araw.lua       A script file
+didump.lua       A script file
+formatMifare.lua A script file
+test_t55x7_psk.lua A script file
+dumptoemul.lua   A script file
+mifare_autopwn.lua A script file
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+help             This Help
+inquiry          Search for tags in range
+read             Read a block
+write            Write a block
+readmulti        Reads multiple Blocks
+sysinfo          Get Card Information
+raw              Send raw hex data to tag
+csetuid          Set UID for magic Chinese card
+debug            Turn debugging on/off
+Using UID 0030000000000000
+no answer
+Usage:  hf 15 cmd read    [options] <uid|s|u|*> <page#>
+           options:
+               -2        use slower '1 out of 256' mode
+           uid (either): 
+               <8B hex>  full UID eg E011223344556677
+               s         selected tag
+               u         unaddressed mode
+               *         scan for tag
+           page#:        page number 0-255
+70 68 30 77 6E 7B 64 6F    ph0wn{do
+5F 6E 6F 74 5F 65 61 74    _not_eat
+5F 32 5F 6D 75 43 68 5F    _2_muCh_
+73 75 47 61 52 7D 00 00    suGaR}..
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+help             This help. Use '<command> help' for details of a particular command.
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+emv              { EMV iso14443 and iso7816... }
+sc               { Smartcard commands... }
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+Prox/RFID mark3 RFID instrument
+bootrom: master/v3.1.0-119-g88b3dad-suspect 2019-07-29 09:05:11
+os: master/v3.1.0-119-g88b3dad-suspect 2019-07-29 09:05:12
+fpga_lf.bit built for 2s30vq100 on 2015/03/06 at 07:38:04
+fpga_hf.bit built for 2s30vq100 on 2019/03/20 at 08:08:07
+SmartCard Slot: not available
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 208552 bytes (40%). Free: 315736 bytes (60%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+ndef_dump.lua    A script file
+cmdline.lua      A script file
+tnp3dump.lua     A script file
+mfkeys.lua       A script file
+test_t55x7_bi.lua A script file
+parameters.lua   A script file
+test.lua         A script file
+emul2dump.lua    A script file
+test_t55x7_ask.lua A script file
+remagic.lua      A script file
+tracetest.lua    A script file
+tnp3clone.lua    A script file
+htmldump.lua     A script file
+tnp3sim.lua      A script file
+brutesim.lua     A script file
+lf_bulk_program.lua A script file
+axelle.lua       A script file
+test_t55x7_fsk.lua A script file
+hf_read.lua      A script file
+mifarePlus.lua   A script file
+emul2html.lua    A script file
+iso15_magic.lua  A script file
+flash-sensor.lua A script file
+reset.lua        A script file
+14araw.lua       A script file
+didump.lua       A script file
+formatMifare.lua A script file
+test_t55x7_psk.lua A script file
+dumptoemul.lua   A script file
+mifare_autopwn.lua A script file
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
+received 3 octets
+00 78 F0 
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+received 3 octets
+00 78 F0 
