@@ -1,0 +1,7 @@
+FROM cgatay/domoticz:master
+
+RUN mkdir /ph0wn 
+COPY Ph0wn_Domoticz.db /ph0wn/domoticz.db
+
+ENTRYPOINT ["/opt/domoticz/domoticz", "-dbase", "/ph0wn/domoticz.db", "-log", "/config/domoticz.log"]
+

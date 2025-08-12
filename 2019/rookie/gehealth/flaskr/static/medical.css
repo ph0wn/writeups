@@ -1,0 +1,46 @@
+BODY
+{
+background-color:    b9c2db;
+color:                       black;
+font-size:                 10pt;
+font-family:             arial;
+font-weight: 	      bold;
+line-height: 35px;
+padding: 10px;
+text-align: center;
+}
+
+p {
+  background-color: 2c3e64;
+  color: white;
+  font-weight: 	      bold;
+  }		      
+
+input {
+      background-color:    e4e6f1;
+      -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      margin-left: 10px;
+      width: 205px;
+}
+
+input#submit {
+      background-color:    8d98be;
+      font-weight: 	      bold;
+      border: 0;
+      padding: 5px 35px 5px 35px;
+      margin-left: 10px;
+      width: 205px;	
+}
+
+button {
+     background-color:    b9c2db;
+     color:                       7a82a2;
+     margin-left: 10px;
+     padding: 5px 35px 5px 35px;
+     width: 205px;
+}
+
+
+

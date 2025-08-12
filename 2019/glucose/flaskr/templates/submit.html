@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>Lab Results</h1>
+{% endblock %}
+
+  {% block content %}
+  Please <a href="{{ url_for('static', filename='lab-results.pdf') }}">download  your lab results here</a>.
+    <br>
+{% endblock %}

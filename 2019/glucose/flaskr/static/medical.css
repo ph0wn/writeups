@@ -1,0 +1,45 @@
+BODY
+{
+background-color:    2dabe2;
+color:                       white;
+font-size:                 10pt;
+font-family:             arial;
+line-height: 30px;
+padding: 10px;
+text-align: center;
+}
+
+h1 {
+font-size:            20pt;
+font-weight:         bold;
+font-family:         arial;
+font-variant: SMALL-CAPS;
+}
+
+input#email {
+      background-color:    b6d9e8;
+      -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+input#submit {
+      background-color:    f8a045;
+      color:                       white;
+      border: 0;
+      padding: 5px 10px 5px 10px;
+}
+
+input#submit:active {
+  background-color:    f8a045;
+  transform: translateY(4px);
+}
+
+textarea {
+      width: 372px;
+      height: 150px;
+      background-color:    b6d9e8;
+      -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}

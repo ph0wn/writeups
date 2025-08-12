@@ -1,0 +1,21 @@
+---
+version: "2"
+services:
+  domoticz:
+    build:
+      context: .
+      dockerfile: Dockerfile.domoticz
+    container_name: ph0wn-domoticz
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    ports:
+      - 8081:8080
+  legrand:
+    build:
+      context: .
+      dockerfile: Dockerfile.legrand
+    container_name: ph0wn-legrand
+    ports:
+      - 20000:20000

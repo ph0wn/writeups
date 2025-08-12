@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+  {% block content %}
+<img src="{{ url_for('static', filename='discovery.png') }}"  >
+<center>
+  (c) 2019 Ph0wn Electric Company - All Rights Reserved
+  <br>
+  <br>
+  <form action="submit.html" method="post">
+
+    <table>
+      <tr>
+	<td align="right"> <b>Logon Name:</b> </td>
+	<td> <input id="logon" name="logon" type="text" width="150px"> </td>
+	<td> <input type="submit" id="submit" value="Emergency Logon"> </td>
+	</tr>
+      <tr>
+	<td align="right"> <b>Password:</b> </td>
+	<td><input id="password" name="password" type="password" width="150px"></td>
+	<td><input type="submit" id="submit" value="Change Password"></td>
+      </tr>
+      <tr>
+	<td></td>
+	<td><input type="submit" id="submit" value="Logon"></td>
+	<td><button type="button" disabled>Cancel</button></td>
+	</tr>
+  </form>
+{% endblock %}
+
