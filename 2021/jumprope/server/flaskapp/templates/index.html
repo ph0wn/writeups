@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Select a BLE service</h2>
+<form action="service" method="POST">
+    {% for s in services %}
+    <input type="radio" name="service_uuid" value="{{ s }}"> {{ s }} </input><br>
+    {% endfor %}
+    <input type="submit" value="Select service">
+</form>
+
+{% if info %}
+<div class="alert alert-info mt-3">
+    {{ info }}
+</div>
+{% endif %}
+
+{% endblock %}

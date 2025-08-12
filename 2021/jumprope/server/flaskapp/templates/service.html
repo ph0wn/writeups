@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Select a BLE characteristic for service {{ service }}</h2>
+<form action="charac" method="POST">
+    {% for c in characteristics %}
+    <input type="radio" name="charac_uuid" value="{{ c }}"> {{ c }} </input><br>
+    {% endfor %}
+    <input type="submit" value="Select characteristic">
+</form>
+
+{% endblock %}

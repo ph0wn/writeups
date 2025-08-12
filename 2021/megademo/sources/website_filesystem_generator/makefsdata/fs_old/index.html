@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ph0wn mega demo - beta version</title>
+	<style type="text/css">
+		.centered {
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+	</style>	
+    <link rel="stylesheet" href="css/milligram.min.css" />
+  </head>
+<body bgcolor="#FFFFFF">
+
+<section class="container" id="typography">
+	<h1 class="title">ph0wn's NXP prototype board ref i.MX RT1050 EVK</h1>
+	<p class="description">This is a show case using a NXP ARM minimal CPU with an ethernet interface. Enjoy the demo and find the flags!</p>
+</section>
+
+<section class="container" id="forms">
+<form action="demo.cgi" method="get">
+  <fieldset>
+    <label for="Zoom">Zoom</label>
+    <input type="text" placeholder="best value 10 - 500" id="zoom" name="zoom">
+    <label for="Zoom">Speed</label>
+    <input type="text" placeholder="best value 10 - 100" id="speed" name="speed">
+    <input class="button-primary" type="submit" value="Send">
+  </fieldset>
+</form>
+</section>
+
+<div class="centered">
+	<img src="img/logo.png" alt="logo">
+</div>
+
+</body>
+</html>

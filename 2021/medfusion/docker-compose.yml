@@ -1,0 +1,32 @@
+---
+version: "3"
+services:
+  medfusion:
+    build:
+      context: .
+      dockerfile: Dockerfile.pump
+    image: cryptax/ph0wn-pump:2021.11
+    container_name: ph0wn_pump
+    hostname: medfusion
+    ports:
+      - "23:23"
+  meltingpot:
+    build:
+      context: .
+      dockerfile: Dockerfile.meltingpot
+    image: cryptax/ph0wn-ftp:2021.11
+    restart: always
+    container_name: ph0wn_ftp
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+  drugserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.drugserver
+    image: cryptax/ph0wn-drugserver:2021.11
+    restart: always
+    container_name: ph0wn_drugserver
+    ports:
+      - "7777:7777"
+

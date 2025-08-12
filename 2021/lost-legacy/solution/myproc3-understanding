@@ -1,0 +1,26 @@
+
+# proc 3 - power(n)
+w3 = 1
+w2 = 1
+w4 = p & 255
+loop2:
+if w4 <= w2 then goto 2b
+w3 = w3 + w3 + w3
+loop1:
+if w3 > 256 then goto 26
+w3 = w3 - 257
+goto loop1
+w2 = w2 + 1
+goto loop2
+w3 & 255
+ret
+
+# proc 1
+w2 = 0
+loop1:
+w3 = input[w2]
+input[w2] = power(w3 + w2)
+w2++
+if param1 > w2 then loop1
+if w3 == 0 then goto loop1
+

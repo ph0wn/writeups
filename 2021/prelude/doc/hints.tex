@@ -1,0 +1,70 @@
+\documentclass[12pt]{scrartcl}
+\usepackage{amssymb,graphicx}
+
+\title{An atonal challenge}
+\subtitle{Ph0wn 2021}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section*{Pitch Classes and Set Theory}
+
+Pitch-class Set Theory is field of musical analysis often applied for analyzing atonal music. Pitch-class Set Theory studies sets of \emph{pitch-classes}.
+
+A pitch-class gathers all the notes that are $n$ octaves apart, with $n \in \mathbb{N}$. For instance, the pitch-class of C will gather C1, C2, C3, etc.
+
+There are 12 different pitch-classes, and each of them are associated with an integer $i \in [\![0,11]\!]$. Table~\ref{table:pitch-classes} provides the equivalence between pitch classes and $[\![0,11]\!]$.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c|c}
+		$i$ & Pitch-class\\
+		\hline
+		\hline
+		0 & C\\
+		\hline
+		1 & C\#, D$\flat$\\
+		\hline
+		2 & D\\
+		\hline
+		3 & D\#, E$\flat$\\
+		\hline
+		4 & E\\
+		\hline
+		5 & F\\
+		\hline
+		6 & F\#, G$\flat$\\
+		\hline
+		7 & G\\
+		\hline
+		8 & G\#, A$\flat$\\
+		\hline
+		9 & A\\
+		\hline
+		10 & A\#, B$\flat$\\
+		\hline
+		11 & B
+	\end{tabular}
+	\caption{The 12 pitch-classes.}
+	\label{table:pitch-classes}
+\end{table}
+
+See Wikipedia ``Pitch Class'' for more information.
+
+\section*{Chord}
+
+A chord is a group of 1 or more notes played at the same time. So, it converts to an integer set.
+
+Example:
+\begin{itemize}
+  \item The C-Major chord (C, E, G) corresponds to the set $\{0,4,7\}$.
+  \item Let's suppose we have a C3-C4-E4-G4-C5 chord, the pitch-classes composing this chord are the C-pitch-class, the E-pitch-class and the G-pitch-class, therefore the corresponding set will be $\{0,4,7\}$.
+  \item Reciprocally, a single note C3 corresponds to $\{0\}$.
+\end{itemize}
+
+
+
+\end{document}

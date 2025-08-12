@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Available Console Commands"
+echo " "
+echo "help                           Display this message"
+echo "ifconfig                       IP network configuration"
+echo "iwconfig                       Wireless interface configuration"
+echo "mds                            Medical Device Server configuration"
+echo "ls                             List all files in the specified filesystem"
+echo "cat                            Cat a file to the display"

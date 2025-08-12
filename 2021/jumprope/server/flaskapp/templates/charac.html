@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Select an action for BLE characteristic {{ characteristic }}</h2>
+What do you want to do on this characteristic?
+<br>
+<form action="perms" method="POST">
+    {% for p in perms %}
+    <input type="radio" name="perm" value="{{ p }}"> {{ p }} </input><br>
+    {% endfor %}
+    <input type="submit" value="Select">
+</form>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Medfusion3600Configuration>
+  <TelnetInterface>
+    <Port>23</Port>
+    <Username>medfusion</Username>
+    <Password>chu_ph0wn</Password>
+ </TelnetInterface>
+</Medfusion3600Configuration>

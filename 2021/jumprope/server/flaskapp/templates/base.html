@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ph0wn Jump Rope</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- 	<link rel="stylesheet" href="{{ url_for('static', filename='jumprope.css') }}"> -->
+    </head>
+
+    <body>
+	<div class="container p-5 my-5 bg-dark text-white">
+	    <h1>Ph0wn Jump Rope - BLE Communication <img src="/static/images/bluetooth.png" />  </h1>
+	</div>
+
+	<div class="container p-5 my-5">
+	    <div class="col-sm-12">
+		{% block content %}{% endblock %}
+	    </div>
+	
+	    <br>
+	    <div class="alert alert-warning">
+		It's the <b>connected jump rope you need to hack</b>. <i>Not this website</i>. Come back when you know the solution and need to validate it. Thanks :)
+	    </div>
+
+	    <p class="text-center">
+		Powered by Ph0wn 2021 - without any Chartreuse ;)
+	    </p>
+    </body>
+</html>

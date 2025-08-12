@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ph0wn mega demo - beta version</title>
+	<style type="text/css">
+		.centered {
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+	</style>	
+    <link rel="stylesheet" href="css/milligram.css" />
+  </head>
+<body bgcolor="#FFFFFF">
+
+<section id="tables" class="container">
+<table>
+	<thead>
+		<tr>
+			<th>Var</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Packets sent:</td>
+			<td><!--#s_xmit--></td>
+		</tr>
+		<tr>
+			<td>Packets received:</td>
+			<td><!--#s_recv--></td>
+		</tr>
+		<tr>
+			<td>Packets forwared:</td>
+			<td><!--#s_fw--></td>
+		</tr>
+		<tr>
+			<td>Packets dropped:</td>
+			<td><!--#s_drop--></td>
+		</tr>
+		<tr>
+			<td>Checksum errors:</td>
+			<td><!--#s_chkerr--></td>
+		</tr>
+		<tr>
+			<td>Packets with invalid length:</td>
+			<td><!--#s_lenerr--></td>
+		</tr>
+		<tr>
+			<td>Memory errors:</td>
+			<td><!--#s_memerr--></td>
+		</tr>
+		<tr>
+			<td>Routing errors:</td>
+			<td><!--#s_rterr--></td>
+		</tr>
+		<tr>
+			<td>Protocol errors:</td>
+			<td><!--#s_proerr--></td>
+		</tr>
+		<tr>
+			<td>Option errors:</td>
+			<td><!--#s_opterr--></td>
+		</tr>
+		<tr>
+			<td>Miscellaneous errors:</td>
+			<td><!--#s_err--></td>
+		</tr>
+	</tbody>
+</table>
+</section>
+
+<section id="tables" class="container">
+<table>
+	<thead>
+		<tr>
+			<th>Var</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><!-- setup debug var from the hidden CGI page -->
+			<td><!--#debugL-->:</td>
+			<td><!--#debugV--></td>
+		</tr>
+	</tbody>
+</table>
+</section>
+
+<div class="centered">
+	<img src="img/pico.png" alt="logo">
+</div>
+
+<br>
+<br>
+ph0wn{youFoundThePage!}
+</body>
+</html>

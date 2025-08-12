@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Write to BLE uuid {{ uuid }}</h2>
+<br>
+<form action="write" method="POST">
+    <label for="writevalue">Please write bytes you want to send:</label>
+    <input type="text" name="writevalue" value="0"> </input><br>
+    <input type="submit" value="Send">
+</form>
+
+{% endblock %}
