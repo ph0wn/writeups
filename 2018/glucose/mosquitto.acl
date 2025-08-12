@@ -1,0 +1,18 @@
+user user
+topic read ph0wn18/glucose-level
+topic read ph0wn18/alert
+topic read ph0wn18/info
+
+user admin
+topic read $SYS/#
+topic read ph0wn18/flag
+topic read ph0wn18/alert
+topic read ph0wn18/info
+topic readwrite ph0wn18/teamid
+topic readwrite ph0wn18/glucose-level
+
+user superadmin
+topic readwrite $SYS/#
+topic readwrite ph0wn18/#
+
+

@@ -1,0 +1,3 @@
+# add in /etc/rc.local:
+
+sudo -b -u alberry "/home/alberry/Ph0wn2018/alberry.sh"

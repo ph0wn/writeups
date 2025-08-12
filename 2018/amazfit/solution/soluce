@@ -1,0 +1,16 @@
+
+
+Install the app
+$cd src
+$make all
+
+then connect GadgetBridge to the watch
+Then:
+3 button push
+Wait for the notif
+2 button push
+Wait for the notif
+6 button push
+Wait for the notif
+2 very fast button push
+Got the flag!!!!

@@ -1,0 +1,17 @@
+Name: Writeable Memories (easy)
+Category: Exploit
+Level: Intermediate
+
+After a long journey, you arrive the mines of Moria.
+You do have the memories of this place, but can you speak the magic word to
+`0x2007f00`?
+
+sha256 of writable_memories.elf:
+`b30710b248b0937766ee814cb6e1827d8bb20b87f51bcf333ad5475f081e8a48`
+
+
+**Organizational Note**
+The real flag has to be captured on the corresponding device at the organizers
+desk. If you think your board needs a re-flash, come and see us.
+Note that the image on our version of the board may be different, however, the
+location of the magic word is consistent.

@@ -1,0 +1,26 @@
+
+Board STM32F030 recyclé de GreHack
+
+On donne la bord nue sans rien.
+Une fois alimenté, du morse pour donner le MDP via la seule LED
+Protégrer SEULEMENT le bout de code STM32 qui morse contre la relecture
+un ZIP protégé par le MDP dans le reste de la flash avec une image .JPG et le flag dedans
+
+Pas du zip:
+painfullmorsecode1337
+Flag:
+ph0wn{SomeoneGetGoodTimeAndForgotChallenges...}
+
+Offset ZIP
+08002780
+08010000	55424
+
+
+
+Moi je ferai dans le folko total niveau énoncé:
+
+"The guy who was meant to implement the hardware challenge for ph0wn has disappeared. Nevertheless, he left us this device - that'll you come and get at our organizer's desk (get a time slot) - and it appears that he's trying to communicate with us, one way or another..."
+
+Title: Wanted!
+
+

@@ -1,0 +1,13 @@
+Chromecast
+
+
+Our company has just acquired a chromecast to display information for employees. However, we suspect that someone found a way to take control of what is displayed! We need you to help us on this!
+
+To avoid being detected when investigating, you will be allowed to connect to our local switch for 15min only. Please come and get a time slot at the organizer's desk.
+
+You may use ports 1 to 7 on the FortiSwitch.
+
+Author: Roman
+Difficulty: Easy
+Category: Network
+Points: 300 - 25 - 10

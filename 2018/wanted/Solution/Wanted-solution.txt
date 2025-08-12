@@ -1,0 +1,7 @@
+The board contain a flag to recover.
+
+When you powerup it, the red LED is flashing in morse a password, but that’s not the flag.
+The UART is sending:  “Was a good idea, but the flag isn't here. This is a forensic challenge.”
+You must use a ST-LINK to dump the flash and see there is beside the usual code a ZIP file.
+Extract the zip file from the flash, open it and unzip the picture with the Morse password from the beginning “painfullmorsecode1337”.
+Open the picture, admire the lazy croco and grab the flag.

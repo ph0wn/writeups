@@ -1,0 +1,9 @@
+To reset the challenge:
+- Plug the plug, push the button for 10s until you hear a soft 'click' (you
+  might need to push twice).
+- Connect to the plug's wifi.
+- Run the `reset.py` script
+
+That should be it. Distribute __ONLY__ the `description.txt` file to the participants.
+The flag is by default set to `ph0wn{kahZoo0w}`, you can change the value by
+passing another `--flag` parameter to the `reset.py` script.

@@ -1,0 +1,17 @@
+Name: Writeable Memories (easy)
+Category: Exploit
+Level: Difficult
+Author: Marius
+
+It's your second time here! In the meanwhile, the dwarves didn't sleep and
+updated their security protocol.
+Can you cast a magic spell to `0x3f000`?
+
+This challenge shares the same file `writeable_memories.elf` as Writable Memories 1.
+It is expected that participants do stage 1 before stage 2, especially as stage 2 is more difficult, but you may actually do them in the order you wish.
+
+
+**Organizational Note:**
+
+The real flag has to be captured on the corresponding device at the organizers desk. If you think your board needs a re-flash, come and see us. Note that the image on our version of the board may be different, however, the location of the magic word is consistent.
+

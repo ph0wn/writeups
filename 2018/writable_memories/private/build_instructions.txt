@@ -1,0 +1,27 @@
+This challenge uses arm mbed. 
+
+To build the binary, the following steps have to be done:
+
+1) Setting up mbed-cli:
+`pip install mbed-cli`
+
+2) Getting a GNU Embedded Toolchain for Arm:
+https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads
+
+3) Create a new mbed project:
+`mbed-cli new A --scm none`
+
+4) Specify the path to the bin directory of the toolchain in mbed_settings.py
+`mbed-cli config GCC_ARM_PATH $gcc_arm_location/bin`
+
+5) Link to our customized linker script
+`n -sf ./NRF51822.ld ./mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/device/TOOLCHAIN_GCC_ARM/TARGET_MCU_NORDIC_32K/NRF51822.ld `
+
+5) Compile
+`mbed-cli compile -v -t GCC_ARM -m NRF51_DK`
+
+This will produce a writeable_memories.hex file in the BUILD directory.
+This can be directly copied on the flash storage of the nrfdk for flashing.
+
+NB: The program has a public and a ph0wn-crew version. Which one is compiled
+    can be changed in the source coude.
