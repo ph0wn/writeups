@@ -1,0 +1,40 @@
+Some hints !
+
+
+# Weather station, challenge 1
+
+1/ Look the chip on the USB board and try to guess witch driver to use to hook up your computer.
+2/ Hook the USB cable to your computer and look the USB vendor’s ID to guess with kind of device it is.
+3/ The FTDI drivers must be used to run the serial link on your computer.
+4/ The serial port setup is 19200 8N1.
+
+
+# Weather station, challenge 2
+
+1/ Study carefully witch events happened (and when) on the serial link to try to find the function to reverse.
+2/ Focus on strings and try to find the reference in the code to find the good function to reverse to get the password.
+3/ The string “Password: ” has only one reference and will give you the function to reverse
+4/ Try to guess the serial_printf() function and where the firmware read the password string, next to it there is the password checking algorithm.
+
+
+# Weather station, challenge 3
+
+1/ Calling an easter egg means find it in the firmware and gaining the control of the Program Counter (PC) to call it.
+2/ You should look carefully in the firmware where it ask you to input a string to overflow a buffer and overwrite the PC.
+3/ You should look carefully in the firmware what happened when you enter more than 8 chars on the custom brand’s name setup menu.
+4/ You should smash the stack where it allow you to setup the custom brand’s name and trig your jump @xxxxxxxx when exiting the menu.
+
+
+# Weather station, challenge 4
+
+* I2C :
+1/ I2C handling functions are not trivial to spot, look what happened of the serial link just after the boot and try to deduct the function to reverse.
+2/ Use the string “I2C” to find a reference, then spot the handling of serial number over I2C.
+3/ Connect and I2C probe or a logic analyzer to see what happened on I2C bus just after the reset and try to find the code relevant code it in the firmware.
+4/ In every good computer tale you should find a #DEAD #BEEF reference …
+
+* Shellcode-like exploit :
+1/ Serial generator function are not trivial to spot, look what happened on the serial link just after the boot and try to find the code handling it.
+2/ Use the string “I2C” to spot the handling of serial number over I2C and try to understand where the function is.
+3/ A sprintf () is used to format the serial number and there is nowhere in the firmware to print if over the serial links.  Your shellcode must call the serial number generation code, then give the address to the serial_printf() function to leek it over serial bus.
+4/ The stack is not the easiest place to store your shellcode, the buffer used for the Password is better because it is a fixed RAM address. Then the BOF used to call the easter egg of challenge 3 is OK to trig it.

@@ -1,0 +1,9 @@
+# Weather station, challenge 1
+
+- Author: Phil / GreHack
+- Difficulty: Easy (50 points)
+- Category: Hardware / Recon
+
+You’ve just unboxed this nice weather station, will you manage to connect it to a computer and interact with it?
+
+To score this challenge please enter a flag in the form of 'Ph0wn{xxxxx}'.

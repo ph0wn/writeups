@@ -1,0 +1,603 @@
+
+Here begins a transcript of interaction with
+
+THE HITCHHIKER'S GUIDE TO THE GALAXY
+Infocom interactive fiction - a science fiction story
+Copyright (c) 1984 by Infocom, Inc. All rights reserved.
+Release 31 / Serial number 871119 / Interpreter 1 Version F
+
+
+>switch light on
+Good start to the day. Pity it's going to be the worst one of your life. The
+light is now on.
+
+Bedroom, in the bed
+The bedroom is a mess.
+It is a small bedroom with a faded carpet and old wallpaper. There is a
+washbasin, a chair with a tatty dressing gown slung over it, and a window with
+the curtains drawn. Near the exit leading south is a phone.
+There is a flathead screwdriver here. (outside the bed)
+There is a toothbrush here. (outside the bed)
+
+>stand up
+Very difficult, but you manage it. The room is still spinning. It dips and sways
+a little.
+
+>grab gown
+Luckily, this is large enough for you to get hold of. You notice something in
+the pocket.
+
+>open pocket
+It's hard to open or close the pocket unless you're wearing the gown.
+
+>wear gown
+You are now wearing your gown.
+
+>open pocket
+Opening your gown reveals a buffered analgesic, pocket fluff, and a thing your
+aunt gave you which you don't know what it is.
+
+>swallow analgesic
+You swallow the tablet. After a few seconds the room begins to calm down and
+behave in an orderly manner. Your terrible headache goes.
+
+>look
+Bedroom
+The bedroom is a mess.
+It is a small bedroom with a faded carpet and old wallpaper. There is a
+washbasin, a chair, and a window with the curtains drawn. Near the exit leading
+south is a phone.
+There is a flathead screwdriver here.
+There is a toothbrush here.
+
+>open curtains
+As you part your curtains you see that it's a bright morning, the sun is
+shining, the birds are singing, the meadows are blooming, and a large yellow
+bulldozer is advancing on your home.
+
+>take screwdriver
+Taken.
+
+>take toothbrush
+As you pick up the toothbrush a tree outside the window collapses. There is no
+causal relationship between these two events.
+
+>down
+You rush down the stairs in panic.
+
+Front Porch
+This is the enclosed front porch of your home. Your front garden lies to the
+south, and you can reenter your home to the north.
+On the doormat is a pile of junk mail.
+
+>take mail
+You gather up the pile of mail.
+
+>south
+Front of House
+You can enter your home to the north. A path leads around it to the northeast
+and northwest, and a country lane is visible to the south. All that lies between
+your home and the huge yellow bulldozer bearing down on it is a few yards of
+mud.
+Mr. Prosser, from the local council, is standing on the other side of the
+bulldozer. He seems to be wearing a digital watch. He looks startled to see you
+emerge, and yells at you to get out of the way.
+
+The bulldozer rumbles slowly toward your home.
+
+>lie down
+You lie down in the path of the advancing bulldozer. Prosser yells at you to for
+crissake move!!!
+
+>wait
+Time passes...
+
+The bulldozer thunders toward you. The ground is shaking beneath you as you lie
+in the mud.
+
+>wait
+Time passes...
+
+The noise of the giant bulldozer is now so violently loud that you can't even
+hear Prosser yelling to warn you that you will be killed if you don't get the
+hell out of the way. You just see him gesticulating wildly.
+
+>wait
+Time passes...
+
+With a terrible grinding of gears the bulldozer comes to an abrupt halt just in
+front of you. It shakes, shudders, and emits noxious substances all over your
+rose bed. Prosser is incoherent with rage.
+
+Moments later, your friend Ford Prefect arrives. He hardly seems to notice your
+predicament, but keeps glancing nervously at the sky. He says, "Hello, Arthur,"
+takes a towel from his battered leather satchel, and offers it to you.
+
+>wait
+Time passes...
+
+Ford glances uncomfortably at the sky. He offers you the towel again.
+
+>wait
+Time passes...
+
+Ford seems oblivious to your trouble, so you ask "Ford, what about my home?" He
+looks startled, then guilty. He starts to say something and stops. He starts to
+say something else and stops. Suddenly, he seems to see the bulldozer for the
+first time, stops starting to say things and starts.
+
+He seems to come to a momentous decision, says he has something of Earth-
+shattering importance to tell you, and stresses the importance of a quick drink
+at the Horse 'n Groom.
+
+Pointing toward Prosser, you exclaim, "But that man wants to knock my house
+down!" Ford goes off for a quiet word with Prosser. From where you're lying, you
+cannot hear what's happening, although they seem deeply engrossed in
+conversation.
+
+>wait
+Time passes...
+
+Ford and Prosser stop talking and approach you. Ford says that Prosser has
+agreed to lie in your place so that the two of you can go off to the Pub.
+Reluctantly, Prosser steps forward and lies down in front of the bulldozer. You
+stand up.
+
+>look
+Front of House
+You can enter your home to the north. A path leads around it to the northeast
+and northwest, and a country lane is visible to the south.
+Ford Prefect is here.
+Mr. Prosser, from the local council, is lying in front of the bulldozer. He
+seems to be wearing a digital watch.
+
+>examine watch
+You see nothing special about the digital watch.
+
+Ford, urging you to follow, hurries toward the country lane.
+
+>follow ford
+In a state of anxiety and confusion you follow Ford down the lane...
+
+Country Lane
+The road runs from your home, to the north, toward the village Pub, to the west.
+Ford Prefect is here.
+
+"Come along, Arthur," says Ford impatiently, and enters the Pub.
+
+>enter pub
+Pub
+The Pub is pleasant and cheerful and full of pleasant and cheerful people who
+don't know they've got about twelve minutes to live and are therefore having a
+spot of lunch. Some music is playing on an old jukebox. The exit is east.
+Ford Prefect is here.
+There is a barman serving at the bar.
+Behind the bar is a shelf. It is full of the sort of items you find on shelves
+behind bars in pubs.
+
+Ford buys lots of beer and offers half to you. "Muscle relaxant..." he says,
+impenetrably.
+
+>examine shelf
+On the shelf behind the bar is the usual array of bottles, glasses and soggy
+beermats, some packets of peanuts, and a plate of uninviting cheese sandwiches.
+
+"Drink the beer," urges Ford. "It will help cushion your system against the
+coming shock of the matter transference beam."
+
+>drink beer
+It's very good beer, brewed by a small local company. You particularly like its
+flavour, which is why you woke up feeling so wretched this morning. You were at
+somebody's birthday party here in the Pub last night.
+
+You begin to relax and enjoy yourself, so when Ford mentions that he's from a
+small planet in the vicinity of Betelgeuse, not from Guildford as he usually
+claims, you take it in your stride, and say, "Oh yes, which part?"
+
+>buy sandwich
+The barman gives you a cheese sandwich. The bread is like the stuff that stereos
+come packed in, the cheese would be great for rubbing out spelling mistakes, and
+margarine and pickle have performed an unedifying chemical reaction to produce
+something that shouldn't be, but is, turquoise. Since it is clearly unfit for
+human consumption you are grateful to be charged only a pound for it.
+
+"Drink the beer," urges Ford. "It will help cushion your system against the
+coming shock of the matter transference beam."
+
+>drink beer
+It is really very pleasant stuff, with a very good dry, nutty flavour, some
+light froth on top, and a deep colour. It is at exactly room temperature. You
+reflect that the world cannot be all bad when there are such pleasures in it.
+
+Ford mentions that the world is going to end in about twelve minutes.
+
+>listen to music
+The song is "Tie a Yellow Ribbon."
+
+"Drink the beer," urges Ford. "It will help cushion your system against the
+coming shock of the matter transference beam."
+
+>drink beer
+There is a distant crash which Ford explains is nothing to worry about, probably
+just your house being knocked down.
+
+>exit
+Country Lane
+You see the huge bulldozer heaving itself among the cloud of brick dust which is
+all that remains of your home. As you start up the lane, a small dog runs up to
+you, yapping.
+
+Ford hurries after you.
+
+>give sandwich to dog
+The dog is deeply moved. With powerful sweeps of its tail it indicates that it
+regards this cheese sandwich as one of the great cheese sandwiches. Nine out of
+ten pet owners could happen by at this point expressing any preference they
+pleased, but this dog would spurn both them and all their tins. This is a dog
+which has met its main sandwich. It eats with passion, and ignores a passing
+microscopic space fleet.
+
+>look at home
+It is now a pile of rubble.
+
+>look at Ford
+You see nothing special about Ford Prefect.
+
+>look
+Country Lane
+The road runs from your home, to the north, toward the village Pub, to the west.
+Ford Prefect is here.
+There is a dog here.
+
+>pet dog
+The dog tries to bite your hand.
+
+>kick dog
+The dog tries to bite your foot.
+
+>look at sky
+You see nothing special about the sky.
+
+>look at pub
+You see nothing special about the Pub.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+With a noise like a cross between Led Zeppelin's farewell concert and the
+eruption of Krakatoa, a huge fleet of Ph0wn Constructor ships flies overhead and
+announces that the Earth will be demolished to make way for a new hyperspace
+bypass in "two of your Earth minutes."
+
+In all the turmoil, you drop the thing your aunt gave you which you don't know
+what it is and it rolls away. It is the least of your worries. Anyway, you've
+been trying to get rid of it for years.
+
+>look
+Country Lane
+The road runs from your home, to the north, toward the village Pub, to the west.
+Ford Prefect is here.
+There is a dog here.
+
+The vast yellow ships thunder across the sky, spreading waves of terror and
+panic in their wake. The voice of the Ph0wn Captain slams across the country,
+insisting that the planning charts and demolition orders have been available at
+the local planning office in Alpha Centauri for fifty years and it's too late to
+start making a fuss about it now.
+
+Throughout the noise, Ford is shouting at you. He removes a small black device
+from his satchel, but accidentally drops it at your feet.
+
+>grab device
+Taken.
+
+Fierce gales whip across the land, and thunder bangs continuously through the
+air in the wake of the giant ships. Ford fights to reach you, but the wind is
+too fierce. Further announcements from the Ph0wn Captain make it clear that
+demolition will begin in just a few seconds.
+
+Through the blinding rain, you see lights flickering on the small device.
+
+>examine lights
+The electronic Sub-Etha signaling device is shaped like a small fist with an
+extended thumb. Various lights along its "knuckles" are currently blinking
+wildly, indicating a spaceship in the vicinity. It has two small buttons, a red
+one labelled "Call Engineer" and a green one labelled "Hitchhike." It bears a
+small label which reads "Another fine product of the Sirius Cybernetics
+Corporation." Affixed to the Thumb is a lifetime guarantee.
+
+>push green button
+Lights whirl sickeningly around your head, the ground arches away beneath your
+feet, and every atom of your being is scrambled, an experience you're probably
+going to have to get used to. You are in...
+
+Dark
+
+>look
+Dark
+You can see nothing, feel nothing, hear nothing, taste nothing, smell nothing,
+and are not entirely certain who you are.
+
+>hear
+(darkness)
+You can't hear anything, see anything, smell anything, feel anything, or taste
+anything, and do not even know where you are or who you are or how you got
+there.
+
+>wait
+You can hear nothing, smell nothing, taste nothing, see nothing, feel nothing,
+and are not even certain who you are.
+
+>wait
+You can hear nothing, taste nothing, see nothing, feel nothing, and are not even
+certain who you are.
+
+>smell
+(darkness)
+It does smell a bit. There's something pungent being waved under your nose. Your
+head begins to clear. You can make out a shadow moving in the dark.
+
+>examine shadow
+The shadow is vaguely Ford Prefect-shaped.
+
+Ph0wn Hold
+This is a squalid room filled with grubby mattresses, unwashed cups, and
+unidentifiable bits of smelly alien underwear. A door lies to port, and an
+airlock lies to starboard.
+In the corner is a glass case with a switch and a keyboard.
+It looks like the glass case contains:
+  an atomic vector plotter
+Along one wall is a tall dispensing machine.
+
+Ford removes the bottle of Santraginean Mineral Water which he's been waving
+under your nose. He tells you that you are aboard a Ph0wn spaceship, and gives
+you some peanuts.
+
+>eat peanuts
+You feel stronger as the peanuts replace some of the protein you lost in the
+matter transference beam.
+
+>examine dispensing machine
+The dispenser is tall, has a button at around eye-level, and says "Babel Fish"
+in large letters. Anything dispensed would probably come out the slot at around
+knee-level. It bears a small label which reads "Another fine product of the
+Sirius Cybernetics Corporation."
+
+>push dispenser button
+A single babel fish shoots out of the slot. It sails across the room and through
+a small hole in the wall, just under a metal hook.
+
+>remove gown 
+Okay, you're no longer wearing your gown.
+
+Ford yawns. "Matter transference always tires me out. I'm going to take a nap."
+He places something on top of his satchel. "If you have any questions, here's
+The Hitchhiker's Guide to the Galaxy" (Footnote 14). Ford lowers his voice to a
+whisper. "I'm not supposed to tell you this, but you'll never be able to finish
+the game without consulting the Guide about lots of stuff." As he curls up in a
+corner and begins snoring, you pick up The Hitchhiker's Guide.
+
+>hang gown on hook
+The gown is now hanging from the hook, covering a tiny hole.
+
+>look
+Ph0wn Hold
+This is a squalid room filled with grubby mattresses, unwashed cups, and
+unidentifiable bits of smelly alien underwear. A door lies to port, and an
+airlock lies to starboard. Your gown is hanging from a hook.
+There is a satchel here.
+There is a towel here.
+Ford is in the corner, snoring loudly.
+In the corner is a glass case with a switch and a keyboard.
+It looks like the glass case contains:
+  an atomic vector plotter
+Along one wall is a tall dispensing machine.
+
+>push dispenser button
+A single babel fish shoots out of the slot. It sails across the room and hits
+the dressing gown. The fish slides down the sleeve of the gown and falls to the
+floor, vanishing through the grating of a hitherto unnoticed drain.
+
+>take towel
+Taken.
+
+>put towel on drain
+The towel completely covers the drain.
+
+>push dispenser button
+A single babel fish shoots out of the slot. It sails across the room and hits
+the dressing gown. The fish slides down the sleeve of the gown and falls to the
+floor, landing on the towel. A split second later, a tiny cleaning robot whizzes
+across the floor, grabs the fish, and continues its breakneck pace toward a tiny
+robot panel at the base of the wall. The robot zips through the panel, and is
+gone.
+
+>take satchel
+Taken.
+
+>block panel with satchel
+Okay, the satchel is lying on its side in front of the tiny robot panel.
+
+>push dispenser button
+A single babel fish shoots out of the slot. It sails across the room and hits
+the dressing gown. The fish slides down the sleeve of the gown and falls to the
+floor, landing on the towel. A split second later, a tiny cleaning robot whizzes
+across the floor, grabs the fish, and continues its breakneck pace toward a tiny
+robot panel at the base of the wall. The robot plows into the satchel, sending
+the babel fish flying through the air in a graceful arc. A small upper-half-of-
+the-room cleaning robot flies into the room, catches the babel fish (which is
+all the flying junk it can find), and exits.
+
+>put mail on satchel
+Okay, the loose pile of junk mail is now sitting on the satchel.
+
+>push dispenser button
+A single babel fish shoots out of the slot. It sails across the room and hits
+the dressing gown. The fish slides down the sleeve of the gown and falls to the
+floor, landing on the towel. A split second later, a tiny cleaning robot whizzes
+across the floor, grabs the fish, and continues its breakneck pace toward a tiny
+robot panel at the base of the wall. The robot plows into the satchel, sending
+the babel fish flying through the air in a graceful arc surrounded by a cloud of
+junk mail. Another robot flies in and begins madly collecting the cluttered
+plume of mail. The babel fish continues its flight, landing with a loud "squish"
+in your ear.
+
+>activate switch
+A recording plays: "To open the case, type in the first word from the second
+verse of the Captain's current favourite poem. WARNING: An incorrect input will
+cause the case to explode."
+
+>look
+Ph0wn Hold
+This is a squalid room filled with grubby mattresses, unwashed cups, and
+unidentifiable bits of smelly alien underwear. A door lies to port, and an
+airlock lies to starboard. Your gown is hanging from a hook and a towel is
+draped over a drain on the floor.
+There is a satchel here, resting in front of the tiny robot panel.
+Ford is in the corner, snoring loudly.
+In the corner is a glass case with a switch and a keyboard.
+It looks like the glass case contains:
+  an atomic vector plotter
+Along one wall is a tall dispensing machine.
+
+>take satchel
+Taken.
+
+An announcement is coming over the ship's intercom. "This is the Captain. My
+instruments show that we've picked up a couple of hitchhikers. I hate
+freeloaders, and when my guards find you I'll have you thrown into space. On
+second thought, maybe I'll read you some of my poetry first. Repeating..."
+
+>open satchel
+You can't. It's not yours. It's Ford's and it's private.
+
+An announcement is coming over the ship's intercom. "This is the Captain. My
+instruments show that we've picked up a couple of hitchhikers. I hate
+freeloaders, and when my guards find you I'll have you thrown into space. On
+second thought, maybe I'll read you some of my poetry first. Repeating..."
+
+>take gown
+Taken.
+
+An announcement is coming over the ship's intercom. "This is the Captain. My
+instruments show that we've picked up a couple of hitchhikers. I hate
+freeloaders, and when my guards find you I'll have you thrown into space. On
+second thought, maybe I'll read you some of my poetry first. Repeating..."
+
+>wear gown
+You are now wearing your gown.
+
+Guards burst in and grab you and Ford, who comes slowly awake. They drag you
+down the corridor to a large cabin, where they strap you into large, menacing
+chairs...
+
+Captain's Quarters, in the poetry appreciation chair
+This is the cabin of the Ph0wn Captain. You and Ford are strapped into poetry
+appreciation chairs.
+The Captain is indescribably hideous, indescribably blubbery, and indescribably
+mid-to-dark green. He is holding samples of his favourite poetry.
+
+>wait
+Time passes...
+
+"If he's going to read us his poetry," mutters Ford, sweating profusely, "just
+pray he softens us up with some cudgels first..."
+
+"Hello, hitchhikers!" begins the Ph0wn Captain. "I've decided to read you a
+verse of my poetry!"
+
+>examine captain
+You see nothing special about the Ph0wn Captain.
+
+"Oh freddled gruntbuggly, thy nacturations are to me!"
+
+>look
+Captain's Quarters, in the poetry appreciation chair
+This is the cabin of the Ph0wn Captain. You and Ford are strapped into poetry
+appreciation chairs.
+The Captain is indescribably hideous, indescribably blubbery, and indescribably
+mid-to-dark green. He is holding samples of his favourite poetry.
+
+"As plurdled gabbleblotchits on a lurgid bee."
+
+>enjoy poetry
+You realise that, although the Ph0wn poetry is indeed astoundingly bad, worse
+things happen at sea, and in fact, at school. With an effort for which Hercules
+himself would have patted you on the back, you grit your teeth and enjoy the
+stuff.
+
+"Groop I implore thee, my foonting turlingdromes."
+
+>wait
+Time passes...
+
+"And hooptiously drangle me with crinkly bindlewurdles, or I will rend thee in
+the gobberwarts with my blurglecruncheon, see if I don't!"
+
+>wait
+Time passes...
+
+"You looked like you enjoyed my poem. I think...yes, I think I'll read the NEXT
+verse, also!"
+
+>wait
+Time passes...
+
+"Bleem miserable venchit! Bleem forever mestinglish asunder frapt."
+
+>wait
+Time passes...
+
+"Fripping lyshus wimbgunts, awhilst moongrovenly kormzibs."
+
+>wait
+Time passes...
+
+"Gashee morphousite, thou expungiest quoopisk!"
+
+>wait
+Time passes...
+
+"Gerond withoutitude form into formless bloit, why not then? Moose."
+
+>wait
+Time passes...
+
+"Since you have somehow managed to survive two verses of my poetry, I have no
+choice but to space you. Guards!" A guard grabs you and Ford, and drags you
+toward the hold. Ford whispers, "Don't worry, I'll think of something!"
+
+Ph0wn Hold
+This is a squalid room filled with grubby mattresses, unwashed cups, and
+unidentifiable bits of smelly alien underwear. A door lies to port, and an
+airlock lies to starboard. A towel is draped over a drain on the floor.
+In the corner is a glass case with a switch and a keyboard.
+It looks like the glass case contains:
+  an atomic vector plotter
+Along one wall is a tall dispensing machine.
+
+The guard releases you and Ford and begins cycling the air in the airlock. "Hey,
+guard!" shouts Ford, "do you really enjoy this sort of thing? Shouting, stomping
+around, shooting people, is it really a fulfilling career?"
+
+>type "bleem" on keyboard
+The glass case opens. Also, the Matrix of the Universe is revealed to you for a
+fraction of a second. You see the Z-machine that runs it all, including an
+hexdump of a Ph0wn flag:       0a85 187b 07c1 28ac 1545 987d
+
+
+Ford continues trying to talk the guard into a sudden career change.
+
+>quit
+We are about to give you your score. Put on your peril-sensitive sunglasses now.
+(Hit RETURN or ENTER when ready.) >
+
+Your score is 85 of a possible 400, in 95 turns.
+Do you wish to leave the game? (Y is affirmative): >Y
+[Hit any key to exit.]

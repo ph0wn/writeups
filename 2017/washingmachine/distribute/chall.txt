@@ -1,0 +1,16 @@
+Superclean3000
+
+Category: pwn. Author: Marius.
+
+Description:
+Check this out: We got this super new and super useless IoT-Device-Prototype.
+It's some sort of washing-machine or whatever. 
+Appearingly there is some sort of secret hidden in its firmware protected by
+anti-reversing and debugging measures.
+However, word on the street is that the developer isn't experienced in 
+programming embedded devices, so it should be an easy task to exfiltrate the
+secret.
+Drop by at the ph0wn orga to get your copy of the prototype.
+
+[To solve this challenge, you have to exploit the master-device, which you can
+ find on the desk of the ph0wn orga]

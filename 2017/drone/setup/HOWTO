@@ -1,0 +1,16 @@
+- Reset the drone i.e. unplug the battery and reconnect it
+
+- Make sure your laptop is connected to the wifi of the drone, and that the drone is reachable : 192.168.1.1. The default wifi network is "ardrone2_132997"
+
+- Install the wpa supplicant ability
+$ script/install
+
+- Configure the wifi to which the drone will connect
+$ script/connect "DroneStaff" -p "donttrytohackthisdronenottakingoff" -a 172.16.5.2
+
+- or simply:
+setup-drone.sh
+
+You should be able to telnet the drone on its configured address.
+
+

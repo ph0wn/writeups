@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Created-By: 9-internal (Oracle Corporation)
+
+Name: assets/qrcode.png
+SHA-256-Digest: XC9Qb8IEQyXhpixbZUmyGKzAR+uN4HN3YwlOOPHUh1o=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA-256-Digest: rr57iZzO3w8r42rR11i3H0dNRtNvjJuHTb9tN3XDmwM=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: 3BQ8pV3KecBaXxRAToed92C3ScUrODozxIf0Q45KWqI=
+
+Name: res/layout/main.xml
+SHA-256-Digest: gejOj+3cPRXjxzo314NbncgFZ/6ZviEwXRF6pFwcwAE=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA-256-Digest: IHF2pl0mQpc1hpyz/cUbDJdGBnCwT65XXz5l2FQdomU=
+
+Name: resources.arsc
+SHA-256-Digest: QwCzhujXYOrhtPz0/E10vJ9GinK9aJd9VthyRF46fv8=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA-256-Digest: VVEaOwc+WexS3QlmVliMEX9HkOYd9jMoC3Yg3LwZ+wo=
+
+Name: classes.dex
+SHA-256-Digest: yqDHmUkdPsoyi9UAgwSRzyTUucESNdhH6pfRWvqQZ9A=
+
+Name: res/drawable-ldpi-v4/ic_launcher.png
+SHA-256-Digest: 90VrgcPj4xemR1SR+mhntmgAgSUY7ig/MbgI9WDR+Rs=
+

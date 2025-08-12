@@ -1,0 +1,39 @@
+Author: Balda
+
+= BlackAlps badge I - Xtensible reversing
+== Category : Reverse
+== Difficulty : Medium
+== Description : 
+    This little device is locked and does not allow us to connect. We
+    were able to dump its firmware, but it seems we are not able to
+    reverse its authentication algorithm. Can you make it ?
+== Commentaires :
+    Un reverse assez basique mais avec une architecture xtensa histoire
+    de mettre les gens dans le bain avec le chip.
+
+= BlackAlps badge II - Let's get graphical
+== Category : Reverse/Forensics
+== Difficulty : Medium
+== Description :
+    The firmware contains a flag that should have been displayed on the
+    screen, if only the developper had enough time to implement the code
+    to display it...
+== Commentaires :
+    Le firmware du badge est fourni. Le but est de reverser le firmware
+    pour trouver ou sont stockées les images affichées sur le badge.
+    Ensuite, il faut comprendre comment les images sont affichées sur
+    l'écran (ie. lire la doc du pcd8544) et recomposer une image qui
+    affiche le flag.
+
+= BlackAlps badge III - TBA
+== Category : Reverse/Pwn
+== Difficulty : Hard
+== Description :
+    Congrats ! By having found the first two flags, you are now allowed
+    to play with the device and discover the last flag.
+== Commentaires :
+    Ce challenge nécessite l'accès physique au badge. L'idée est de
+    pouvoir uploader sa propre image sur le badge. L'écriture de l'image
+ déborde sur une structure qui gère les menus de l'affichage. écraser
+    la structure permet de réécrire un pointeur de fonction et ainsi de
+    pouvoir exécuter une fonction get_flag qui affiche le dernier flag.

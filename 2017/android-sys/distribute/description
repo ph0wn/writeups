@@ -1,0 +1,27 @@
+Title: Interrupted secrets
+
+Lacking time and always being interrupted at work? Want to throw away your Android phone? what a life!
+Unfortunately, this remark s also applies to Android systems. Could these interrupts be used to hide secret messages?
+
+How to be interrupted?
+
+[Download the VM from here]((http://192.168.194.146:8080/challenge-public-files/Ph0wnAndroidChallenge.ova) or [here](https://mega.nz/#!2ZJAWARL!PpWgGAI3WakKnujQifsVqVZtJRwepSkLMQNmChdRZMg) or get it from a USB key.**This file is ~6.2 GB big**
+
+In the VM, log with the default user and the **rootpass** as password.
+BEWARE: **the keyboard uses an English layout on the login screen.**
+
+Once logged in, open a terminal and type
+
+```
+$ emulator
+```
+
+There you go! But again, **don't be interrupted!**
+
+sha256:
+```
+Ph0wnAndroidChallenge.ova
+8ecfd1eda73ff356d6c84e022849d520262ed7e697d4b5a0aea71341acb07b6e
+```
+
+Author: TuxDePoinsisse
