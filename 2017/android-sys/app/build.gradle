@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "25.0.0"
+    lintOptions {
+          abortOnError false
+      }
+
+signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storePassword "ph0wnmewhenyouwant"
+            keyAlias "myCuteKey"
+            keyPassword "ph0wnmewhenyouwant"
+        }
+    }
+      buildTypes {
+        release {
+            minifyEnabled true
+	    signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+}

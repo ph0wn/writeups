@@ -1,0 +1,9 @@
+Generate an ova: export appliance from the file menu of virual box
+
+split -b 2000m Ph0wnAndroidChallenge.ova  Ph0wnAndroidChallenge_
+Copy on USB disk ...
+cp Ph0wnAndroidChallenge_a? /Volumes/NO\ NAME/
+
+then concat the file, obtain a .ova.
+In virtualbox, make "File, import virtual appliance"
+

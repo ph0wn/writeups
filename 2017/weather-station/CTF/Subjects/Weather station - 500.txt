@@ -1,0 +1,27 @@
+# Weather station, challenge 4
+
+- Author: Phil / GreHack
+- Difficulty: Hard (500)
+- Category: Hardware / Exploitation
+
+Now it’s time to show your real hacker’s skills. 
+This device is built on a STM32 CPU and has an unique serial number. 
+You must recover this unique ID.
+
+2 ways to definitely break this device:
+* A custom I2C probe is used by the factory to have access to this serial number. Will you be able to get it with your own fake probe hooked on the I2C bus? 
+* There are enough software bugs in this crappy code to call the serial generation and recover it over serial bus. Will find a way to inject your payload and do the job?
+
+(Again, yes, there is 2 different ways to solve this one: reverse to understand I2C protocol to hook a hardware I2C fake probe OR reverse + exploit code, choose your kungfu)
+
+
+Advice 1: the serial over USB function is a little buggy, you should send your payload by packet of 16 bytes, and do a little 10ms pause, and then continue sending the next chunk.
+
+Advice 2: No need to solve challenge 3 to complete this one with reverse + exploit, but it REALLY helps and you should REALLY do it before. 
+
+Advice 3 : The firmware is provided in .elf and .bin format. It's the same version, it's up to you to use your preferred format, but a strong advice is to use the .elf file. 
+
+Advice 4: the function at @ 0x800CA88 is only here to hide the flag. Solve this task will never ask you to reverse this complex obfuscation function. If you do, you’ll lose time and all the interest of the challenge.
+
+
+To score this challenge please enter a flag in the form of 'Ph0wn{xxxxx}'.

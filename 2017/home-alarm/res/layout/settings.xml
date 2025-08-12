@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Settings - IoT ph0wn home safety al@rm"
+    />
+
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Phone #"
+    />
+<EditText
+    android:id="@+id/phoneET"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:text="@string/phonenumber" />
+
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Secret alarm code"
+    />
+
+<EditText
+    android:id="@+id/secretET"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:text="@string/secret" />
+
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Security passphrase to protect your settings"
+    />
+
+<EditText
+    android:id="@+id/passphraseET"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:text="@string/passphrase" />
+
+<Button
+    android:layout_width="250px" 
+    android:layout_height="100px"
+    android:id="@+id/doneBtn"
+    android:text="Done"
+    />
+
+</LinearLayout>
+

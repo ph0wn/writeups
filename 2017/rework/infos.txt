@@ -1,0 +1,23 @@
+login aurelf.
+  for the chalenge:
+  Description
+  Ouch, someone really messed up those PCBs and you need to fix it to
+  make it work and get the flags out ! Pick one level depending on how
+  confident you are with your soldering skills !  Each team will have
+  the option to pass once, after everyone is passed (or declined) you
+  will be able to try a second challenge.
+  Write your name on the page and chose the number of points you are
+  looking for !
+  Challenges:
+  Rework 1  50 pts
+  9 devices/tokens
+  Rework 2 100 pts
+  10 devices/tokens
+  Rework 3 300 pts
+  6 devices/tokens
+  note to self:
+ Level 1 x-nucleo-nfc*04*A1 antenna cut with dremel
+  Level 2 x-nucleo-nfc*01*A1 antenna cut, chip mounted reverse
+  Level 3 X-NUCLEO-NFC*04*A1 antenna cut, chip removed, extra messed up wire
+s
+  + drill a few vias

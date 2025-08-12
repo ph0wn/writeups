@@ -1,0 +1,33 @@
+Signature-Version: 1.0
+Created-By: 9-internal (Oracle Corporation)
+SHA-256-Digest-Manifest: 0XPC5GSkjQOI/bKfSxOxhKKORjpCtYWPZpDyih/CvGw=
+SHA-256-Digest-Manifest-Main-Attributes: M+ftdXFuH3DTQEAuS03YK2UlO97Pk
+ dnWHp/vdiDrwU0=
+
+Name: assets/qrcode.png
+SHA-256-Digest: d+O12iP9uosvDv1H0nik1ydT7SIoZNn3XIU3gQRCIJI=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA-256-Digest: UoGWL5Ik4QwcN8PlP29r04MDcrveS6T84FeS5oc5NfE=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: kujSi26CfaWeTqXNP2W0MkOslJW1tQOQmcoOErVafP4=
+
+Name: res/layout/main.xml
+SHA-256-Digest: IANHUMQtiIEfLlq/RIYPJVWad+Cm4jGGoqjP6tivTqI=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA-256-Digest: oOEBy41TiVSYO22zE+ecmKC8O6sYalno8SJjfJUKQ5A=
+
+Name: resources.arsc
+SHA-256-Digest: LrJ/thSK3eWvhIZoQS49APX+bMWKEHr4KmnBo+nsWqo=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA-256-Digest: d9+sYtOidyOzC+QLXyICxWklfp5rKohBHpbDdr/5lUw=
+
+Name: classes.dex
+SHA-256-Digest: rtWC04554NFsuMnsMq5Vtobmi+xLx/OKQ54/GbjXVwA=
+
+Name: res/drawable-ldpi-v4/ic_launcher.png
+SHA-256-Digest: G+jJG4i8xmkgn2O9iJOsetvIsD4E8X7P2gXSsHgkMN0=
+

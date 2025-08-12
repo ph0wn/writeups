@@ -1,0 +1,10 @@
+bitstream = '10100001101000011000011101111101110111101101101001101110011001111001001110010100111101100011000100011010001100111110110011001110100101111101'
+
+index = 0
+solution = ''
+
+while index < len(bitstream):
+    solution = solution + chr(int(bitstream[index:index+7],2))
+    index = index + 7
+
+print solution    

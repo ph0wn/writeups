@@ -1,0 +1,31 @@
+* Install the MAME emulator.
+* Install the invaders.zip file in mame/roms/
+
+* Then, use the web page on space invaders easter eggs:
+http://www.computerarcheology.com/Arcade/SpaceInvaders/
+
+I you compare, with hexdump, the code at 0x19a, you can note that the sequence of keys to activate the easter egg has been changed with regards to te original code.
+
+Original code
+19A5: D6 72           SUB     $72                 ; 0111_0010 1st sequence: 2Pstart, 1Pshot, 1Pleft, 1Pright
+
+In the new code:
+0x34 instaead of 0x72
+
+
+Same for the second sequence :
+original:
+19B0: FE 34           CP      $34                 ; 0011_0100 2nd sequence: 1Pstart, 1Pshot, 1Pleft
+
+new code:
+0x52
+
+By trying to find which key correspong to which mask,
+We deduce the new sequence of keys:
+p1-Start, Fire, Left and p2-Start, Fire, Right.
+
+Do ths during the demo playing the game. You should obtain a red message:"TAITO COP"
+
+
+Flag: Ph0wn<TAITO COP>
+
