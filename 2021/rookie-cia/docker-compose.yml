@@ -1,0 +1,10 @@
+---
+version: "3"
+services:
+  web-cia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rookie-cia
+    ports:
+      - "3338:80" 

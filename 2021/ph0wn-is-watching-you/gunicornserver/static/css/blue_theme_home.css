@@ -1,0 +1,43 @@
+#control-area table {
+		color: #000000;
+}
+
+#configuration-area table {
+	color: #92B0C8;
+}
+
+#configuration-area td a{
+	color:#92B0C8;
+}
+
+div#page_title {
+    color: #000000;
+}
+
+table#frame-wrapper td{
+    background:#92B0C8;
+}
+
+table#outter-wrapper td{
+    background:#ffffff;
+}
+
+#control-area table td, #control-area, #video-area-wrapper, #video-area table td{
+    background: #E8E8E8;
+}
+
+#configuration-area table td, #configuration-area, #sidebar-footer{
+    background: #92B0C8;
+}
+
+#ctrl-panel-toggle {
+    background-color: #0186d1;
+}
+
+#ctrl-panel-toggle-icon{
+    border-color: #E8E8E8 #92B0C8 #E8E8E8 #92B0C8;
+}
+
+#ctrl-panel-toggle-icon.clicked {
+    border-color: #fff #fff #fff #0186d1;
+}

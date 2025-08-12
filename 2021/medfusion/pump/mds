@@ -1,0 +1,57 @@
+#!/bin/bash
+# ping drugserver should resolve to the drugserver, or specify the IP address
+SERVER=drugserver
+PORT=7777
+
+function usage() {
+    echo "Ph0wn Medical Service Server (mds) usage:"
+    echo "- mds therapy therapy-id"
+    echo "  Communicates with remote Drug Server and queries the correct pump configuration"
+    echo "- mds secret"
+    echo "  Privileged operations for authorized personel"
+    echo "- mds help"
+    echo "  Displays usage info"
+}
+
+function secret() {
+	 exec 3<>/dev/tcp/$SERVER/$PORT
+	 echo -e "secret" >&3
+	 timeout 1 cat <&3
+}
+
+function do_help() {
+	 exec 3<>/dev/tcp/$SERVER/$PORT
+	 echo -e "help" >&3
+	 timeout 1 cat <&3
+}
+
+function therapy() {
+    exec 4<>/dev/tcp/$SERVER/$PORT
+    echo -e "therapy $1" >&4
+    timeout 1 cat <&4
+}
+
+
+
+if [ "$#" -lt 1 ]; then
+   usage
+   exit 0
+fi   
+
+if [ "$1" = "secret" ]; then
+   secret
+fi
+
+if [ "$1" = "help" ]; then
+   do_help
+fi
+
+
+if [ "$1" = "therapy" ]; then
+   if [ "$#" -ne 2 ]; then
+      usage
+      exit 0
+   fi
+   therapy $2
+fi
+exit 1

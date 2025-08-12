@@ -1,0 +1,42 @@
+# https://pythonspeed.com/articles/base-image-python-docker-images/
+FROM debian:bullseye-slim
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor telnetd xinetd bash iputils-ping nano procps && rm -rf /var/lib/apt/lists/*
+
+# Setup Supervisor -----------------------
+RUN mkdir -p /var/log/supervisor
+COPY ./pump/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Setup Telnet ----------------------------
+ADD ./pump/xinetd.conf /etc/xinetd.conf
+ADD ./pump/telnet /etc/xinetd.d/telnet
+ADD ./pump/issue.net /etc/issue.net
+RUN /etc/init.d/xinetd restart
+
+# Create an account
+RUN useradd --create-home medfusion
+RUN echo "medfusion:chu_ph0wn" | chpasswd
+
+# Setup Host -------------------------------
+ADD ./pump/prompt.sh /etc/profile.d/prompt.sh
+ADD ./pump/help /usr/bin/help
+ADD ./pump/ifconfig /sbin/ifconfig
+ADD ./pump/iwconfig /sbin/iwconfig
+ADD ./pump/mds /usr/bin/mds
+RUN chmod 555 /usr/bin/help /sbin/ifconfig /sbin/iwconfig /usr/bin/mds
+RUN echo " " > /etc/motd
+RUN mkdir -p /rfs /ffs && touch /rfs/WIFI_LOG
+ADD ./meltingpot/fs /ffs
+
+ADD ./pump/test.sh /home/medfusion/test.sh
+ADD ./drugserver/public_drugserver /home/medfusion/copy_of_drugserver
+ADD ./FLAG1 /home/medfusion/flag1.txt
+RUN chmod u+x /home/medfusion/test.sh
+RUN chown medfusion /home/medfusion/test.sh /home/medfusion/flag1.txt /home/medfusion/copy_of_drugserver
+RUN rm -rf /home/medfusion/.python_history
+
+# ----------------------------------------------------
+EXPOSE 23
+
+CMD [ "/usr/bin/supervisord", "-c",  "/etc/supervisor/conf.d/supervisord.conf" ]
+

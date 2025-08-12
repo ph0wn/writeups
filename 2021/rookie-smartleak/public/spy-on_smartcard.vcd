@@ -1,0 +1,618 @@
+$date
+Sat Nov 20 17:35:20 2021
+$end
+
+$version
+Daniel's TML simulator
+$end
+
+$timescale
+5 ns
+$end
+
+$scope module Simulation $end
+$var wire 1 cpu4_core0 ApplicationMCU_1_Core0 $end
+$var wire 1 cpu7_core0 TerminalCPU_1_Core0 $end
+$var wire 1 fpga8_AppC__SmartCard InterfaceController_AppC__SmartCard $end
+$var wire 8 busApplicationBus_0 ApplicationBus_0 $end
+$var wire 16 busInterfaceBus_0 InterfaceBus_0 $end
+$var wire 1 ta9 AppC__Application $end
+$var wire 1 ta11 AppC__InterfaceDevice $end
+$var wire 1 ta18 AppC__SmartCard $end
+$var integer 32 clk Clock $end
+$upscope $end
+$enddefinitions  $end
+
+#0
+b0 clk
+0cpu4_core0
+1cpu7_core0
+b00000000 busApplicationBus_0
+b00 ta18
+b0000000000000000 busInterfaceBus_0
+0fpga8_AppC__SmartCard
+b00 ta9
+b01 ta11
+#2
+b10 ta18
+1fpga8_AppC__SmartCard
+#4
+b00 ta11
+0cpu7_core0
+#20
+r20 clk
+#32
+b00 ta18
+0fpga8_AppC__SmartCard
+#12
+1fpga8_AppC__SmartCard
+#32
+1cpu7_core0
+0fpga8_AppC__SmartCard
+#22
+1fpga8_AppC__SmartCard
+#32
+0fpga8_AppC__SmartCard
+#40
+r40 clk
+#52
+b10 ta11
+1cpu7_core0
+#56
+b10 ta18
+1fpga8_AppC__SmartCard
+b00 ta11
+0cpu7_core0
+#60
+r60 clk
+#76
+b01 ta11
+1cpu7_core0
+#80
+r80 clk
+#86
+b00 ta18
+0fpga8_AppC__SmartCard
+#66
+1fpga8_AppC__SmartCard
+#86
+1cpu4_core0
+0fpga8_AppC__SmartCard
+#76
+1fpga8_AppC__SmartCard
+#86
+b10 ta9
+0fpga8_AppC__SmartCard
+#96
+b10 ta11
+1cpu7_core0
+#98
+b00 ta11
+0cpu7_core0
+#100
+r100 clk
+#120
+r120 clk
+#140
+r140 clk
+#160
+r160 clk
+#180
+r180 clk
+#195
+b01010100 busApplicationBus_0
+#196
+b01101000 busApplicationBus_0
+#197
+b01100101 busApplicationBus_0
+#198
+b01010000 busApplicationBus_0
+#199
+b01100101 busApplicationBus_0
+#200
+r200 clk
+b01110010 busApplicationBus_0
+#201
+b01100110 busApplicationBus_0
+#202
+b01100101 busApplicationBus_0
+#203
+b01100011 busApplicationBus_0
+#204
+b01110100 busApplicationBus_0
+#205
+b01010010 busApplicationBus_0
+#206
+b01101111 busApplicationBus_0
+#207
+b01101111 busApplicationBus_0
+#208
+b01101011 busApplicationBus_0
+#209
+b01101001 busApplicationBus_0
+#210
+b01100101 busApplicationBus_0
+#211
+b00000000 busApplicationBus_0
+#220
+r220 clk
+#240
+r240 clk
+#260
+r260 clk
+#280
+r280 clk
+#300
+r300 clk
+#320
+r320 clk
+#340
+r340 clk
+#360
+r360 clk
+#380
+r380 clk
+#400
+r400 clk
+#420
+r420 clk
+#440
+r440 clk
+#460
+r460 clk
+#480
+r480 clk
+#500
+r500 clk
+#520
+r520 clk
+#540
+r540 clk
+#560
+r560 clk
+#580
+r580 clk
+#600
+r600 clk
+#620
+r620 clk
+#640
+r640 clk
+#660
+r660 clk
+#680
+r680 clk
+#700
+r700 clk
+#720
+r720 clk
+#740
+r740 clk
+#760
+r760 clk
+#780
+r780 clk
+#800
+r800 clk
+#820
+r820 clk
+#840
+r840 clk
+#860
+r860 clk
+#880
+r880 clk
+#900
+r900 clk
+#920
+r920 clk
+#940
+r940 clk
+#960
+r960 clk
+#980
+r980 clk
+#1000
+r1000 clk
+#1020
+r1020 clk
+#1040
+r1040 clk
+#1060
+r1060 clk
+#1080
+r1080 clk
+#1100
+r1100 clk
+#1120
+r1120 clk
+#1140
+r1140 clk
+#1160
+r1160 clk
+#1180
+r1180 clk
+#1200
+r1200 clk
+#1220
+r1220 clk
+#1240
+r1240 clk
+#1260
+r1260 clk
+#1280
+r1280 clk
+#1300
+r1300 clk
+#1320
+r1320 clk
+#1334
+b10 ta18
+1fpga8_AppC__SmartCard
+b00 ta9
+0cpu4_core0
+#1340
+r1340 clk
+#1344
+b1101001001001110 busInterfaceBus_0
+#1349
+b0000000000000000 busInterfaceBus_0
+#1359
+b00 ta18
+0fpga8_AppC__SmartCard
+#1344
+1fpga8_AppC__SmartCard
+#1359
+b01 ta11
+0fpga8_AppC__SmartCard
+#1349
+1fpga8_AppC__SmartCard
+#1359
+0fpga8_AppC__SmartCard
+#1360
+b10101010000 clk
+1cpu7_core0
+#1380
+b10101100100 clk
+b10 ta11
+1cpu7_core0
+#1382
+b1101001001001110 busInterfaceBus_0
+#1387
+1fpga8_AppC__SmartCard
+b00 ta11
+0cpu7_core0
+b1001000000011110 busInterfaceBus_0
+b10 ta18
+#1392
+b0000000000000000 busInterfaceBus_0
+#1400
+r1400 clk
+#1402
+b10 ta11
+0fpga8_AppC__SmartCard
+#1392
+1fpga8_AppC__SmartCard
+#1402
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1404
+b1001000000011110 busInterfaceBus_0
+#1409
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0001111101010000 busInterfaceBus_0
+b10 ta18
+#1414
+b0000000000000000 busInterfaceBus_0
+#1420
+r1420 clk
+#1424
+0fpga8_AppC__SmartCard
+#1414
+1fpga8_AppC__SmartCard
+#1424
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1426
+b0001111101010000 busInterfaceBus_0
+#1431
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0101010101110000 busInterfaceBus_0
+b10 ta18
+#1436
+b0000000000000000 busInterfaceBus_0
+#1440
+r1440 clk
+#1446
+0fpga8_AppC__SmartCard
+#1436
+1fpga8_AppC__SmartCard
+#1446
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1448
+b0101010101110000 busInterfaceBus_0
+#1453
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b1111011100100111 busInterfaceBus_0
+b10 ta18
+#1458
+b0000000000000000 busInterfaceBus_0
+#1460
+r1460 clk
+#1468
+0fpga8_AppC__SmartCard
+#1458
+1fpga8_AppC__SmartCard
+#1468
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1470
+b1111011100100111 busInterfaceBus_0
+#1475
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b1100011011001110 busInterfaceBus_0
+b10 ta18
+#1480
+b10111001000 clk
+b0000000000000000 busInterfaceBus_0
+#1490
+0fpga8_AppC__SmartCard
+#1480
+1fpga8_AppC__SmartCard
+#1490
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1492
+b1100011011001110 busInterfaceBus_0
+#1497
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0101110110010001 busInterfaceBus_0
+b10 ta18
+#1500
+r1500 clk
+#1502
+b0000000000000000 busInterfaceBus_0
+#1512
+0fpga8_AppC__SmartCard
+#1502
+1fpga8_AppC__SmartCard
+#1512
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1514
+b0101110110010001 busInterfaceBus_0
+#1519
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b1000001110111101 busInterfaceBus_0
+b10 ta18
+#1520
+r1520 clk
+#1524
+b0000000000000000 busInterfaceBus_0
+#1534
+0fpga8_AppC__SmartCard
+#1524
+1fpga8_AppC__SmartCard
+#1534
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1536
+b1000001110111101 busInterfaceBus_0
+#1540
+r1540 clk
+#1541
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0010100101101100 busInterfaceBus_0
+b10 ta18
+#1546
+b0000000000000000 busInterfaceBus_0
+#1556
+0fpga8_AppC__SmartCard
+#1546
+1fpga8_AppC__SmartCard
+#1556
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1558
+b0010100101101100 busInterfaceBus_0
+#1560
+r1560 clk
+#1563
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0101001010101111 busInterfaceBus_0
+b10 ta18
+#1568
+b0000000000000000 busInterfaceBus_0
+#1578
+0fpga8_AppC__SmartCard
+#1568
+1fpga8_AppC__SmartCard
+#1578
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1580
+b11000101100 clk
+b0101001010101111 busInterfaceBus_0
+#1585
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b1101111111111010 busInterfaceBus_0
+b10 ta18
+#1590
+b0000000000000000 busInterfaceBus_0
+#1600
+b11001000000 clk
+0fpga8_AppC__SmartCard
+#1590
+1fpga8_AppC__SmartCard
+#1600
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1602
+b1101111111111010 busInterfaceBus_0
+#1607
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b1011010010101000 busInterfaceBus_0
+b10 ta18
+#1612
+b0000000000000000 busInterfaceBus_0
+#1620
+r1620 clk
+#1622
+0fpga8_AppC__SmartCard
+#1612
+1fpga8_AppC__SmartCard
+#1622
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1624
+b1011010010101000 busInterfaceBus_0
+#1629
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0011101011110111 busInterfaceBus_0
+b10 ta18
+#1634
+b0000000000000000 busInterfaceBus_0
+#1640
+r1640 clk
+#1644
+0fpga8_AppC__SmartCard
+#1634
+1fpga8_AppC__SmartCard
+#1644
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1646
+b0011101011110111 busInterfaceBus_0
+#1651
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0011101001010011 busInterfaceBus_0
+b10 ta18
+#1656
+b0000000000000000 busInterfaceBus_0
+#1660
+r1660 clk
+#1666
+0fpga8_AppC__SmartCard
+#1656
+1fpga8_AppC__SmartCard
+#1666
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1668
+b0011101001010011 busInterfaceBus_0
+#1673
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b1111101001010101 busInterfaceBus_0
+b10 ta18
+#1678
+b0000000000000000 busInterfaceBus_0
+#1680
+r1680 clk
+#1688
+0fpga8_AppC__SmartCard
+#1678
+1fpga8_AppC__SmartCard
+#1688
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1690
+b1111101001010101 busInterfaceBus_0
+#1695
+b00 ta11
+1fpga8_AppC__SmartCard
+0cpu7_core0
+b0001110000000001 busInterfaceBus_0
+b10 ta18
+#1700
+b11010100100 clk
+b0000000000000000 busInterfaceBus_0
+#1710
+0fpga8_AppC__SmartCard
+#1700
+1fpga8_AppC__SmartCard
+#1710
+b10 ta11
+b00 ta18
+0fpga8_AppC__SmartCard
+1cpu7_core0
+#1712
+b0001110000000001 busInterfaceBus_0
+#1717
+b01 ta11
+0cpu7_core0
+b0000000000000000 busInterfaceBus_0
+#1718
+b10 ta11
+1cpu7_core0
+#1720
+b11010111000 clk
+1fpga8_AppC__SmartCard
+b00 ta11
+0cpu7_core0
+b10 ta18
+#1730
+0fpga8_AppC__SmartCard
+b00 ta18
+#1731
+0cpu4
+0cpu7
+0fpga8
+b00000000 busApplicationBus_0
+b0000000000000000 busInterfaceBus_0
+0ta9
+0ta11
+0ta18

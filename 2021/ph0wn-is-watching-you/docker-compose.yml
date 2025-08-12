@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  mitmproxy:
+    build: mitmproxy
+    ports:
+      - "8002:8002"
+    links:
+      - "server"
+    environment:
+      - SERVER_HOSTNAME=server
+      - SERVER_PORT=8000
+  server:
+    build: gunicornserver

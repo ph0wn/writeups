@@ -1,0 +1,94 @@
+body {
+  background-color: #000;
+  font-family: 'Gruppo';
+}
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  max-width: 100%;
+  display: block;
+}
+
+.centered form input, label {
+  font-family: 'Gruppo';
+  font-size:30px;
+  display: block;
+  margin:.8em;
+  border-radius: 18px;
+
+}
+
+.centered form input[type=text] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 15px;
+  border: 1px solid rgba(90, 249, 255, 1);
+  color: #444444;
+}
+
+.centered form input[type=text]:focus {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+  border: 1px solid rgb(255, 0, 0);
+}
+
+.centered form label {
+position: relative;
+background: rgba(90, 249, 255, 1);
+border: 1px solid rgb(90, 249, 255, 1);
+border-radius: .8em;
+color:#444444;
+padding: .5em;
+cursor: pointer;
+}
+
+.centered form label:hover {
+  box-shadow: 0 0 .8em rgba(255, 0, 0, 1);
+  background: rgba(255, 0, 0);
+  border: 1px solid rgb(255, 0, 0);
+  color:#FFF;
+}
+
+.centered form input[type=file] {
+display: none;
+}
+
+.centered form input[type=image] {
+  width: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered form input[type=image]:hover {
+  filter: brightness(50%) sepia(100) saturate(100) hue-rotate(25deg);
+}
+
+p {
+    color: rgb(90, 249, 255, 1);
+    font-size: 1em;
+}

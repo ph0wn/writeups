@@ -1,0 +1,267 @@
+0. Récupérer les pistes du readme
+
+- plus de 35 ans, tailles exprimées en records (de 128 octets) => CP/M
+- Peter Sollich & Martin Odersky => Turbo Modula-2 pour CP/M
+- archives Internet => retroarchive.org pour récupérer une copie de Turbo
+Modula-2...
+- reverse dans tous les sens du terme...
+
+1. Exécuter le programme, vérifier l'Id/Pwd donné
+
+Les programmes CP/M sont des .COM, en assembleur 8080 ou Z80...
+Ce n'est pas le cas ici, le .MCD signifie que c'est du Modula Code (MCode),
+un bytecode généré par le compilateur Turbo Modula-2 (et dérivé du MCode
+du compilateur Modula-2 de Niklaus Wirth pour la machine Lillith, mais
+incompatible). Il faut donc l'interpréter depuis le système Turbo Modula-2,
+qui est un programme Z80 pour CP/M.
+
+=> récupérer les fichiers de Turbo Modula-2 depuis retroarchive.org
+
+=> tous les émulateurs CP/M qui prennent en charge le Z80 doivent être
+capables de faire tourner TM2 (liste sur http://www.z80.info/z80emu.htm)
+
+NB: J'utilisais z80pack d'Udo Munk jusqu'à il y a peu, mais récemment j'ai
+découvert tnylpo, un utilitaire qui permet d'exécuter des exécutables CP/M
+directement en ligne de commande Unix, et qui permet de remplacer les disques ou
+disquettes CP/M par des répertoires unix. (attention, pour tnylpo il vaut
+mieux renommer tous les fichiers avec des noms en minuscules)
+
+=> tnylpo m2
+permet de lancer Turbo Modula-2 (le fichier m2.com). 
+Depuis le menu, la commande R(un) ph0wn exécute le module ph0wn.mcd
+
+Saisir les id/pwd donnés dans le readme :
+
+Id: Niklaus Wirth
+Pwd: Oberon is as simple as possible
+
+
+2. Observer le contenu des fichiers
+
+Le fichier greet.mcd contient peu d'informations lisibles, les quelques noms
+apparaissant à la fin du fichier confirment juste que ce programme Modula-2
+dépend de deux autres modules: Terminal et Files. Ce sont deux modules de la
+bibliothèque standard (le manuel utilisateur de Turbo Modula-2 peut être
+téléchargé sur Internet).
+
+La présence du fichier greet.sym donne l'information supplémentaire que le
+programme est en même temps un module avec sa partie définition et sa partie
+implémentation. On va donc pouvoir l'utiliser comme un module de bibliothèque.
+Les identifiants visibles dans le fichier donnent les symboles exportés, on
+intuite que le module exporte deux procédures Encode et Login, que Encode
+accepte un paramètre str, et qu'il y a sans doute des types Id, Pwd, Greeting,
+FileRecord exportés par le module (et des champs id, pwd, greeting dans le
+type FileRecord)...
+
+Le fichier database.bin est chiffré, mais on peut distinguer trois champs dans
+chaque record de 128 octets (les champs de respectivement 16, 32 et 80 octets)
+Comme il n'y a qu'une procédure d'encodage dans le module, on se doute qu'elle
+est utilisée à la fois pour encoder les identifiants et mots de passe, et pour
+retrouver une version en clair des messages de greeting.
+
+Puisqu'il suffit d'utiliser la procédure d'encodage pour déchiffrer tous les
+greetings, on peut au choix :
+a) utiliser la version déjà existante dans le module
+b) désassembler la procédure d'encodage pour la réécrire, soit en Modula-2
+soit dans le langage de son choix.
+
+
+3a. Option a) Trouver le premier flag pour ceux qui connaissent le langage 
+Modula-2 en utilisant la procédure d'encodage existante
+
+On peut vérifier qu'on peut facilement s'interfacer avec le module, en
+écrivant le petit programme suivant :
+
+MODULE Test;
+IMPORT Greet;
+BEGIN
+  WRITELN("Now starting procedure Login");
+  Greet.Login
+END Test.
+
+À l'exécution, on constate que l'affichage de "Now starting..." est précédé
+d'une exécution de l'initialisation (corps) du module Greet, qui appelle
+visiblement la procédure Login => deux invocations de la procédure Login
+séparées de l'affichage "Now starting...".
+
+Pour utiliser la procédure Encode, il faut deviner le type du paramètre str.
+Avec un peu d'intuition ou avec quelques essais/erreurs, on constate qu'il
+doit s'agir d'une VARiable de type ARRAY OF CHAR. Pour info, la définition du
+module était :
+
+DEFINITION MODULE Greet;
+TYPE Id   = ARRAY [0..15] OF CHAR;
+     Pwd  = ARRAY [0..31] OF CHAR;
+     Greeting = ARRAY [0..79] OF CHAR;
+     FileRecord = RECORD
+                   id: Id;
+                   pwd: Pwd;
+                   greeting: Greeting;
+                  END;
+PROCEDURE Encode(VAR str: ARRAY OF CHAR);
+PROCEDURE Login
+END Greet.
+
+On peut alors écrire un petit programme pour lire le fichier database.bin et
+utiliser la procédure d'encodage sur tous les champs...
+Par exemple :
+
+MODULE Test;
+IMPORT Files, Greet;
+VAR i   : CARDINAL;
+    file: Files.FILE;
+    rec : Greet.FileRecord;
+BEGIN
+  IF Files.Open(file, "database.bin") THEN
+    FOR i:=1 TO 5 DO
+      Files.ReadRec(file, rec);
+      Greet.Encode(rec.id);  WRITELN("Id: ",rec.id);
+      Greet.Encode(rec.pwd); WRITELN("Pwd: ", rec.pwd);
+      Greet.Encode(rec.greeting); WRITELN("Greeting: ",rec.greeting);
+    END
+  END
+END Test.
+
+=> les Id et les Pwd ne sont pas correctement déchiffrés (la fonction
+d'encodage n'est pas involutive), mais tous les greetings apparaissent en
+clair, et donc y compris celui avec le premier flag de Pico.
+
+
+3b. Option b) Trouver les flags en désassemblant la fonction d'encodage
+
+Le module n'est pas bien gros (300 octets de bytecode), et la majeure partie
+consiste à charger le fichier greeting.dat à la recherche des id/pwd saisis
+(et encodés): la fonction de codage est donc très courte...
+
+Chercher "reverse modula-2" sur Google, on tombe sur mon repository Reversing
+Turbo Modula-2 sur GitHub...
+=> On récupère le désassembleur et on désassemble greet.mcd
+
+La lecture du code montre un calcul de 3^n dans le corps fini modulo 257.
+Pour éviter la simple substitution, pour chaque ième caractère d'une chaîne s,
+c'est s[i]+i qui est encodé...
+
+Pour info, l'implémentation du module était :
+
+IMPLEMENTATION MODULE Greet;
+IMPORT Terminal, Files, Texts;
+(* $[+ remove procedure names *)
+
+PROCEDURE Power(n: CARDINAL): CARDINAL;
+VAR i, res: CARDINAL;
+BEGIN
+  res := 1;
+  FOR i := 1 TO n MOD 256 DO
+    res := res + res + res;
+    WHILE res > 256 DO res := res - 257 END;
+  END;
+  RETURN res MOD 256
+END Power;
+
+PROCEDURE Encode(VAR str: ARRAY OF CHAR);
+VAR i: CARDINAL; byte: CARDINAL;
+BEGIN
+  i := 0;
+  REPEAT
+    byte   := ORD(str[i]);
+    str[i] := CHR(Power(byte+i));
+    INC(i)
+  UNTIL (i > HIGH(str)) OR (byte = 0);
+END Encode;
+
+PROCEDURE Login;
+CONST GREETFILE = "database.bin";
+VAR file   : Files.FILE;
+    rec    : FileRecord;
+    id     : Id;
+    pwd    : Pwd;
+          : CARDINAL;
+    found  : BOOLEAN;
+BEGIN
+  Terminal.WriteString("Id : "); Terminal.ReadLine(id);  Encode(id);
+  Terminal.WriteString("Pwd: "); Terminal.ReadLine(pwd); Encode(pwd);
+  IF Files.Open(file, GREETFILE) THEN
+    Files.NoTrailer(file); (* file length is a multiple of 128 *)
+    found := FALSE;
+    WHILE NOT Files.EOF(file) AND NOT found DO
+      Files.ReadRec(file, rec);
+      found := (id = rec.id) AND (pwd = rec.pwd);
+    END;
+    Terminal.WriteString("Access ");
+    IF found THEN
+      Terminal.WriteString("granted...");
+      Terminal.WriteLn;
+      Encode(rec.greeting);
+      Terminal.WriteString(rec.greeting);
+    ELSE
+      Terminal.WriteString("denied.")
+    END;
+  ELSE
+    Terminal.WriteString(GREETFILE);
+    Terminal.WriteString(" not found")
+  END;
+  Terminal.WriteLn;
+  Files.Close(file)
+END Login;
+
+BEGIN
+  Login
+END Greet.
+
+On voit aussi dans le désassemblage que chaque record du fichier greeting est
+constitué de 16 octets pour l'Id, 32 octets pour le password, et 80 octets pour
+le greeting (l'indice maximal (HIGH) est passé à chaque appel d'un open array).
+Quand on saisit un id et un password, ils sont d'abord encodés, puis cherchés
+dans le fichier, et s'ils sont trouvés alors le greeting stocké dans le ficher
+est codé à son tour pour l'afficher. Comme il n'y a que la fonction d'encodage
+dans le module, les greetings ont été encodés avec la fonction inverse
+(logarithme discret).
+
+On peut alors reécrire la fonction d'encodage et un petit programme pour
+déchiffrer le contenu du fichier database.bin, en Modula-2 ou dans le langage
+de son choix...
+Pour la fonction inverse, comme le calcul d'exponentiation est fait modulo 257
+(et 256 remplacé par 0 qui n'apparaitrait pas sinon), on peut utiliser une 
+table pour facilement coder la fonction inverse.
+
+Exemple en Modula-2 :
+
+MODULE Flag2;
+IMPORT Terminal, Files, Texts, Greet;
+
+VAR logTable: ARRAY [0..255] OF CARDINAL;
+
+PROCEDURE Decode(VAR str: ARRAY OF CHAR);
+VAR i: CARDINAL;
+    byte: CARDINAL;
+BEGIN
+  FOR i:=0 TO HIGH(str) DO
+    byte := logTable[ORD(str[i])];
+    IF byte < i THEN str[i] := CHR(byte+256-i) ELSE str[i] := CHR(byte-i) END;
+  END;
+END Decode;
+
+VAR in : Files.FILE;
+    rec: Greet.FileRecord;
+    i  : CARDINAL;
+    msg: ARRAY [0..0] OF CHAR;
+BEGIN
+  FOR i:=0 TO 255 DO
+    msg[0] := CHR(i); Greet.Encode(msg); logTable[ORD(msg[0])] := i
+  END;
+  IF Files.Open(in, "database.bin") THEN
+    FOR i:=1 TO 5 DO
+      Files.ReadRec(in, rec);
+      Decode(rec.id);  WRITELN("Id : ",rec.id);
+      Decode(rec.pwd); WRITELN("Pwd: ",rec.pwd);
+      Greet.Encode(rec.greeting); WRITELN("Msg: ",rec.greeting);
+    END;
+  END;
+END Flag2.
+
+4. Optionnel: Vérification des flags par exécution du programme
+
+Id : Pico le croco
+Pwd: Ph0wn{TM2 hacks NW's work!}
+Access granted.
+YES!!! Ph0wn{Pico hack3d this place!} Greetings to Axelle & Ludo...

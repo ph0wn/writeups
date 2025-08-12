@@ -1,0 +1,11 @@
+---
+version: "3"
+services:
+  jumprope:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cryptax/ph0wn-jumprope:2021.11
+    container_name: ph0wn_jumprope
+    ports:
+      - "3339:1234"

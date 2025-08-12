@@ -1,0 +1,4 @@
+- Check that the cartridge is installed
+- Check that the user name in the game is the flag
+- Go to setup, scroll down, parental control. Set the parental code to *8560* for all games rated "12" and above (allow for 7 and 3 only).
+- Save, return to home

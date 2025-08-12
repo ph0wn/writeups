@@ -1,0 +1,20 @@
+---
+version: "3"
+services:
+  logging:
+    build:
+      context: .
+      dockerfile: Dockerfile.logging
+    image: lucrative_logging
+    container_name: lucrative_logging
+    ports:
+      - "12345:12345"
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image: lucrative_server
+    restart: always
+    container_name: lucrative_server
+    ports:
+      - "12346:12346"

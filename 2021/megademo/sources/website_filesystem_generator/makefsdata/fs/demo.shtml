@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ph0wn mega demo - beta version</title>
+	<style type="text/css">
+		.centered {
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+	</style>	
+
+<script language="JavaScript">
+
+var j=100;
+
+var nb_bobs=18;
+var xs = new Array(-5,-4,-3,-2,-1,-1,-1,-1,0,1,2,3,-1,-1,-1,-1,-1,-1);
+var ys = new Array(-1,-1,-1,-1,-2,-4,-5,-3,-1,-1,-1,-1,0,1,2,3,-1,-1);
+var zs = new Array(-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5);
+
+var xd = new Array(-1,-1,-1,-1,-2,-3,0,1,-1,-1,-2,-3,-1,-1,0,1,-1,-1);
+var yd = new Array(-1,-1,-2,-3,-1,-1,-1,-1,0,1,-1,-1,-2,-3,-1,-1,0,1);
+var zd = new Array(-5,-4,-3,-3,-3,-3,-3,-3,-3,-3,-6,-6,-6,-6,-6,-6,-6,-6);
+
+var x = new Array();
+var y = new Array();
+var z = new Array();
+
+  var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement &&
+      ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+
+var CENTRE_X=myWidth/2;
+var CENTRE_Y=myHeight/2;
+var a=1.1,b=0.0,c=0.1,d=0.0, q=0.0;
+var morph_position=0;
+
+function anim()
+{
+	// calcul des coefs
+	a+=Math.PI/80;
+	b+=Math.PI/100;
+	c+=Math.PI/70;
+	d+=Math.PI/15;
+	
+	ca=Math.cos(c)*Math.cos(b);
+	cb=Math.sin(c)*Math.cos(b);
+	cc=-Math.sin(b);
+	cd=(Math.cos(c)*Math.sin(b)*Math.sin(a))-(Math.sin(c)*Math.cos(a));
+	ce=(Math.sin(c)*Math.sin(b)*Math.sin(a))+(Math.cos(c)*Math.cos(a));
+	cf=Math.cos(b)*Math.sin(a);
+	cg=(Math.cos(c)*Math.sin(b)*Math.cos(a))+(Math.sin(c)*Math.sin(a));
+	ch=(Math.sin(c)*Math.sin(b)*Math.cos(a))-(Math.cos(c)*Math.sin(a));
+	ci=Math.cos(b)*Math.cos(a);
+
+	// calcule la position des dots
+	morph_duration=200;
+	if( j>200 && morph_position<morph_duration)
+		morph_position++;
+	if( j>200+morph_duration+200)
+	{
+		for(n=0; n<nb_bobs; n++)
+		{
+			xxx=xs[n];
+			xs[n]=xd[n];
+			xd[n]=xxx;
+			
+			xxx=ys[n];
+			ys[n]=yd[n];
+			yd[n]=xxx;
+			
+			xxx=zs[n];
+			zs[n]=zd[n];
+			zd[n]=xxx;
+		}
+		morph_position=0;
+		j=0;
+	}
+
+	for(n=0; n<nb_bobs; n++)
+	{
+		x[n]=(xs[n]*morph_position+xd[n]*(morph_duration-morph_position))/morph_duration;
+		y[n]=(ys[n]*morph_position+yd[n]*(morph_duration-morph_position))/morph_duration;
+		z[n]=(zs[n]*morph_position+zd[n]*(morph_duration-morph_position))/morph_duration;
+	}
+
+	var xdep=Math.sin(a)*500;
+	var ydep=Math.sin(b)*500;
+	var zdep=Math.sin(c)*30+2000;
+
+	// calcul des points
+	for(i=0; i<nb_bobs; i++)
+	{
+		q=1-(cc*x[i]+cf*y[i]+ci*z[i]+zdep)/512;
+		xp=(ca*x[i]+cd*y[i]+cg*z[i]+xdep)/q+CENTRE_X;
+		yp=(cb*x[i]+ce*y[i]+ch*z[i]+ydep)/q+CENTRE_Y;
+
+		idx=Math.round((500+q*100));
+
+		var bob = document.getElementById("L"+i);
+		if( bob ) {
+			bob.style.left = xp + "px";
+			bob.style.top = yp + "px";
+			bob.style.zIndex = idx;
+		}
+	}
+	j++;
+	setTimeout("anim()",<!--#speed-->);
+}
+
+function init()
+{
+	var zoom=<!--#zoom-->;
+	for(i=0; i<nb_bobs; i++) {
+		xs[i]*=zoom;
+		ys[i]*=zoom;
+		zs[i]*=zoom;
+		xd[i]*=zoom;
+		yd[i]*=zoom;
+		zd[i]*=zoom;
+	}
+
+	setTimeout("anim()",<!--#speed-->);
+}
+		</script>
+  </head>
+
+  <body bgcolor="#FFFFFF" onload="init();">
+	<script>
+		for(i=0;i<nb_bobs;i++) {	
+			document.write('<div id="L'+ i +'" style="position:absolute; left:0px; top:0px; width:22px; height:22px; z-index:1"><img src="img/dollar.gif" width="22" height="22" border="0"></div>');
+		}
+	</script>
+
+    <div class="centered">
+      <img src="img/pico.png" alt="logo">
+    </div>
+
+  </body>
+</html>

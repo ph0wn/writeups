@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Biometric login</title>
+    <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  </head>
+  <body>
+    <div class="split left">
+      <div class="centered">
+        <img src="{{url_for('static', filename='images/logo.jpg')}}" align="middle" />
+      </div>
+    </div>
+
+<div class="split right">
+  <div class="centered">
+    <form method="post" action="/" enctype="multipart/form-data">
+      <input type="text" name="username" placeholder="username" autocomplete="off" required>
+      <label>Upload Fingerprint<input type="file" name="fingerprint"/></label>
+      <input type="image" src="{{url_for('static', filename='images/login.png')}}">
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+  </div>
+</div>
+<!-- TODOs Fix robots.txt -->
+</body>
+</html>
+
+

@@ -1,0 +1,15 @@
+FROM debian:bullseye
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y procps
+
+ENV USER drugserver
+RUN groupadd -r ${USER} && useradd --create-home --home-dir /home/${USER} --gid ${USER} ${USER}
+
+ADD ./drugserver/drugserver /home/drugserver
+RUN chmod u+x /home/drugserver/drugserver
+
+USER drugserver
+
+EXPOSE 7777
+
+ENTRYPOINT [ "/home/drugserver/drugserver" ]

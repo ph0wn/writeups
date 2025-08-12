@@ -1,0 +1,17 @@
+FROM python:3.6
+
+RUN mkdir -p /usr/share/meltingpot /var/meltingpot/fs /var/meltingpot/uploads
+
+ADD ./meltingpot/meltingpot.py /usr/share/meltingpot
+ADD ./meltingpot/meltingpot.cfg /usr/share/meltingpot
+ADD ./meltingpot/requirements.txt /usr/share/meltingpot
+ADD ./meltingpot/creds.cfg /usr/share/meltingpot
+ADD ./meltingpot/fs /var/meltingpot/fs
+
+RUN pip install -r /usr/share/meltingpot/requirements.txt
+
+EXPOSE 21
+EXPOSE 30000-30009
+
+WORKDIR /usr/share/meltingpot
+CMD ["python3", "-u", "/usr/share/meltingpot/meltingpot.py"]
