@@ -1,0 +1,17 @@
+Donwload ev3 img from 
+https://www.ev3dev.org/docs/getting-started/
+
+Select the Jessie version, NOT the beta.
+
+Use Etcher to flash the SD
+Select the RIGHT card on the disk, beware!
+
+mdp wifi: aifourtpt
+Wifi network: ph0wn2018-robot
+
+Then connect automatically, and DHCP
+IP should be 10.210.17.146
+
+ssh robot@10.210.17.146
+mdp: maker
+

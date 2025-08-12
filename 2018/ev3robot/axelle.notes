@@ -1,0 +1,12 @@
+git clone https://github.com/ev3dev/ev3dev-lang-python
+Cloning into 'ev3dev-lang-python'...
+$ python3
+
+from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent,
+from ev3dev2.motor import OUTPUT_C, OUTPUT_D
+
+>>> m = LargeMotor(OUTPUT_B)
+>>> m.on_for_rotations(SpeedPercent(20), 3)
+
+m2 = LargeMotor(OUTPUT_D)
+m2.stop()

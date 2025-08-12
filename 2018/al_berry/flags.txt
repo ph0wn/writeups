@@ -1,0 +1,2 @@
+stage1's flag: ph0wn{Enjoy_the_Silence}
+stage2's flag: ph0wn{RopRopRop}

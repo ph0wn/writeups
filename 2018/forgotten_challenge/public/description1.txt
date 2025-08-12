@@ -1,0 +1,10 @@
+Name: Forgotten Challenge 1
+Category: Hardware
+Level: Easy
+
+Do you know this feeling? You write a challenge, flash it on some boards ...
+And loose the source code?
+By now, no one knows what the challenge is about.
+
+If you think you can rescue us, come speak to us and get the hardware for this
+challenge.

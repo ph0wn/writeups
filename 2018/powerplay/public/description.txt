@@ -1,0 +1,22 @@
+Author: Jonas
+Difficulty: Intermediate
+Points: 500 - 20 - 50
+Equipment: 3 or 4 meross sockets.
+Category: Web? Exploit? System?
+
+PowerPlay
+=========
+
+The invasion has started.
+
+The alien force is trying to take over the power. Literally.
+
+Something has gone horribly wrong with this smart plug. And I wanted to make
+everything right. I set a strong password to make sure nobody fiddles with the
+configuration of this fragile piece of IoT, and yet here we are ...
+
+Please help me. I've noted the plug's WiFi on its side, I trust you to know how
+to handle this computer stuff. 
+
+Ah, one last thing: I wouldn't pair this thing with my smartphone. Ever. Really
+not. I'm serious. That's not a joke. YOU COULD BRICK THIS PIECE OF ART.
