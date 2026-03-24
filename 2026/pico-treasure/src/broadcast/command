@@ -1,0 +1,1 @@
+python3 broadcast.py ../time_lock_ctf_c/time_lock_ctf --loop --shuffle --port 5005 --chunk 512 --delay 0.5

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Black Pearl{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="dashboard-grid">
+        <div class="treasure-card">
+            <div class="skull-large">🏴‍☠️</div>
+            <h1>The Black Pearl</h1>
+            <p class="subtitle">The most frighful pirate vessel on Earth</p>
+	    <p>It navigates in the Carribean Sea, or in between frozen islands with the same skills. </p>
+            <p>If you dig around <i>Frozen Islands</i> on the Skull Island Badge, you <i>might</i> find a flag.</p>
+            <p class="card-text">"But who cares? We heared that Captain Pico le Croco keeps his most valuable maps in his treasure chest."</p>
+            <br>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Return to Map</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

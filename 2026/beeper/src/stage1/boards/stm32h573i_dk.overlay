@@ -1,0 +1,32 @@
+/*
+ * CC1101 433MHz overlay for STM32H573I-DK
+ * Using Arduino SPI connector (SPI2)
+ *
+ * CC1101 Module Pinout:
+ *   Pin 1 GND  -> GND
+ *   Pin 2 VCC  -> 3.3V
+ *   Pin 3 GDO0 -> D2  (PG15)
+ *   Pin 4 CSN  -> D10 (PA3)
+ *   Pin 5 SCK  -> D13 (PI1)
+ *   Pin 6 MOSI -> D11 (PB15)
+ *   Pin 7 MISO -> D12 (PI2)
+ *   Pin 8 GDO2 -> D3  (PB5)
+ */
+
+&spi2 {
+	status = "okay";
+	cs-gpios = <&gpioa 3 GPIO_ACTIVE_LOW>;
+
+	cc1101@0 {
+		compatible = "ti,cc1101";
+		reg = <0>;
+		spi-max-frequency = <2500000>;
+		int_gpios = <&gpiog 15 GPIO_ACTIVE_LOW>,
+			    <&gpiob 5 GPIO_ACTIVE_LOW>;
+		cs-gpios = <&gpioa 3 GPIO_ACTIVE_LOW>;
+
+		frequency = <433920>;  /* 433.92 MHz */
+		bitrate = <4800>;
+		status = "okay";
+	};
+};

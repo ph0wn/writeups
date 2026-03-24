@@ -1,0 +1,15 @@
+[Unit]
+Description=minipavi Service
+After=network-online.target
+
+[Service]
+ExecStart=/home/phil/minitel/install/passerelle/serveur/startminipavi.sh
+WorkingDirectory=/home/phil/minitel/install/passerelle/serveur
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=1
+User=phil
+
+[Install]
+WantedBy=multi-user.target

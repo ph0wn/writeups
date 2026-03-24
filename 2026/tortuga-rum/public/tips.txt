@@ -1,0 +1,9 @@
+Tips:
+
+- Do not start by searching for the MMSI: you're very unlikely to succeed that way. If you do it, be warned you're probably wasting your time. Proceed step by step, and first try to find out where Captain Flam meets Pico. You will search for the MMSI at some point, but only when you had understood the story and have gained elements to help you.
+- Only one NMEA trace is really useful.
+- Trying to find information from car license plates is a dead end, because there is no collaboration with the administration of the Caribbean.
+- Rely on *public* information only. 
+- Social engineering is *useless*.
+- Some elements may be in French.
+- This challenge is expected to be difficult. For an easier OSINT, look into "An Ancient Story".

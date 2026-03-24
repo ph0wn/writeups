@@ -1,0 +1,13 @@
+services:
+  skull-server:
+    build: .
+    ports:
+      - "9888:9888"
+    environment:
+      SECRET_KEY: "mygreatsupersecretkeywow293801978cjksdhf"
+      REDIS_URL: "redis://redis:6379/0"
+    depends_on:
+      - redis
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped

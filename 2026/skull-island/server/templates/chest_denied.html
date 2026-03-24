@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Access Denied{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="dashboard-grid">
+        <div class="treasure-card">
+            <div class="card-icon">⚔️</div>
+            <h2>HALT - Captain's Orders</h2>
+            <p>Only the Captain <strong>picolecroco</strong> may approach the Treasure Chest.</p>
+            <p class="card-text">Back to the decks with ye, {{ session.get('username') }}!</p>
+            <br>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Retreat</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

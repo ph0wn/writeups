@@ -1,0 +1,21 @@
+[Unit]
+Description=Minitel 2 handling service
+Requires=minipavi.service
+After=minipavi.service
+
+[Service]
+ExecStart=/home/phil/minitel/install/bridgeMinitel/minitel.sh
+Restart=always
+RestartSec=1
+
+# logs "journalctl -u minitel-2-loop"
+StandardOutput=journal
+StandardError=journal
+
+WorkingDirectory=/tmp
+Environment="SerPort=/dev/ttyUSB1"
+
+User=phil
+
+[Install]
+WantedBy=multi-user.target

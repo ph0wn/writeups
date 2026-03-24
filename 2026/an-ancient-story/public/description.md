@@ -1,0 +1,5 @@
+When you were a child, your grandfather would often tell you old family tales about your seafaring ancestors. How many times did you listen to him, your eyes sparkling like stars, as he spoke about the exploits of Great-Uncle Reginald Popham?
+
+Then one day, you decide to open old Uncle Reginald's trunk, which had been sitting in the attic. Among the logbooks and a broken sextant, you find this old sketch. What could your ancestor have wanted to bear witness to? To make matters worse, Great-Uncle Reginald seemed to mix up pennants: his ship, a French vessel, was nowhere near the signal... a building at the French Naval Academy bears her name, by the way. Will you be able to reconstruct his message and figure out where Uncle Reginald wrote it down?
+
+The flag follows the format `ph0wn{orderofthepennants_nameoftheshipwhereUncleReginaldwas}`, for example: `ph0wn{123456789101112_renard}`.

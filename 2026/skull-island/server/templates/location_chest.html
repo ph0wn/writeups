@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Treasure Chest{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="dashboard-grid">
+        <div class="treasure-card">
+            <div class="card-icon">👑</div>
+            <h1>The Treasure Chest</h1>
+            <p class="subtitle">The Captain's secret stash</p>
+            <p>Congratulations, Captain {{ session.get('username') }}!</p>
+
+            <p class="card-text">
+                You have uncovered the lost treasure of Skull Island.
+                Lots of gold, and a valuable ancient map to locate Black Pearl.
+            </p>
+
+            <br>
+            <p class="card-text" style="font-family: monospace;">
+                {{ flag }}
+            </p>
+            <br>
+
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+                Return to Map
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

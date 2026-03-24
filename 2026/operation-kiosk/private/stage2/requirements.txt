@@ -1,0 +1,4 @@
+cryptography
+numpy
+scipy
+pytest

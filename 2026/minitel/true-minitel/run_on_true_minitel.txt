@@ -1,0 +1,44 @@
+Emmergency deploy from 0 with this repo :
+
+* Install a Debian based distro on wathever with a few USB port
+* setup network with IP 192.168.0.86/24 gateway + DNS 192.168.0.1
+* create an acount phil
+* untar at the /home/phil file minitel.tgz
+sudo su
+apt install apache2
+apt install php8.3
+apt install php-curl
+apt install php-mbstring
+apt install php-xml
+dpkg --add-architecture i386
+apt update
+apt install gcc-multilib lib6-dev-i386
+apt install gcc-multilib libc6-dev-i386
+cd minitel/
+cp install/passerelle/minipavi.service /etc/systemd/system/
+systemctl enable minipavi.service
+cp install/bridgeMinitel/minitel-1-loop.service /etc/systemd/system/
+cp install/bridgeMinitel/minitel-2-loop.service /etc/systemd/system/
+cp install/bridgeMinitel/minitel-3-loop.service /etc/systemd/system/
+cp install/bridgeMinitel/minitel-4-loop.service /etc/systemd/system/
+cp install/bridgeMinitel/minitel-5-loop.service /etc/systemd/system/
+systemctl enable minitel-1-loop.service
+systemctl enable minitel-2-loop.service
+systemctl enable minitel-3-loop.service
+systemctl enable minitel-4-loop.service
+systemctl enable minitel-5-loop.service
+#compile secret.c
+cd web/var-www
+rm -rf /var/www/html
+cp -a html /var/www/
+chown -R root: /var/www/html
+chmod -R 755 /var/www/html
+cp -a include /var/www/
+chown -R root: /var/www/include
+chmod -R 755 /var/www/include
+reboot
+
+change IP easy (home + /var/www) :
+find . -type f -exec sed -i 's/192\.168\.0\.86/192.168.0.85/g' {} +
+
+* sources is UNUSEFULL

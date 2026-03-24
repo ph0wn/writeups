@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  warmbed-simulator:
+    build: .
+    container_name: warmbed-simulator
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/fuse:/dev/fuse
+      - ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR}
+    devices:
+      - /dev/fuse
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    network_mode: host
+    restart: unless-stopped

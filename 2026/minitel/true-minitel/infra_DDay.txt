@@ -1,0 +1,13 @@
+The D Day this challenge need an ethernet cable network to be connected to the ph0wn infra.
+
+IP of the RPi is 192.168.0.85/24
+Gateway and DNS 192.168.0.254
+
+The RPi need to be accessed by the staff only on SSH port 22.
+
+The RPi need an unfiltred internet access to connect to external other minitel services.
+
+
+As backup-up ONLY, and if there is too much people on the minitel, it's possible to play from a web emulator.
+In this case, player must have access to http port 80 and websocket port 8182.
+We should kept those two port closed, and open them if needed during the event.

@@ -1,0 +1,112 @@
+.mpwb-status {
+	margin:0;
+	padding:0;
+	height:15px;
+	background-color:#000000;
+	display:flex;
+}
+.mpwb-content {
+	display: flex;
+    justify-content: space-evenly; 
+    align-items: center; /* Centre verticalement les éléments dans le container */
+    height: auto;
+    max-height: 130px; /* Limite la hauteur maximale du container */
+    overflow-y: hidden; 
+    border: 1px solid #ccc;	
+	padding:0;
+	margin:0;
+}
+
+.mpwb-audioPlayer {
+	display:none;
+}
+
+.mpwb-youtubePlayer {
+	display:none;
+}
+
+.mpwb-videoPlayer {
+	height: 130px;
+	max-height: 130px;
+	display:none;
+}
+
+.mpwb-imgViewer {
+	max-height: 130px;
+	display:none;
+}
+
+.mpwb-linkButton {
+	max-height: 120px;
+	display: none;
+	padding: 5px 5px; 
+	margin: 5px 5px; 
+	border: 2px solid #ffffff;
+	border-radius: 8px; 
+	background-color: #da16e6;
+	color: #FFFFFF; 
+	font-size: 12px; 
+	text-align: center; 
+	text-decoration: none; 
+	cursor: pointer; 
+	max-width: 550px; 
+	width: 100%; 
+	box-sizing: border-box; 
+	transition: background-color 0.3s, border-color 0.3s; 
+}
+  
+.mpwb-close {
+    -webkit-appearance: none; /* Supprime l'apparence par défaut sur iOS */
+    -moz-appearance: none; /* Supprime l'apparence par défaut sur Firefox */
+    appearance: none; /* Supprime l'apparence par défaut */
+    width: 25px;
+    height: 25px;
+    background-color: transparent; /* Fond transparent */
+    border: 2px solid white;
+    border-radius: 8px; /* Coins légèrement arrondis */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    padding: 0; /* Supprime le padding interne */
+    margin: 0; /* Supprime le margin interne */
+    box-sizing: border-box; /* Inclut les bordures dans les dimensions */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/*
+.mpwb-close {
+            width: 25px;
+            height: 25px;
+            background-color: transparent; /* Fond transparent */
+            border: 2px solid white; 
+            border-radius: 8px; /* Coins légèrement arrondis */
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1;
+            transition: background-color 0.3s ease, border-color 0.3s ease;	
+}
+*/
+
+.mpwb-close:hover {
+            background-color: rgba(255, 0, 0, 0.1); 
+            border-color: darkred; 
+}
+		
+
+.responsive-ytiframe {
+	height: 100%;          /* La largeur par défaut est 100% de la largeur du conteneur parent */
+	max-height: 130px;     /* La largeur maximale de l'iframe */
+	border: none;         /* Supprimer la bordure de l'iframe */
+}
+

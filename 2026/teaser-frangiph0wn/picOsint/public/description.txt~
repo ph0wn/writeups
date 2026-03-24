@@ -1,0 +1,10 @@
+Where did Pico go for his Xmas vacation?
+
+Flag: ph0wn{Place_Name_Drink}
+
+- Place_Name is the name of the exact place he went to. No articles, words separated by underscore, and each first letter with a capital. Example: Baie des Milliardaires (in Antibes) is Baie_Milliardaires
+
+- Drink: after that, he went to a restaurant and had a nice cocktail. Find the precise name of his cocktail. Example: Lemonade (obviously, Pico did not have lemonade).
+
+
+Attached file: osint1.txt

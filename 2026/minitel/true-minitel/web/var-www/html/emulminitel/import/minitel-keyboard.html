@@ -1,0 +1,338 @@
+<div class="minitel-keyboard" data-minitel="keyboard">
+  <!-- Click sound to imitate the Minitel -->
+  <audio data-minitel="keysound">
+    <source src="sound/minitel-key.mp3" type="audio/mpeg"/>
+    Too bad, your browser does not support HTML5 audio or mp3 format.
+  </audio>
+
+  <!-- The Minitel virtual keyboard is drawn with standard buttons -->
+  <div class="keyboard-functions">
+    <div class="row-special-keys-1">
+      <div class="switch">
+        <button data-call="onConfig">⚙</button>
+      </div>
+      <div class="switch">
+        <button data-call="onAlpha">A</button>
+      </div>
+      <div class="switch">
+        <button data-call="onNAlpha">⌥</button>
+      </div>
+      <div class="switch">
+        <button data-call="onclick" data-param="Pause">&#x23F8;</button>
+      </div>
+
+	   
+	   <div class="special save">
+			<button data-call="onclick" data-param="Sauve" >Début enr.</button>	  
+		</div>
+		
+      <div class="special">
+        <button data-call="onclick" data-param="Sommaire">Sommaire</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Annulation">Annulation</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Retour">Retour</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Repetition">Répétition</button>
+      </div>
+    </div>
+
+    <div class="row-special-keys-2">
+      <div class="special">
+        <button data-call="onclick" data-param="Fnct">Fnct</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Connexion">Cnx/fin</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Guide">Guide</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Correction">Correction</button>
+      </div>
+      <div class="special">
+        <button data-call="onclick" data-param="Suite">Suite</button>
+      </div>
+      <div class="special send">
+        <button data-call="onclick" data-param="Envoi">Envoi</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard-page page-non-alpha hidden" data-minitel="keynonalpha">
+    <div class="row-numbers">
+      <div class="standard">
+        <button data-call="onclick" data-param="1">1</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="2">2</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="3">3</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="4">4</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="5">5</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="6">6</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="7">7</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="8">8</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="9">9</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="0">0</button>
+      </div>
+    </div>
+
+    <div class="row-punctuation-keys-1">
+      <div class="standard">
+        <button data-call="onclick" data-param="Escape">Esc</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param=",">,</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param=".">.</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="’">’</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param=";">;</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="-">-</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param=":">:</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="?">?</button>
+      </div>
+    </div>
+
+    <div class="row-punctuation-keys-2">
+      <div class="standard">
+        <button data-call="onclick" data-param="!">!</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param='"'>"</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="#">#</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="$">$</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="%">%</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="&amp;">&amp;</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="’">’</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="(">(</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param=")">)</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="FlecheHaut">↑</button>
+      </div>
+    </div>
+
+    <div class="row-punctuation-keys-3">
+      <div class="standard">
+        <button data-call="onclick" data-param="]">[</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="]">]</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="&lt;">&lt;</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="&gt;">&gt;</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="@">@</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="+">+</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="=">=</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="*">*</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="/">/</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard-page page-alpha" data-minitel="keyalpha">
+    <div class="row-alphabet-1">
+      <div class="standard">
+        <button data-call="onclick" data-param="a">A</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="z">Z</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="e">E</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="r">R</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="t">T</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="y">Y</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="u">U</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="i">I</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="o">O</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="p">P</button>
+      </div>
+    </div>
+
+    <div class="row-alphabet-2">
+      <div class="standard">
+        <button data-call="onclick" data-param="q">Q</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="s">S</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="d">D</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="f">F</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="g">G</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="h">H</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="j">J</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="k">K</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="l">L</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="m">M</button>
+      </div>
+    </div>
+
+    <div class="row-alphabet-3">
+      <div class="shift">
+        <button data-call="onclick" data-param="Ctrl">Ctrl</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="w">W</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="x">X</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="c">C</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="v">V</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="b">B</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="n">N</button>
+      </div>
+      <div class="shift">
+        <button data-call="onclick" data-param="Maj">Maj</button>
+      </div>
+    </div>
+
+    <div class="row-space">
+      <div class="standard">
+        <button data-call="onclick" data-param="Haut">↑</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="Bas">↓</button>
+      </div>
+      <div class="space">
+        <button data-call="onclick" data-param="Espace">Espace</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="Gauche">←</button>
+      </div>
+      <div class="standard">
+        <button data-call="onclick" data-param="Droite">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard-page page-config hidden" data-minitel="keyconfig">
+    <form class="form-config" data-change="onSettingChanged">
+      <div class="config-speed">
+        <label for="config-speed">Vitesse</label>
+        <select name="config-speed" id="config-speed">
+          <option value="1200" selected="selected">1200 bps</option>
+          <option value="4800">4800 bps</option>
+          <option value="9600">9600 bps</option>
+          <option value="FULL">maximum</option>
+        </select>
+      </div>
+
+      <div class="config-color">
+        <label for="config-color">Mode</label>
+        <select name="config-color" id="config-color">
+          <option value="false" selected="selected">noir et blanc</option>
+          <option value="true">couleur</option>
+        </select>
+      </div>
+
+
+      <div class="config-help">
+        <div><kbd>F1</kbd> Guide</div>
+        <div><kbd>F2</kbd> Répétition</div>
+        <div><kbd>⤶</kbd> Envoi</div>
+        <div><kbd>⟵</kbd> Correction</div>
+        <div><kbd>↖</kbd> Sommaire</div>
+        <div><kbd>↑</kbd> Retour</div>
+        <div><kbd>↓</kbd> Suite</div>
+        <div><kbd>←</kbd> Annulation</div>
+        <div><kbd>→</kbd> Envoi</div>
+        <div><kbd>⇥</kbd> Suite</div>
+      </div>
+	</form>    
+  </div>
+</div>

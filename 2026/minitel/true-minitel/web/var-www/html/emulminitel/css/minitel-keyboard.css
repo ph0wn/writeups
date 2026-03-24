@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #202020;
+}
+
+x-minitel {
+    display: block;
+    position:relative;
+    width: 40em;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+}
+
+canvas {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    width: 40em;
+    max-width: 100%;
+    height: auto;
+}
+
+.minitel-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none
+}
+
+.minitel-screen {
+	pointer-events: auto;
+	position:relative;
+}
+
+object {
+    width: 40em;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Keyboard */
+.minitel-keyboard button {
+    padding: 0;
+    height: 3.2em;
+    margin: 0;
+    width: 100%;
+    background-color: #462e22;
+    color: white;
+    border: none;
+    border-radius: 1em 0.4em 0.4em 0.4em;
+    border: 0.3em solid #202020;
+    text-shadow: 0.05em 0.05em 0.1em black;
+    font-size: 65%;
+}
+
+.special button, .send button, .save button .switch button {
+    text-shadow: 0.05em 0.05em 0.1em #462e22;
+}
+
+.special button { background-color: #a0795a; }
+.send button { background-color: #a4943c; }
+.save button { background-color: #ff943c; }
+
+.switch button {
+    width: 3em;
+    background-color: blue;
+}
+
+.minitel-keyboard>div>div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.minitel-keyboard>div>div>div { flex-grow: 1; }
+.minitel-keyboard>div>div>div.switch { flex-grow: 0; }
+
+.form-config {
+    color: #ddd;
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 80%;
+}
+
+.config-color, .config-speed  {
+    display: flex;
+    align-items: center;
+}
+
+.config-speed { margin-top: 0.5em; }
+
+.form-config label { width: 33%; }
+.form-config select {
+    flex-grow: 1;
+    font-size: 95%;
+}
+
+.config-speed>div, .config-color>div { margin: 0.8em 0; }
+
+.config-help {
+    margin-top: 1em;
+    column-count: 3;
+    font-size: 85%;
+}
+
+.config-help kbd {
+    display: inline-block;
+    width: 2em;
+    margin: 0 0.3em 0.4em 0;
+    text-align: center;
+    font-size: 150%;
+    border: 0.05em solid white;
+    border-radius: 0.3em;
+}
+
+.hidden { display: none; }

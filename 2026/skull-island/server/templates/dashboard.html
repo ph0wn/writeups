@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Skull Island Map{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Welcome to Your Treasure Map, {{ username }}! 🏴‍☠️</h1>
+        <p class="subtitle">You have successfully sealed your fate with the Skull Seal</p>
+    </div>
+
+
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='skull_map.png') }}" alt="Skull Map" usemap="#treasuremap"
+            style="max-width: 100%; height: auto;">
+        <map name="treasuremap">
+            <area shape="rect" coords="300,600,400,700" href="{{ url_for('location_palm_trees') }}" alt="Palm Trees"
+                title="The Palm Trees">
+
+            <area shape="rect" coords="690,360,780,450" href="{{ url_for('location_treasure_chest') }}"
+                alt="Treasure Chest" title="The Treasure Chest">
+
+            <area shape="rect" coords="1000,470,1100,530" href="{{ url_for('location_black_pearl') }}" alt="Black Pearl"
+                title="The Black Pearl">
+
+        </map>
+        <p style="font-size: 0.9em; margin-top: 10px;">Click on the map to explore locations!</p>
+    </div>
+
+
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+        }
+
+        .dashboard-header h1 {
+            color: #ffd700;
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+
+        .dashboard-header .subtitle {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+    </style>
+    {% endblock %}

@@ -1,0 +1,23 @@
+services:
+  mcp-server:
+    build: .
+    container_name: mcp-server
+    restart: unless-stopped
+
+    # Single source of truth for the port:
+    environment:
+      PORT: ${MCP_PORT:-9999}
+      # we can only have one worker because they don't share the global "sessions" variable !
+      WORKERS: 1
+      # the logs of my server.py file
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      MCP_LOG_LEVEL: WARNING
+      UVICORN_ACCESS_LOG_LEVEL: INFO
+      # TIMEOUT=0 is recommended for long-lived streaming responses
+      TIMEOUT: ${MCP_TIMEOUT:-0}
+      # Optional: external host/IP that clients will connect to (used for transport security)
+      EXTERNAL_HOST: ${EXTERNAL_HOST:-}
+
+    ports:
+      - "${MCP_PORT:-9999}:9999"
+

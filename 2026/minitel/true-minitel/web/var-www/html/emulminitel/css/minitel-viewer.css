@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #202020;
+}
+
+canvas {
+    /* Disables any smoothing algorithm when image is resized */
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: auto;
+}
+
+@media (min-aspect-ratio: 320/250) {
+    canvas { width: auto; height: 100%; }
+}
+
+@media (max-aspect-ratio: 320/250) {
+    canvas { width: 100%; height: auto; }
+}

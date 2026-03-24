@@ -1,0 +1,11 @@
+source "Kconfig.zephyr"
+
+config CC1101
+    bool "CC1101 RF Transceiver"
+    default y
+    depends on SPI && GPIO
+
+config CC1101_RX_STACK_SIZE
+    int "CC1101 RX thread stack size"
+    default 2048
+    depends on CC1101

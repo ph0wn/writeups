@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pico le Croco's Yacht Food Stock</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='pico.png') }}" alt="Pico le Croco" class="pico-image">
+    <h1>Pico le Croco - Yacht Food Stock</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <form method="POST" action="/add">
+            <td>
+              <input type="text" name="name" placeholder="Pico likes caviar..." required>
+            </td>
+            <td class="center">
+              <button class="btn green" type="submit">➕ Add</button>
+            </td>
+          </form>
+        </tr>
+      </thead>
+      <tbody>
+        {% for fname, display in food_list %}
+          <tr>
+            <td>{{ display }}</td>
+            <td class="center">
+              <form method="POST" action="/delete">
+                <input type="hidden" name="filename" value="{{ fname }}">
+                <button class="btn red" type="submit">🗑️ Delete</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

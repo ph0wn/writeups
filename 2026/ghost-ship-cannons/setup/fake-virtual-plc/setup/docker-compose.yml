@@ -1,0 +1,13 @@
+services:
+  fakeplc:
+    build: .
+    ports:
+      - "5020:5020"
+    environment:
+      FLAG: ph0wn{Tr41n_M0d3}
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.30.250.0/24

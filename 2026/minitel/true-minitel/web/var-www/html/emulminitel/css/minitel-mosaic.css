@@ -1,0 +1,139 @@
+/* Font definitions */
+@font-face { font-family: BigFatBlack; src: url(../font/draw/bigfatblack/BigFatBlack.ttf); }
+@font-face { font-family: Genown; src: url(../font/draw/genown/GENOWN_V.TTF); }
+@font-face { font-family: GreenFlame; src: url(../font/draw/greenflame/GreenFlame.ttf); }
+@font-face { font-family: EleventhSquare; src: url(../font/draw/eleventhsquare/Eleventh-Square.ttf); }
+@font-face { font-family: PressStart2P; src: url(../font/draw/pressstart2p/PressStart2P.ttf); }
+
+.sample-bigfatblack { font-family: BigFatBlack; }
+.sample-genown { font-family: Genown; }
+.sample-greenflame { font-family: GreenFlame; }
+.sample-eleventhsquare { font-family: EleventhSquare; }
+.sample-pressstart2p { font-family: PressStart2P; }
+
+#graphics-text-form {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+    background: linear-gradient(#ffffff, #eaedf1);
+    border-bottom: 0.1em solid #8b9097;
+    box-shadow: #8b9097 0 0.1em 0.3em;
+}
+
+#graphics-text-form .sample {
+    font-size: 125%;
+    vertical-align: sub;
+}
+
+#graphics-text-form form>div { margin-bottom: 1em; }
+#graphics-text-form.visible { display: block; }
+
+.mosaic-root {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #404040;
+    overflow-y: scroll;
+}
+
+.mosaic-canvases {
+    text-align: center;
+}
+
+.center {
+    display: inline-block;
+    position: relative;
+}
+
+.hidden { display: none; }
+
+.mosaic-grid, .mosaic-overlay, .mosaic-error, .mosaic-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mosaic-overlay {
+    width: 100%;
+    height: 100%;
+}
+
+.mosaic-grid, .mosaic-overlay, .mosaic-error, .mosaic-preview {
+    pointer-events: none
+}
+
+.mosaic-overlay {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    opacity: 0.5;
+}
+
+/* Current settings */
+.mosaic-current-settings {
+    position: absolute;
+    top: 24em;
+    left: 0;
+    background-color: #eaedf1;
+    padding: 0 0.5em;
+}
+
+.mosaic-current-settings img {
+    display: block;
+    margin: 0.5em 0;
+}
+
+/* Cursors for each tool */
+.cursor-pencil {
+    cursor: url(../icon/miicons.svg#graphics-pencil) 0 32,
+    pointer
+}
+
+.cursor-fill {
+    cursor: url(../icon/miicons.svg#graphics-fill) 3 28,
+    pointer
+}
+
+.cursor-circle {
+    cursor: url(../icon/miicons.svg#graphics-circle) 16 16,
+    pointer
+}
+
+.cursor-filledCircle {
+    cursor: url(../icon/miicons.svg#graphics-filled-circle) 16 16,
+    pointer
+}
+
+.cursor-rectangle {
+    cursor: url(../icon/miicons.svg#graphics-rectangle) 7 6,
+    pointer
+}
+
+.cursor-filledRectangle {
+    cursor: url(../icon/miicons.svg#graphics-filled-rectangle) 7 6,
+    pointer
+}
+
+.cursor-curve {
+    cursor: url(../icon/miicons.svg#graphics-curve) 12 6,
+    pointer
+}
+
+.cursor-copy {
+    cursor: url(../icon/miicons.svg#graphics-copy) 7 6,
+    pointer
+}
+
+.cursor-paste {
+    cursor: url(../icon/miicons.svg#graphics-paste) 16 16,
+    pointer
+}
+

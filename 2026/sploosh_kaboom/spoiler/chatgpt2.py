@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+import re
+import time
+import argparse
+import serial
+
+# stage-1 ships (same as before)
+SHIP_LENS = [3, 3, 2, 2, 1]
+N = 24
+
+# XOR words used by place_ghost (from rodata @ 0x3a1bc)
+# 0x464f4c4c, 0x4f575f54, 0x48455f47, 0x484f5354  == "FOLLOW_THE_GHOST" chunks
+GHOST_XOR = [0x464F4C4C, 0x4F575F54, 0x48455F47, 0x484F5354]
+
+def xorshift32(s: int) -> int:
+    s &= 0xFFFFFFFF
+    s ^= (s << 13) & 0xFFFFFFFF
+    s ^= (s >> 17) & 0xFFFFFFFF
+    s ^= (s << 5)  & 0xFFFFFFFF
+    return s & 0xFFFFFFFF
+
+def rand_mod(state: int, mod: int):
+    state = xorshift32(state)
+    return state, state % mod
+
+def place_normal_ships_and_state(seed: int):
+    """
+    Rebuild normal ship occupancy AND return RNG state AFTER placement.
+    Mirrors: rand8(2) orient, rand8(24) x, rand8(24) y, collision(), mark().
+    """
+    state = seed & 0xFFFFFFFF
+    occ = [[0]*N for _ in range(N)]
+
+    def coll(x, y, ln, vert):
+        for i in range(ln):
+            xx = x if vert else x + i
+            yy = y + i if vert else y
+            if occ[yy][xx]:
+                return True
+        return False
+
+    def mark(x, y, ln, vert):
+        for i in range(ln):
+            xx = x if vert else x + i
+            yy = y + i if vert else y
+            occ[yy][xx] = 1
+
+    for ln in SHIP_LENS:
+        while True:
+            state, vert = rand_mod(state, 2)   # 0=horiz, 1=vert
+            state, x    = rand_mod(state, N)
+            state, y    = rand_mod(state, N)
+
+            if vert and y + ln > N: y = N - ln
+            if not vert and x + ln > N: x = N - ln
+
+            if not coll(x, y, ln, vert):
+                mark(x, y, ln, vert)
+                break
+
+    return occ, state
+
+def place_ghost(state: int, step: int, occ):
+    """
+    Mirrors place_ghost():
+      state ^= GHOST_XOR[step-1]
+      rand8(2) -> orientation (irrelevant for len=1)
+      rand8(12) -> x
+      rand8(6)  -> y
+      re-roll if collision against bits(ships|ghost)
+      mark ghost cell as occupied
+    """
+    state ^= GHOST_XOR[step - 1] & 0xFFFFFFFF
+
+    while True:
+        state, _vert = rand_mod(state, 2)
+        state, x     = rand_mod(state, 12)  # 0..11
+        state, y     = rand_mod(state, 6)   # 0..5
+        if not occ[y][x]:
+            occ[y][x] = 1  # leave a "trail" (like firmware: old ghost spots remain occupied)
+            return (y, x), state  # (row, col), updated state
+
+def _readline(ser, timeout=0.6) -> str:
+    t0 = time.time()
+    buf = bytearray()
+    while time.time() - t0 < timeout:
+        b = ser.read(1)
+        if not b:
+            continue
+        if b == b"\n":
+            break
+        buf += b
+    return buf.decode(errors="ignore").strip("\r").strip()
+
+def send_cmd_until_prompt(ser, cmd: str, timeout=1.5) -> str:
+    """
+    Send a command; read lines until a bare '$' prompt (or timeout).
+    Filters echoed command lines and strips the prompt.
+    """
+    ser.reset_input_buffer()
+    ser.write((cmd + "\n").encode())
+
+    out_lines = []
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        line = _readline(ser, timeout=timeout)
+        if not line:
+            continue
+        if line == cmd:
+            continue  # echo
+        if line == "$":
+            break
+        if line.startswith("$"):
+            line = line.lstrip("$").strip()
+            if not line:
+                break
+        out_lines.append(line)
+
+        # If device prints prompt on same burst, we’ll catch it next iteration quickly.
+        if ser.in_waiting == 0:
+            time.sleep(0.01)
+
+    return "\n".join(out_lines).strip()
+
+def get_seed(ser) -> int:
+    print("[*] Reading seed from game_id")
+    print("[>] game_id")
+    out = send_cmd_until_prompt(ser, "game_id", timeout=1.2)
+    m = re.search(r"0x([0-9a-fA-F]{8})", out)
+    if not m:
+        print(f"[-] Seed not found in: {out!r}")
+        raise RuntimeError("Seed not found")
+    seed = int(m.group(1), 16)
+    print(f"[+] seed = 0x{seed:08x}")
+    return seed
+
+def main():
+    ap = argparse.ArgumentParser(description="Ghost ship stage-2 solver")
+    ap.add_argument("--port", default="/dev/ttyACM0")
+    ap.add_argument("--baud", type=int, default=115200)
+    ap.add_argument("--delay", type=float, default=0.02, help="delay between ghost shots")
+    ap.add_argument("--timeout", type=float, default=1.5, help="per-command read timeout")
+    args = ap.parse_args()
+
+    print(f"[*] opening {args.port} @ {args.baud}")
+    with serial.Serial(args.port, args.baud, timeout=0.1) as ser:
+        seed = get_seed(ser)
+
+        # Rebuild occupancy and RNG state after normal ship placement
+        occ, state = place_normal_ships_and_state(seed)
+
+        # Precompute the 4 ghost positions (row,col) you must hit in order
+        ghost_cells = []
+        for step in (1, 2, 3, 4):
+            (rc, state) = place_ghost(state, step, occ)
+            ghost_cells.append(rc)
+
+        print(f"[+] computed ghost path (4 hits): {ghost_cells}")
+
+        # Fire 4 times quickly
+        for i, (row, col) in enumerate(ghost_cells, 1):
+            cmd = f"fire {row} {col}"  # REVERTED: keep same ordering as your working stage-1 script
+            print(f"[*] ({i:02d}/04) firing ghost at ({row},{col})")
+            print(f"[>] {cmd}")
+            out = send_cmd_until_prompt(ser, cmd, timeout=args.timeout)
+            if out:
+                print(out)
+            else:
+                print("[-] no response (timeout)")
+
+            # If the device says timer elapsed, stop early.
+            if "Timer elapsed" in out or "escaped" in out.lower():
+                print("[-] ghost escaped (timer). Try lowering --delay and/or increasing baud.")
+                return
+
+            time.sleep(args.delay)
+
+        # Grab stage-2 flag
+        print("[*] requesting stage-2 flag")
+        print("[>] flag 2")
+        out = send_cmd_until_prompt(ser, "flag 2", timeout=5.0)
+        if out:
+            print(f"[+] {out}")
+        else:
+            print("[-] no response to 'flag 2'")
+
+if __name__ == "__main__":
+    main()

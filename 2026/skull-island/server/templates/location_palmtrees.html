@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Palm Trees{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="dashboard-grid">
+        <div class="treasure-card">
+            <div class="skull-large">🌴</div>
+            <h1>The Palm Trees</h1>
+            <p class="subtitle">A peaceful spot on the island</p>
+
+            <h2>Just Coconuts 🥥 </h2>
+            <p>You dug around the palm trees but only found fallen coconuts.</p>
+            <p class="card-text">"Not X marks the spot, matey!"</p>
+            <br>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Return to Map</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+services:
+  pico:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - pico_data:/app/food
+
+volumes:
+  pico_data:
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 100.64.10.0/24

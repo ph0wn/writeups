@@ -1,0 +1,28 @@
+# Copyright (c) 2018, Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+description: Texas Instruments CC1101 wireless transceiver
+
+compatible: "ti,cc1101"
+
+include: spi-device.yaml
+
+properties:
+  int_gpios:
+    type: phandle-array
+    required: true
+    description: |
+      GPIOs connected to the GDO0 and GDO2 pins of the transceiver.
+  cs-gpios:
+     type: phandle-array
+     description: |
+       GPIO connected nCS
+ 
+  frequency:
+    type: int
+    description: |
+      The carrier frequency, in kHz.
+  bitrate:
+    type: int
+    description: |
+      The bitrate in bit per second.

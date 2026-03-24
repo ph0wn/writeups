@@ -1,0 +1,158 @@
+body {
+	font-size:12px;
+	font-family:Arial,Helvetica;
+	background-color:#6c023b;
+	color:white;	
+}						
+h1 a {
+	color:#ff850f
+}
+
+table.rounded-corners {
+	border-spacing: 0;
+	border-collapse: separate;
+	border-radius: 10px;
+	--border: 2px solid #fef0dc;
+	border: var(--border);
+	overflow:hidden;
+	font-size:12px;
+}
+table.rounded-corners th, table.rounded-corners td {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+table.rounded-corners th {
+	background-color: #fddeb9;
+	color: black;
+	font-weight:bold;
+}
+
+/* Apply a border to the right of all but the last column */
+table.rounded-corners th:not(:last-child),
+table.rounded-corners td:not(:last-child) {
+	border-right: var(--border);
+}
+
+/* Apply a border to the bottom of all but the last row */
+table.rounded-corners>thead>tr:not(:last-child)>th,
+table.rounded-corners>thead>tr:not(:last-child)>td,
+table.rounded-corners>tbody>tr:not(:last-child)>th,
+table.rounded-corners>tbody>tr:not(:last-child)>td,
+table.rounded-corners>tfoot>tr:not(:last-child)>th,
+table.rounded-corners>tfoot>tr:not(:last-child)>td,
+table.rounded-corners>tr:not(:last-child)>td,
+table.rounded-corners>tr:not(:last-child)>th,
+table.rounded-corners>thead:not(:last-child),
+table.rounded-corners>tbody:not(:last-child),
+table.rounded-corners>tfoot:not(:last-child) {
+	border-bottom: var(--border);
+}
+
+table.rounded-corners td.total {
+	font-weight:bold;
+	color:yellow;
+}
+	
+table.rounded-corners td.head {	
+	background-color:#a23500;
+}
+
+table.rounded-corners tr.head {	
+	background-color:#a23500;
+	color:white;
+}
+	
+	
+@arrowColor: #ffcc00;
+@arrow: escape('@{arrowColor}');
+
+select {  
+	background-color:#a23500;
+	background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23ffcc00%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A);
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+	border-radius: 2px;
+	border: none;
+	color: #ffffff;
+	padding: 10px 30px 10px 10px;
+	border-radius: 10px;
+	
+	// disable default appearance
+	outline: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	&::-ms-expand { display: none };
+}
+
+// remove dotted firefox border
+@-moz-document url-prefix() {
+  select {
+    color: rgba(0,0,0,0);
+    text-shadow: 0 0 0 #ffffff;
+  }
+}
+
+// Codepen Layout
+
+
+select {
+    margin: 50px auto 0;
+    display:block;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+
+.button-3 {
+	appearance: none;
+	background-color: #fddeb9;
+	border: 1px solid rgba(27, 31, 35, .15);
+	border-radius: 10px;
+	box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+	box-sizing: border-box;
+	color: #000000;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system,system-ui,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji';
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	padding: 6px 16px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+	box-shadow: none;
+	outline: none;
+}
+
+.button-3:hover {
+	background-color: #a23500;
+	color:#ffffff;
+}
+
+.button-3:focus {
+	box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+	outline: none;
+}
+
+.button-3:disabled {
+	background-color: #94d3a2;
+	border-color: rgba(27, 31, 35, .1);
+	color: rgba(255, 255, 255, .8);
+	cursor: default;
+}
+
+.button-3:active {
+	box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}

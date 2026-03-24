@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Skull Island Map{% endblock %}
+
+{% block content %}
+
+<div class="login-container">
+    <div class="login-wrapper">
+        <div class="login-mascot-container">
+            <img src="{{ url_for('static', filename='sticker3.png') }}" alt="Pico le Croco" class="login-mascot">
+        </div>
+
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Skull Seal Login</h1>
+                <p class="subtitle">High Security Pirate Authentication System</p>
+            </div>
+
+            <div class="login-body-grid">
+                <div class="login-section-form">
+                    <div class="challenge-box" style="margin-bottom: 20px;">
+                        <p style="margin-bottom: 5px; color: #666;">Your Challenge:</p>
+                        <div class="challenge-display">
+                            <span id="challengeValue">Loading...</span>
+                            <button type="button" class="btn-icon" onclick="fetchChallenge()" title="Get new challenge">
+                                🔄
+                            </button>
+                        </div>
+                    </div>
+
+                    <form id="loginForm" class="login-form" method="POST" action="/login">
+                        <input type="hidden" id="username" name="username" value="deckhand">
+
+                        <div class="form-group">
+                            <label for="badge_id">Badge ID</label>
+                            <input type="text" id="badge_id" name="badge_id" placeholder="xxxxxxxxxxxxxxxxxxxxxxxx"
+                                required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="authcode">Skull Seal</label>
+
+                            <input type="text" id="authcode" name="authcode" placeholder="e.g., XXXX-XXXX-XXXX-XXXX"
+                                required class="form-input">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            🏴‍☠️ ENTER
+                        </button>
+                    </form>
+
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                </div>
+
+                <div class="login-section-info">
+                    <div class="login-info">
+                        <h3>⚓ How to Obtain Your Skull Seal</h3>
+
+                        <ol>
+                            <li>On the badge, press the RIGHT button to get your Skull Island Badge ID.</li>
+                            <li>Press the UP button to enter server's challenge.</li>
+                            <li>Report the seal generated on your badge here.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .challenge-display {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+        /* background: #0f172a; 
+        border: 2px solid #333;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px; */
+    }
+
+    #challengeValue {
+        flex: 1;
+        color: #000;
+    }
+
+    .btn-icon {
+        background: #fff;
+        border: 1px solid #333;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: transform 0.2s;
+    }
+
+    .btn-icon:hover {
+        transform: rotate(180deg);
+    }
+
+    .btn-icon:active {
+        transform: scale(0.95);
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentChallenge = null;
+
+    // Function to fetch a new challenge
+    async function fetchChallenge() {
+        try {
+            document.getElementById('challengeValue').textContent = 'Loading...';
+            const response = await fetch('/challenge');
+            const data = await response.json();
+
+            if (response.ok && data.challenge) {
+                currentChallenge = data.challenge;
+                // Replace L with Lobster and R with Bottle for display
+                const displayChallenge = data.challenge.replace(/L/g, '🦞').replace(/R/g, '🍾');
+                document.getElementById('challengeValue').textContent = displayChallenge;
+            } else {
+                throw new Error('Failed to get challenge');
+            }
+        } catch (error) {
+            document.getElementById('challengeValue').textContent = 'Error!';
+            document.getElementById('errorMessage').textContent = '✗ Failed to load challenge: ' + error.message;
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    }
+
+    // Fetch challenge on page load
+    fetchChallenge();
+
+    // Login form submission
+    // Standrad form submission is handled by the browser
+
+    // Check if there is a server-side error to display
+    {% if error %}
+    document.getElementById('errorMessage').textContent = '✗ ' + '{{ error }}';
+    document.getElementById('errorMessage').style.display = 'block';
+    {% endif %}
+
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+        const username = document.getElementById('username').value;
+        const badge_id = document.getElementById('badge_id').value;
+        const authcode = document.getElementById('authcode').value;
+
+        if (!currentChallenge) {
+            e.preventDefault();
+            document.getElementById('errorMessage').textContent = '✗ No challenge loaded. Please refresh.';
+            document.getElementById('errorMessage').style.display = 'block';
+            return;
+        }
+    });
+
+    // Auto-format authcode
+    document.getElementById('authcode').addEventListener('input', (e) => {
+        let value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        if (value.length > 0) {
+            let formatted = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formatted += '-';
+                }
+                formatted += value[i];
+            }
+            e.target.value = formatted;
+        }
+    });
+</script>
+{% endblock %}
